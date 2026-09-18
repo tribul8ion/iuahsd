@@ -2,7 +2,8 @@ import {
   retrieveLaunchParams,
   retrieveRawInitData,
 } from "@telegram-apps/sdk-react";
-import { API_URL } from "@/shared/config";
+import { API_URL, PREVIEW_MODE } from "@/shared/config";
+import { previewRequest } from "./preview";
 import {
   clearSessionToken,
   loadSessionToken,
@@ -224,6 +225,9 @@ async function request<T>(
   options: RequestInit = {},
   stepUp = false
 ): Promise<ApiResponse<T>> {
+  if (PREVIEW_MODE) {
+    return previewRequest<T>(endpoint, options);
+  }
   const auth = await resolveAuth();
   const response = await send(endpoint, options, auth, stepUp);
   let parsed = await parseResponse<T>(response);

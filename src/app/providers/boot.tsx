@@ -10,6 +10,8 @@ import {
 } from "@/shared/session";
 import type { CryptoSettingsDto } from "@/shared/session";
 import { Spinner } from "@/shared/ui";
+import { PREVIEW_MODE } from "@/shared/config";
+import { initPreviewSession, previewUser } from "@/shared/api/preview";
 import { userKeys } from "@/entities/user";
 import type { User } from "@/entities/user";
 import { PrivacyConsentScreen, useConsent } from "@/features/privacy-consent";
@@ -73,6 +75,16 @@ export function BootProvider({ children }: BootProviderProps) {
       return;
     }
     startedRef.current = true;
+    // ВРЕМЕННО: демо-предпросмотр — сразу готовая сессия без Telegram и бэкенда.
+    if (PREVIEW_MODE) {
+      void (async () => {
+        const key = await initPreviewSession();
+        queryClient.setQueryData(userKeys.me(), previewUser());
+        setCryptoKey(key);
+        setBootState("ready");
+      })();
+      return;
+    }
     void (async () => {
       const [profileResponse, storedKey] = await Promise.all([
         apiClient.get<User>("/me"),
@@ -95,7 +107,7 @@ export function BootProvider({ children }: BootProviderProps) {
       }
       await proceedToCrypto();
     })();
-  }, [proceedToCrypto, queryClient, setBootState]);
+  }, [proceedToCrypto, queryClient, setBootState, setCryptoKey]);
 
   const handleConsentAccept = useCallback(() => {
     const profile = queryClient.getQueryData<User>(userKeys.me());
