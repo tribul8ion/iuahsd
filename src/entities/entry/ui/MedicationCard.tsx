@@ -53,17 +53,20 @@ export function MedicationCard({
       }}
     >
       <div
-        className="flex-shrink-0 w-12 h-12 rounded-[14px] flex items-center justify-center"
-        style={{ backgroundColor: colors.bg }}
+        className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
+        style={{ backgroundColor: "#2C2C2E" }}
       >
-        <Icon size={24} strokeWidth={1.8} color={colors.icon} />
+        <Icon size={22} strokeWidth={1.9} color={colors.icon} />
       </div>
 
       <div className="flex-1 min-w-0">
         <div className="flex items-center" style={{ gap: 6 }}>
           <p
-            className="text-[16px] font-semibold leading-snug truncate"
-            style={{ color: medication.corrupted ? "var(--color-text-hint)" : "var(--color-text)" }}
+            className="text-[13px] font-semibold leading-snug truncate uppercase"
+            style={{
+              letterSpacing: "0.05em",
+              color: medication.corrupted ? "var(--color-text-hint)" : "var(--color-text)",
+            }}
           >
             {medication.corrupted ? t("medications.corrupted_entry") : medication.name}
           </p>
@@ -75,7 +78,7 @@ export function MedicationCard({
             />
           )}
         </div>
-        <p className="text-[12px] mt-0.5 truncate" style={{ color: "var(--color-text-hint)" }}>
+        <p className="text-[13px] mt-0.5 truncate" style={{ color: "var(--color-text-secondary)" }}>
           {scheduleLabel} &middot; {medication.time}
           {intervalSuffix}
           {dosageSuffix}

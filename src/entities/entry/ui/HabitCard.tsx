@@ -44,22 +44,25 @@ export function HabitCard({
       onClick={onClick}
     >
       <div
-        className="flex-shrink-0 w-12 h-12 rounded-[14px] flex items-center justify-center"
-        style={{ backgroundColor: habit.tag ? "#FFF7ED" : "rgba(255,255,255,0.06)" }}
+        className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
+        style={{ backgroundColor: "#2C2C2E" }}
       >
-        <span style={{ fontSize: 22, lineHeight: 1 }} aria-hidden="true">
+        <span style={{ fontSize: 20, lineHeight: 1 }} aria-hidden="true">
           {tagEmoji(habit.tag)}
         </span>
       </div>
 
       <div className="flex-1 min-w-0">
         <p
-          className="text-[16px] font-semibold leading-snug truncate"
-          style={{ color: habit.corrupted ? "var(--color-text-hint)" : "var(--color-text)" }}
+          className="text-[13px] font-semibold leading-snug truncate uppercase"
+          style={{
+            letterSpacing: "0.05em",
+            color: habit.corrupted ? "var(--color-text-hint)" : "var(--color-text)",
+          }}
         >
           {habit.corrupted ? t("today.corrupted_entry") : habit.name}
         </p>
-        <p className="text-[12px] mt-0.5 truncate" style={{ color: "var(--color-text-hint)" }}>
+        <p className="text-[13px] mt-0.5 truncate" style={{ color: "var(--color-text-secondary)" }}>
           {habit.time} &middot; {freqLabel}
         </p>
       </div>

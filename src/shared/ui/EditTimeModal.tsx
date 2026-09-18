@@ -135,7 +135,7 @@ export function EditTimeModal({
               className="w-[72px] h-[72px] rounded-2xl flex items-center justify-center cursor-pointer transition-all duration-150"
               style={{
                 backgroundColor: activeField === "hours" ? "rgba(249,255,208,0.12)" : "rgba(255,255,255,0.06)",
-                boxShadow: activeField === "hours" ? "0 0 0 2px #059669" : "none",
+                boxShadow: activeField === "hours" ? "0 0 0 2px #F9FFD0" : "none",
               }}
               onClick={() => {
                 handleFieldFocus("hours");
@@ -163,7 +163,7 @@ export function EditTimeModal({
               className="w-[72px] h-[72px] rounded-2xl flex items-center justify-center cursor-pointer transition-all duration-150"
               style={{
                 backgroundColor: activeField === "minutes" ? "rgba(249,255,208,0.12)" : "rgba(255,255,255,0.06)",
-                boxShadow: activeField === "minutes" ? "0 0 0 2px #059669" : "none",
+                boxShadow: activeField === "minutes" ? "0 0 0 2px #F9FFD0" : "none",
               }}
               onClick={() => {
                 handleFieldFocus("minutes");

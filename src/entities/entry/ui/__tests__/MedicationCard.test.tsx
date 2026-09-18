@@ -122,14 +122,14 @@ describe("MedicationCard", () => {
     const { container } = render(
       <MedicationCard medication={{ ...baseMed, schedule: "custom", time: "13:00" }} />
     );
-    expect(container.querySelector(".w-12")).toHaveStyle({ backgroundColor: "#FFEDD5" });
+    expect(container.querySelector(".w-12 svg")).toHaveAttribute("stroke", "#EA580C");
   });
 
   it("uses the evening icon tile color for a time after 18:00 regardless of schedule", () => {
     const { container } = render(
       <MedicationCard medication={{ ...baseMed, schedule: "morning", time: "19:30" }} />
     );
-    expect(container.querySelector(".w-12")).toHaveStyle({ backgroundColor: "#EDE9FE" });
+    expect(container.querySelector(".w-12 svg")).toHaveAttribute("stroke", "#7C3AED");
   });
 
   it("shows the bell as on when notifications are enabled and not muted today", () => {

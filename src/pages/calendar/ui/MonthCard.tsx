@@ -121,9 +121,9 @@ export function MonthCard({
                   height: 28,
                   background: isToday ? "var(--gradient-primary)" : "transparent",
                   boxShadow: isToday
-                    ? "0 4px 10px -2px rgba(5,150,105,0.4)"
+                    ? "0 4px 10px -2px rgba(249,255,208,0.25)"
                     : isSelected
-                      ? "inset 0 0 0 1.6px #059669"
+                      ? "inset 0 0 0 1.6px #F9FFD0"
                       : "none",
                 }}
               >

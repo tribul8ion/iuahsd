@@ -15,7 +15,7 @@ function swatchStyle(selected: boolean, backgroundColor: string): React.CSSPrope
     height: SWATCH_SIZE,
     borderRadius: "50%",
     backgroundColor,
-    border: selected ? "2px solid #059669" : "2px solid transparent",
+    border: selected ? "2px solid #F9FFD0" : "2px solid transparent",
     position: "relative",
     flexShrink: 0,
   };

@@ -17,7 +17,7 @@ function chipStyle(selected: boolean): React.CSSProperties {
     justifyContent: "center",
     fontSize: 18,
     backgroundColor: selected ? "rgba(249,255,208,0.12)" : "rgba(255,255,255,0.06)",
-    border: selected ? "2px solid #059669" : "2px solid transparent",
+    border: selected ? "2px solid #F9FFD0" : "2px solid transparent",
   };
 }
 

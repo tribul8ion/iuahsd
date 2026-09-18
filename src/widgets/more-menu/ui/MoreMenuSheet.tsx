@@ -24,13 +24,11 @@ function MenuRow({ icon: Icon, title, onClick }: MenuRowProps) {
       style={{ padding: "12px 14px", gap: 12 }}
     >
       <div
-        className="flex-shrink-0 flex items-center justify-center rounded-[12px]"
+        className="flex-shrink-0 flex items-center justify-center rounded-full"
         style={{
           width: 38,
           height: 38,
-          background: "linear-gradient(150deg, rgba(255,255,255,0.95) 0%, rgba(224,248,238,0.85) 100%)",
-          border: "1px solid rgba(255,255,255,0.7)",
-          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.9)",
+          backgroundColor: "#2C2C2E",
         }}
       >
         <Icon size={20} strokeWidth={1.8} color="#F9FFD0" />

@@ -66,7 +66,7 @@ export function CustomIntervalModal({ isOpen, currentValue, onClose, onSave }: C
               width: 120,
               height: 72,
               backgroundColor: "rgba(249,255,208,0.12)",
-              boxShadow: "0 0 0 2px #059669",
+              boxShadow: "0 0 0 2px #F9FFD0",
             }}
           >
             <input

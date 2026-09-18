@@ -59,8 +59,11 @@ export function MarkCard({ mark, entryName, subLabel, after, tag }: MarkCardProp
       <div className="flex-1 min-w-0">
         <div className="flex items-center" style={{ gap: 6 }}>
           <p
-            className="text-[15px] font-semibold leading-snug truncate"
-            style={{ color: entryName === null ? "var(--color-text-hint)" : "var(--color-text)" }}
+            className="text-[13px] font-semibold leading-snug truncate uppercase"
+            style={{
+              letterSpacing: "0.05em",
+              color: entryName === null ? "var(--color-text-hint)" : "var(--color-text)",
+            }}
           >
             {entryName ?? t("today.corrupted_entry")}
           </p>
@@ -72,7 +75,7 @@ export function MarkCard({ mark, entryName, subLabel, after, tag }: MarkCardProp
             />
           )}
         </div>
-        <p className="text-[12px]" style={{ color: "var(--color-text-hint)", marginTop: 2 }}>
+        <p className="text-[13px]" style={{ color: "var(--color-text-secondary)", marginTop: 2 }}>
           {subLabel}
         </p>
       </div>
