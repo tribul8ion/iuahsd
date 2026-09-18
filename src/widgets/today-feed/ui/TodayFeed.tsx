@@ -74,7 +74,7 @@ export function TodayFeed() {
         icon={<ClipboardList size={36} color="#A8A29E" strokeWidth={1.5} />}
         title={t("today.empty_title")}
         subtitle={t("today.empty_subtitle")}
-        minHeight="calc(100vh - 180px - 74px - 32px)"
+        minHeight="calc(100vh - 180px - 96px - 32px)"
         size="lg"
       />
     );
@@ -88,24 +88,18 @@ export function TodayFeed() {
     <div className="flex flex-col" style={{ gap: 14 }}>
       {showConfetti && <Confetti />}
       <div
-        className="rounded-[22px] flex items-center"
-        style={{
-          padding: "16px 20px",
-          gap: 16,
-          background: "var(--gradient-card-mint)",
-          border: "1px solid rgba(5, 150, 105, 0.1)",
-          boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(5,150,105,0.18)",
-        }}
+        className="glass-mint rounded-[26px] flex items-center"
+        style={{ padding: "16px 20px", gap: 16 }}
       >
-        <div style={{ position: "relative", width: 56, height: 56, flexShrink: 0 }}>
-          <svg viewBox="0 0 36 36" style={{ width: 56, height: 56, transform: "rotate(-90deg)" }}>
+        <div style={{ position: "relative", width: 64, height: 64, flexShrink: 0 }}>
+          <svg viewBox="0 0 36 36" style={{ width: 64, height: 64, transform: "rotate(-90deg)" }}>
             <defs>
               <linearGradient id="progress-ring" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#34D399" />
+                <stop offset="0%" stopColor="#4ADE9E" />
                 <stop offset="100%" stopColor="#059669" />
               </linearGradient>
             </defs>
-            <circle cx="18" cy="18" r="15" fill="none" stroke="#DCEEE5" strokeWidth="4" />
+            <circle cx="18" cy="18" r="15" fill="none" stroke="rgba(13,84,73,0.1)" strokeWidth="4" />
             <circle
               cx="18"
               cy="18"
@@ -118,8 +112,8 @@ export function TodayFeed() {
             />
           </svg>
           <span
-            className="absolute inset-0 flex items-center justify-center text-[13px] font-extrabold"
-            style={{ color: "#1C1917" }}
+            className="absolute inset-0 flex items-center justify-center text-[14px] font-extrabold"
+            style={{ color: "#075E54" }}
           >
             {pct}%
           </span>
@@ -139,20 +133,25 @@ export function TodayFeed() {
 
       {groups.map((group) => (
         <div key={group.time} className="flex flex-col" style={{ gap: 8 }}>
-          <div className="flex items-center" style={{ gap: 8, padding: "0 4px" }}>
+          <div className="flex items-center" style={{ gap: 8, padding: "0 6px" }}>
             <span
               className="rounded-full"
               style={{
-                width: 22,
-                height: 3,
+                width: 18,
+                height: 18,
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
                 background: "var(--gradient-primary)",
-                opacity: 0.85,
+                boxShadow: "0 3px 8px -2px rgba(5,150,105,0.5), inset 0 1px 0 rgba(255,255,255,0.4)",
               }}
               aria-hidden="true"
-            />
+            >
+              <span className="rounded-full block" style={{ width: 6, height: 6, backgroundColor: "rgba(255,255,255,0.92)" }} />
+            </span>
             <p
               className="text-[11px] font-bold uppercase"
-              style={{ color: "#78716C", letterSpacing: "1.2px" }}
+              style={{ color: "#51706A", letterSpacing: "1.2px" }}
             >
               {group.time}
             </p>

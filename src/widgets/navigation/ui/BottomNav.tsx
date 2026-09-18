@@ -46,25 +46,28 @@ function NavButton({ item, isActive, onClick, t }: {
   return (
     <button
       onClick={onClick}
-      className="flex-1 flex flex-col items-center justify-center gap-[3px] h-[46px] cursor-pointer"
+      className="flex-1 flex flex-col items-center justify-center gap-[2px] cursor-pointer"
+      style={{ paddingTop: 10, paddingBottom: 6 }}
       aria-label={t(item.labelKey)}
       aria-current={isActive ? "page" : undefined}
     >
       <span
-        className="flex items-center justify-center rounded-full transition-colors duration-200"
+        className="flex items-center justify-center rounded-full transition-all duration-200"
         style={{
-          width: 44,
-          height: 26,
-          marginBottom: 1,
-          backgroundColor: isActive ? "#DCF5E9" : "transparent",
+          width: 46,
+          height: 28,
+          backgroundColor: isActive ? "rgba(255,255,255,0.85)" : "transparent",
+          boxShadow: isActive
+            ? "0 2px 8px rgba(13,84,73,0.18), inset 0 1px 0 rgba(255,255,255,0.9)"
+            : "none",
         }}
       >
-        <Icon size={22} strokeWidth={isActive ? 2.2 : 1.8} color={isActive ? "#047857" : "#A8A29E"} />
+        <Icon size={21} strokeWidth={isActive ? 2.2 : 1.8} color={isActive ? "#047857" : "#8FA39B"} />
       </span>
       <span
         className="text-[9px] uppercase leading-none"
         style={{
-          color: isActive ? "#047857" : "#A8A29E",
+          color: isActive ? "#047857" : "#8FA39B",
           fontWeight: isActive ? 700 : 500,
           letterSpacing: "0.5px",
         }}
@@ -83,15 +86,12 @@ export function BottomNav({ onAdd, onMore }: BottomNavProps) {
   return (
     <nav
       className="fixed bottom-0 left-0 right-0 z-50"
-      style={{
-        backgroundColor: "rgba(255, 255, 255, 0.82)",
-        backdropFilter: "blur(18px) saturate(1.6)",
-        WebkitBackdropFilter: "blur(18px) saturate(1.6)",
-        borderTop: "1px solid rgba(30, 41, 59, 0.07)",
-        padding: "8px 16px calc(20px + env(safe-area-inset-bottom)) 16px",
-      }}
+      style={{ padding: "0 14px calc(10px + env(safe-area-inset-bottom)) 14px" }}
     >
-      <div className="flex items-center justify-around">
+      <div
+        className="glass relative flex items-center justify-around rounded-[32px]"
+        style={{ maxWidth: 460, margin: "0 auto" }}
+      >
         {LEFT_ITEMS.map((item) => (
           <NavButton
             key={item.path}
@@ -108,14 +108,16 @@ export function BottomNav({ onAdd, onMore }: BottomNavProps) {
             aria-label="add-entry"
             className="cursor-pointer flex items-center justify-center rounded-full transition-transform duration-150 active:scale-90"
             style={{
-              width: 50,
-              height: 50,
+              width: 54,
+              height: 54,
               background: "var(--gradient-primary)",
-              transform: "translateY(-16px)",
-              boxShadow: "var(--shadow-fab)",
+              transform: "translateY(-18px)",
+              boxShadow:
+                "0 10px 24px -4px rgba(5,150,105,0.5), inset 0 1px 0 rgba(255,255,255,0.4)",
+              border: "1px solid rgba(255,255,255,0.35)",
             }}
           >
-            <Plus size={24} color="#FFFFFF" strokeWidth={2.5} />
+            <Plus size={26} color="#FFFFFF" strokeWidth={2.5} />
           </button>
         </div>
 

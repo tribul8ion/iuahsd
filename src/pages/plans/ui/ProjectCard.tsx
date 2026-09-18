@@ -14,8 +14,8 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
   return (
     <button
       onClick={onClick}
-      className="w-full text-left rounded-[20px] bg-white cursor-pointer"
-      style={{ padding: "14px 16px", border: "1px solid rgba(30, 41, 59, 0.05)", boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)" }}
+      className="w-full text-left glass rounded-[24px] cursor-pointer"
+      style={{ padding: "14px 16px" }}
     >
       <div className="flex items-center justify-between" style={{ marginBottom: 8 }}>
         <p

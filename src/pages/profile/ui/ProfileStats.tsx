@@ -33,11 +33,7 @@ export function ProfileStats({
 
   return (
     <div
-      className="rounded-[20px] bg-white flex items-stretch"
-      style={{
-        border: "1px solid rgba(30, 41, 59, 0.05)",
-        boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)",
-      }}
+      className="glass rounded-[24px] flex items-stretch"
     >
       <StatColumn value={String(entriesCount)} label={t("profile.stats_entries")} />
       <div style={{ width: 1, backgroundColor: "#F5F5F4" }} />

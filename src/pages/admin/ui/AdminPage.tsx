@@ -94,7 +94,7 @@ export function AdminPage() {
   const maxBar = Math.max(...stats.weekly_registrations, 1);
 
   return (
-    <div className="min-h-full" style={{ backgroundColor: "#F0F4F3", paddingBottom: "calc(74px + 16px + env(safe-area-inset-bottom))" }}>
+    <div className="min-h-full" style={{ backgroundColor: "transparent", paddingBottom: "calc(96px + 16px + env(safe-area-inset-bottom))" }}>
       <div
         className="rounded-b-[28px] flex flex-col justify-center"
         style={{

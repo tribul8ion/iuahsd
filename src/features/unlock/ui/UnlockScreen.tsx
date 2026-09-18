@@ -23,7 +23,7 @@ export function UnlockScreen() {
   return (
     <div
       className="fixed inset-0 z-50 flex flex-col overflow-y-auto"
-      style={{ backgroundColor: "#F2F6F4" }}
+      style={{ backgroundColor: "transparent" }}
     >
       <div className="flex-1 flex flex-col" style={{ padding: "60px 24px 32px 24px" }}>
         <div
@@ -98,7 +98,7 @@ export function UnlockScreen() {
           className="w-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
           style={{
             height: 52,
-            borderRadius: 18,
+            borderRadius: 999,
             background: "var(--gradient-primary)",
             boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)",
             color: "#FFFFFF",

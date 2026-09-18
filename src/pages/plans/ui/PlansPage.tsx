@@ -52,7 +52,7 @@ export function PlansPage() {
     hasQuery && filteredProjects.length === 0 && filteredNotes.length === 0;
 
   return (
-    <div className="min-h-full" style={{ paddingBottom: "calc(74px + 16px + env(safe-area-inset-bottom))" }}>
+    <div className="min-h-full" style={{ paddingBottom: "calc(96px + 16px + env(safe-area-inset-bottom))" }}>
       <PageHeader
         title={t("plans.title")}
         subtitle={t("plans.items_count", { count: totalCount })}
@@ -61,8 +61,8 @@ export function PlansPage() {
 
       <div className="flex flex-col" style={{ padding: "16px 16px 0 16px", gap: 20 }}>
         <div
-          className="flex items-center rounded-[20px] bg-white"
-          style={{ gap: 10, padding: "0 14px", height: 48, border: "1px solid rgba(30, 41, 59, 0.05)", boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)" }}
+          className="flex items-center glass rounded-[24px]"
+          style={{ gap: 10, padding: "0 14px", height: 48 }}
         >
           <Search size={18} color="#A8A29E" strokeWidth={1.8} />
           <input

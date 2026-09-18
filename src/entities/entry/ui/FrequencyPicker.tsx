@@ -74,8 +74,8 @@ export function FrequencyPicker({
   return (
     <div>
       <div
-        className="flex rounded-xl"
-        style={{ backgroundColor: "#F5F5F4", padding: 4, gap: 4 }}
+        className="flex rounded-full"
+        style={{ backgroundColor: "rgba(120,120,128,0.1)", padding: 4, gap: 4 }}
         role="tablist"
         aria-label="frequency-type"
       >
@@ -85,12 +85,12 @@ export function FrequencyPicker({
             onClick={() => handleTabClick(freq)}
             role="tab"
             aria-selected={value === freq}
-            className={`flex-1 h-10 rounded-lg font-medium cursor-pointer transition-all ${showWeekly ? "text-[13px]" : "text-[14px]"}`}
+            className={`flex-1 h-9 rounded-full font-medium cursor-pointer transition-all ${showWeekly ? "text-[13px]" : "text-[14px]"}`}
             style={{
-              backgroundColor: value === freq ? "#FFFFFF" : "transparent",
-              color: value === freq ? "#047857" : "#57534E",
+              backgroundColor: value === freq ? "rgba(255,255,255,0.92)" : "transparent",
+              color: value === freq ? "#047857" : "#51706A",
               fontWeight: value === freq ? 700 : 500,
-              boxShadow: value === freq ? "0 2px 6px rgba(30,41,59,0.08)" : "none",
+              boxShadow: value === freq ? "0 2px 8px rgba(13,84,73,0.16), inset 0 1px 0 rgba(255,255,255,0.9)" : "none",
             }}
           >
             {tabLabel(freq)}
@@ -108,7 +108,7 @@ export function FrequencyPicker({
                 onClick={() => onToggleDay?.(dayIndex)}
                 aria-pressed={isSelected}
                 aria-label={`day-${dayIndex}`}
-                className="flex-1 h-10 rounded-lg text-[13px] font-medium cursor-pointer transition-all"
+                className="flex-1 h-10 rounded-full text-[13px] font-medium cursor-pointer transition-all"
                 style={{
                   background: isSelected ? "var(--gradient-primary)" : "#EEF3F0",
                   color: isSelected ? "#FFFFFF" : "#57534E",

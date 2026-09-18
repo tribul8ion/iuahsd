@@ -12,11 +12,8 @@ export function LanguageSelector() {
   const { mutate } = useChangeLanguage();
 
   return (
-    <div
-      className="rounded-[20px] overflow-hidden"
-      style={{ backgroundColor: "#FFFFFF", border: "1px solid rgba(30, 41, 59, 0.05)", boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)" }}
-    >
-      <div className="flex items-center" style={{ height: 40, padding: "0 16px", backgroundColor: "#F5F5F4" }}>
+    <div className="glass rounded-[24px] overflow-hidden">
+      <div className="flex items-center" style={{ height: 40, padding: "0 16px" }}>
         <span
           className="text-[11px] font-semibold uppercase"
           style={{ color: "#A8A29E", letterSpacing: "1px" }}
@@ -28,7 +25,7 @@ export function LanguageSelector() {
         const isSelected = i18n.language === lang.code;
         return (
           <div key={lang.code}>
-            {idx > 0 && <div style={{ height: 1, backgroundColor: "#F5F5F4" }} />}
+            {idx > 0 && <div style={{ height: 1, backgroundColor: "rgba(30,41,59,0.07)" }} />}
             <button
               onClick={() => mutate(lang.code)}
               className="flex items-center w-full cursor-pointer"

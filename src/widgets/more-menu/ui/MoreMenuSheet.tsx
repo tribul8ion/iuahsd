@@ -20,21 +20,17 @@ function MenuRow({ icon: Icon, title, onClick }: MenuRowProps) {
   return (
     <button
       onClick={onClick}
-      className="flex items-center w-full rounded-2xl cursor-pointer text-left"
-      style={{
-        backgroundColor: "#F7FAF8",
-        border: "1px solid rgba(30, 41, 59, 0.05)",
-        padding: "12px 14px",
-        gap: 12,
-      }}
+      className="glass-item flex items-center w-full rounded-2xl cursor-pointer text-left"
+      style={{ padding: "12px 14px", gap: 12 }}
     >
       <div
         className="flex-shrink-0 flex items-center justify-center rounded-[12px]"
         style={{
           width: 38,
           height: 38,
-          background: "linear-gradient(150deg, #FFFFFF 0%, #E7F7EF 100%)",
-          border: "1px solid rgba(5, 150, 105, 0.12)",
+          background: "linear-gradient(150deg, rgba(255,255,255,0.95) 0%, rgba(224,248,238,0.85) 100%)",
+          border: "1px solid rgba(255,255,255,0.7)",
+          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.9)",
         }}
       >
         <Icon size={20} strokeWidth={1.8} color="#059669" />

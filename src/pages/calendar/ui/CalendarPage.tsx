@@ -74,7 +74,7 @@ export function CalendarPage() {
   }, [editTarget]);
 
   return (
-    <div className="min-h-full" style={{ paddingBottom: "calc(74px + 16px + env(safe-area-inset-bottom))" }}>
+    <div className="min-h-full" style={{ paddingBottom: "calc(96px + 16px + env(safe-area-inset-bottom))" }}>
       <PageHeader
         title={t("calendar.title")}
         subtitle={t("calendar.marks_in_month", { count: monthCount, month: monthLabel })}

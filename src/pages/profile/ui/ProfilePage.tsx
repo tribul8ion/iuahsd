@@ -107,7 +107,7 @@ export function ProfilePage() {
   }
 
   return (
-    <div className="min-h-full" style={{ paddingBottom: "calc(74px + 16px + env(safe-area-inset-bottom))" }}>
+    <div className="min-h-full" style={{ paddingBottom: "calc(96px + 16px + env(safe-area-inset-bottom))" }}>
       <ProfileHeader displayName={displayName} memberSinceDate={memberSinceDate} />
 
       <div className="flex flex-col gap-3" style={{ padding: "16px 16px 0 16px" }}>
@@ -121,8 +121,7 @@ export function ProfilePage() {
         <LanguageSelector />
 
         <div
-          className="rounded-[20px] overflow-hidden"
-          style={{ backgroundColor: "#FFFFFF", border: "1px solid rgba(30,41,59,0.05)", boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)" }}
+          className="glass rounded-[24px] overflow-hidden"
         >
           <SectionHeader title={t("settings.reminders_settings")} />
 
@@ -151,7 +150,7 @@ export function ProfilePage() {
             </span>
             <div
               className="w-[46px] h-[28px] rounded-full relative flex-shrink-0 transition-colors duration-200"
-              style={{ backgroundColor: settings?.reminders_enabled ? "#059669" : "#E7E5E4" }}
+              style={{ backgroundColor: settings?.reminders_enabled ? "#059669" : "rgba(120,120,128,0.24)", boxShadow: settings?.reminders_enabled ? "0 2px 8px rgba(5,150,105,0.35)" : "none" }}
             >
               <div
                 className="absolute top-[3px] w-[22px] h-[22px] rounded-full bg-white transition-transform duration-200"
@@ -165,7 +164,7 @@ export function ProfilePage() {
 
           {settings?.reminders_enabled && (
             <>
-              <div style={{ height: 1, backgroundColor: "#F5F5F4" }} />
+              <div style={{ height: 1, backgroundColor: "rgba(30,41,59,0.07)" }} />
               <NotificationToday settings={settings} />
             </>
           )}
@@ -173,15 +172,14 @@ export function ProfilePage() {
 
         {settings?.reminders_enabled && (
           <div
-            className="rounded-[20px] overflow-hidden animate-fade-in"
-            style={{ backgroundColor: "#FFFFFF", border: "1px solid rgba(30,41,59,0.05)", boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)" }}
+            className="glass rounded-[24px] overflow-hidden animate-fade-in"
           >
             <SectionHeader title={t("settings.select_repeat_interval")} />
             {REPEAT_OPTIONS.map((minutes, idx) => {
               const isSelected = settings?.reminder_repeat_minutes === minutes;
               return (
                 <div key={minutes}>
-                  {idx > 0 && <div style={{ height: 1, backgroundColor: "#F5F5F4" }} />}
+                  {idx > 0 && <div style={{ height: 1, backgroundColor: "rgba(30,41,59,0.07)" }} />}
                   <button
                     onClick={() => handleRepeatChange(minutes)}
                     className="flex items-center w-full cursor-pointer"
@@ -209,7 +207,7 @@ export function ProfilePage() {
                 </div>
               );
             })}
-            <div style={{ height: 1, backgroundColor: "#F5F5F4" }} />
+            <div style={{ height: 1, backgroundColor: "rgba(30,41,59,0.07)" }} />
             {(() => {
               const isCustomSelected = !REPEAT_OPTIONS.includes(settings?.reminder_repeat_minutes ?? 5);
               const hasCustom = lastCustom !== null;
@@ -265,8 +263,7 @@ export function ProfilePage() {
         )}
 
         <div
-          className="rounded-[20px] overflow-hidden"
-          style={{ backgroundColor: "#FFFFFF", border: "1px solid rgba(30,41,59,0.05)", boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)" }}
+          className="glass rounded-[24px] overflow-hidden"
         >
           <SectionHeader title={t("settings.security")} />
           <SettingsRow
@@ -275,7 +272,7 @@ export function ProfilePage() {
             label={t("settings.change_passphrase")}
             onClick={() => setChangePassphraseOpen(true)}
           />
-          <div style={{ height: 1, backgroundColor: "#F5F5F4" }} />
+          <div style={{ height: 1, backgroundColor: "rgba(30,41,59,0.07)" }} />
           <SettingsRow
             icon={<Download size={20} strokeWidth={1.8} color="#059669" />}
             iconBackground="#ECFDF5"
@@ -285,8 +282,7 @@ export function ProfilePage() {
         </div>
 
         <div
-          className="rounded-[20px] overflow-hidden"
-          style={{ backgroundColor: "#FFFFFF", border: "1px solid rgba(30,41,59,0.05)", boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)" }}
+          className="glass rounded-[24px] overflow-hidden"
         >
           <SectionHeader title={t("settings.danger_zone")} />
           <SettingsRow

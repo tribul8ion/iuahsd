@@ -26,13 +26,8 @@ function ChoiceRow({ emoji, title, subtitle, onClick }: ChoiceRowProps) {
   return (
     <button
       onClick={onClick}
-      className="flex items-center w-full rounded-2xl cursor-pointer text-left transition-transform duration-150 active:scale-[0.98]"
-      style={{
-        backgroundColor: "#F7FAF8",
-        border: "1px solid rgba(30, 41, 59, 0.05)",
-        padding: "12px 14px",
-        gap: 12,
-      }}
+      className="glass-item flex items-center w-full rounded-2xl cursor-pointer text-left transition-transform duration-150 active:scale-[0.98]"
+      style={{ padding: "12px 14px", gap: 12 }}
     >
       <div
         className="flex-shrink-0 flex items-center justify-center rounded-[12px]"

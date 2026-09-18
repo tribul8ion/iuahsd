@@ -43,9 +43,12 @@
   --animate-scale-in: scale-in 220ms cubic-bezier(0.32, 0.72, 0, 1);
   --animate-confetti-fall: confetti-fall 1400ms ease-in forwards;
 
-  --gradient-header: linear-gradient(155deg, #047857 0%, #059669 46%, #0D9488 105%);
-  --gradient-primary: linear-gradient(135deg, #34D399 0%, #059669 88%);
-  --gradient-card-mint: linear-gradient(135deg, #FFFFFF 0%, #F0FAF5 100%);
+  --gradient-header: linear-gradient(150deg, #0B7A6B 0%, #059669 44%, #0E9590 100%);
+  --gradient-primary:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 46%),
+    linear-gradient(135deg, #3BDCA0 0%, #059669 88%);
+  --gradient-card-mint:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.82) 0%, rgba(226, 250, 240, 0.62) 100%);
 }
 
 @keyframes slide-up {
@@ -93,7 +96,7 @@ html, body, #root {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--tg-theme-bg-color);
+  background-color: #E9F2EE;
   color: var(--tg-theme-text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -101,6 +104,52 @@ body {
   user-select: none;
   font-size: 16px;
   line-height: 1.5;
+}
+
+/* Лёгкая «аврора»: цветные свечения, над которыми лежит стекло */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(65% 42% at 12% 0%, rgba(45, 212, 191, 0.38) 0%, transparent 62%),
+    radial-gradient(55% 38% at 92% 6%, rgba(96, 165, 250, 0.3) 0%, transparent 62%),
+    radial-gradient(50% 30% at 50% 52%, rgba(216, 240, 255, 0.35) 0%, transparent 70%),
+    radial-gradient(80% 48% at 50% 108%, rgba(52, 211, 153, 0.34) 0%, transparent 66%),
+    linear-gradient(180deg, #EDF5F1 0%, #E6F0EB 100%);
+}
+
+/* «Жидкое стекло»: полупрозрачная панель с блюром, рамкой и бликом сверху */
+.glass {
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.74) 0%, rgba(255, 255, 255, 0.54) 100%);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    0 2px 6px rgba(16, 24, 40, 0.05),
+    0 18px 44px -18px rgba(13, 84, 73, 0.25);
+}
+
+/* Стеклянная мятная панель для акцентных карточек */
+.glass-mint {
+  background: var(--gradient-card-mint);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.66);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 2px 6px rgba(16, 24, 40, 0.05),
+    0 18px 44px -16px rgba(5, 150, 105, 0.28);
+}
+
+/* Лёгкий стеклянный элемент внутри шторок (без блюра — лист сам стеклянный) */
+.glass-item {
+  background: rgba(255, 255, 255, 0.52);
+  border: 1px solid rgba(255, 255, 255, 0.66);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 a {

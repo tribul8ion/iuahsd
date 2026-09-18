@@ -44,13 +44,11 @@ export function MedicationCard({
 
   return (
     <div
-      className="flex items-center rounded-[20px] bg-white"
+      className="glass flex items-center rounded-[24px]"
       style={{
         gap: 12,
         padding: "0 16px",
         height: 80,
-        border: "1px solid rgba(30, 41, 59, 0.05)",
-        boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)",
         opacity: medication.active ? 1 : 0.55,
       }}
     >
@@ -103,7 +101,7 @@ export function MedicationCard({
               aria-label="toggle-active"
               className="cursor-pointer w-[42px] h-[26px] rounded-full relative transition-colors duration-200"
               style={{
-                backgroundColor: medication.active ? "#059669" : "#E7E5E4",
+                backgroundColor: medication.active ? "#059669" : "rgba(120,120,128,0.24)",
                 boxShadow: medication.active ? "0 2px 8px rgba(5,150,105,0.35)" : "inset 0 1px 2px rgba(30,41,59,0.06)",
               }}
             >

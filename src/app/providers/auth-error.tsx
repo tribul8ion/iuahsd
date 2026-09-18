@@ -13,7 +13,7 @@ export function AuthErrorScreen() {
     <div
       role="alert"
       className="min-h-dvh flex items-center justify-center px-6 text-center"
-      style={{ backgroundColor: "#F0F4F3" }}
+      style={{ backgroundColor: "transparent" }}
     >
       <div className="max-w-sm flex flex-col items-center">
         <h1
@@ -40,7 +40,7 @@ export function AuthErrorScreen() {
           className="w-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-[0.98]"
           style={{
             height: 52,
-            borderRadius: 16,
+            borderRadius: 999,
             background: "var(--gradient-primary)",
             boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)",
             color: "#FFFFFF",

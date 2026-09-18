@@ -27,7 +27,7 @@ export function TodayPage() {
   const mood = moodForProgress(taken, items.length);
 
   return (
-    <div className="min-h-full" style={{ paddingBottom: "calc(74px + 16px + env(safe-area-inset-bottom))" }}>
+    <div className="min-h-full" style={{ paddingBottom: "calc(96px + 16px + env(safe-area-inset-bottom))" }}>
       <PageHeader title={t("today.title")} subtitle={dateStr} height={180}>
         {pet && (
           <button
@@ -41,7 +41,11 @@ export function TodayPage() {
               gap: 6,
               padding: "4px 10px 4px 4px",
               borderRadius: 999,
-              backgroundColor: "rgba(255,255,255,.16)",
+              backgroundColor: "rgba(255,255,255,.18)",
+              backdropFilter: "blur(10px)",
+              WebkitBackdropFilter: "blur(10px)",
+              border: "1px solid rgba(255,255,255,.32)",
+              boxShadow: "inset 0 1px 0 rgba(255,255,255,.35)",
             }}
           >
             <span

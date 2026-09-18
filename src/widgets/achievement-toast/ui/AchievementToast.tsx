@@ -45,7 +45,7 @@ export function AchievementToast() {
         <button
           onClick={dequeue}
           className="w-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-[0.98]"
-          style={{ height: 44, borderRadius: 14, background: "var(--gradient-primary)", marginTop: 8, boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)" }}
+          style={{ height: 44, borderRadius: 999, background: "var(--gradient-primary)", marginTop: 8, boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)" }}
         >
           <span className="text-[15px] font-semibold text-white">{t("toast.close")}</span>
         </button>

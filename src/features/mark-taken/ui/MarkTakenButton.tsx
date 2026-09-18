@@ -34,7 +34,11 @@ export function MarkTakenButton({ markId, isTaken }: MarkTakenButtonProps) {
   return (
     <div
       className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-90"
-      style={{ border: "2px solid #E7E5E4", backgroundColor: "#FAFAF9" }}
+      style={{
+        border: "2px solid rgba(255,255,255,0.85)",
+        backgroundColor: "rgba(255,255,255,0.5)",
+        boxShadow: "inset 0 1px 3px rgba(30,41,59,0.08)",
+      }}
       onClick={() => !isPending && mutate({ markId, status: true })}
       role="button"
       aria-label={t("checklist.mark_taken")}

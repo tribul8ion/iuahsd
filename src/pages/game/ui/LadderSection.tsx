@@ -23,8 +23,8 @@ function LadderCard({ tag, currentValue, earnedIds }: LadderCardProps) {
 
   return (
     <div
-      className="rounded-[20px] bg-white"
-      style={{ padding: 16, border: "1px solid rgba(30, 41, 59, 0.05)", boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)" }}
+      className="glass rounded-[22px]"
+      style={{ padding: 16 }}
       data-testid={`ladder-${tag}`}
     >
       <p className="text-[14px] font-semibold" style={{ color: "#1C1917", marginBottom: 10 }}>

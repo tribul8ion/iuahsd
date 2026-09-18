@@ -54,7 +54,7 @@ export function HabitsPage() {
   }, [editTarget]);
 
   return (
-    <div className="flex flex-col min-h-full" style={{ paddingBottom: "calc(74px + 16px + env(safe-area-inset-bottom))" }}>
+    <div className="flex flex-col min-h-full" style={{ paddingBottom: "calc(96px + 16px + env(safe-area-inset-bottom))" }}>
       <PageHeader
         title={t("habits.title")}
         subtitle={t("habits.active_count", { count: activeCount })}

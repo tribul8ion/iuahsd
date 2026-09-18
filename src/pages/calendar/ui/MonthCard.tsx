@@ -49,19 +49,19 @@ export function MonthCard({
 
   return (
     <div
-      className="rounded-[22px] bg-white"
-      style={{
-        padding: "16px",
-        border: "1px solid rgba(30, 41, 59, 0.05)",
-        boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)",
-      }}
+      className="glass rounded-[26px]"
+      style={{ padding: "16px" }}
     >
       <div className="flex items-center justify-between" style={{ marginBottom: 12 }}>
         <button
           onClick={onPrevMonth}
           disabled={!canGoPrev}
           className="cursor-pointer w-8 h-8 rounded-full flex items-center justify-center disabled:opacity-35 disabled:cursor-not-allowed"
-          style={{ backgroundColor: "#F2F6F3", border: "1px solid rgba(30,41,59,0.05)" }}
+          style={{
+            backgroundColor: "rgba(255,255,255,0.65)",
+            border: "1px solid rgba(255,255,255,0.7)",
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.7)",
+          }}
           aria-label={t("calendar.prev_month")}
         >
           <ChevronLeft size={16} color="#57534E" strokeWidth={2} />
@@ -73,7 +73,11 @@ export function MonthCard({
           onClick={onNextMonth}
           disabled={!canGoNext}
           className="cursor-pointer w-8 h-8 rounded-full flex items-center justify-center disabled:opacity-35 disabled:cursor-not-allowed"
-          style={{ backgroundColor: "#F2F6F3", border: "1px solid rgba(30,41,59,0.05)" }}
+          style={{
+            backgroundColor: "rgba(255,255,255,0.65)",
+            border: "1px solid rgba(255,255,255,0.7)",
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.7)",
+          }}
           aria-label={t("calendar.next_month")}
         >
           <ChevronRight size={16} color="#57534E" strokeWidth={2} />

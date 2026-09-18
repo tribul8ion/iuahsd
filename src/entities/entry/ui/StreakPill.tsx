@@ -4,9 +4,10 @@ interface StreakPillProps {
 }
 
 const PILL_STYLE: React.CSSProperties = {
-  background: "linear-gradient(135deg, #FFF8EE 0%, #FFEDD5 100%)",
+  background: "linear-gradient(135deg, rgba(255,248,238,0.95) 0%, rgba(255,237,213,0.9) 100%)",
   color: "#B45309",
-  border: "1px solid #FDEBCF",
+  border: "1px solid rgba(255,255,255,0.8)",
+  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.9), 0 3px 8px -3px rgba(180,83,9,0.3)",
   padding: "3px 10px",
   fontSize: 12,
   fontWeight: 700,

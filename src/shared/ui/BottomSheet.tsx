@@ -46,12 +46,16 @@ export function BottomSheet({ isOpen, onClose, children }: BottomSheetProps) {
         role="dialog"
         aria-modal="true"
         tabIndex={-1}
-        className="w-full max-w-md bg-white shadow-modal animate-slide-up outline-none"
+        className="w-full max-w-md shadow-modal animate-slide-up outline-none"
         style={{
-          borderRadius: "28px 28px 0 0",
+          borderRadius: "32px 32px 0 0",
           maxHeight: "85dvh",
           overflowY: "auto",
           overscrollBehavior: "contain",
+          background: "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.82) 100%)",
+          backdropFilter: "blur(24px) saturate(1.8)",
+          WebkitBackdropFilter: "blur(24px) saturate(1.8)",
+          borderTop: "1px solid rgba(255,255,255,0.7)",
         }}
         onClick={(e) => e.stopPropagation()}
         onFocusCapture={(e) => {
@@ -66,7 +70,7 @@ export function BottomSheet({ isOpen, onClose, children }: BottomSheetProps) {
         }}
       >
         <div className="flex justify-center" style={{ padding: "10px 0 8px 0" }}>
-          <div className="rounded-full" style={{ width: 40, height: 5, backgroundColor: "#E7E5E4" }} />
+          <div className="rounded-full" style={{ width: 40, height: 5, backgroundColor: "rgba(30,41,59,0.16)" }} />
         </div>
         {children}
       </div>

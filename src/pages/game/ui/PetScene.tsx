@@ -62,14 +62,8 @@ export function PetScene() {
   return (
     <div className="flex flex-col" style={{ gap: 12 }}>
       <div
-        className="rounded-[22px] flex flex-col items-center text-center"
-        style={{
-          padding: "24px 20px",
-          gap: 8,
-          background: "var(--gradient-card-mint)",
-          border: "1px solid rgba(5, 150, 105, 0.1)",
-          boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(5,150,105,0.18)",
-        }}
+        className="glass-mint rounded-[26px] flex flex-col items-center text-center"
+        style={{ padding: "24px 20px", gap: 8 }}
       >
         <div
           className="flex items-center justify-center rounded-full"
@@ -130,12 +124,8 @@ export function PetScene() {
       </div>
 
       <div
-        className="rounded-[20px] bg-white"
-        style={{
-          padding: "16px 20px",
-          border: "1px solid rgba(30, 41, 59, 0.05)",
-          boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)",
-        }}
+        className="glass rounded-[22px]"
+        style={{ padding: "16px 20px" }}
       >
         <p className="text-[13px] font-semibold" style={{ color: "#1C1917", marginBottom: 4 }}>
           {t("pet.about_title")}

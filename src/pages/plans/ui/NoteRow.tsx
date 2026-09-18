@@ -23,8 +23,8 @@ export function NoteRow({ note, onClick }: NoteRowProps) {
   return (
     <button
       onClick={onClick}
-      className="flex items-center w-full rounded-[20px] bg-white cursor-pointer"
-      style={{ gap: 12, padding: "0 16px", height: 64, border: "1px solid rgba(30, 41, 59, 0.05)", boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)" }}
+      className="flex items-center w-full glass rounded-[24px] cursor-pointer"
+      style={{ gap: 12, padding: "0 16px", height: 64 }}
     >
       <span style={{ fontSize: 20, lineHeight: 1 }} aria-hidden="true">
         📝

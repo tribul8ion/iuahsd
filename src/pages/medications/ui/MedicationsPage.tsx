@@ -67,7 +67,7 @@ export function MedicationsPage() {
   }, [editTarget]);
 
   return (
-    <div className="flex flex-col min-h-full" style={{ paddingBottom: "calc(74px + 68px + env(safe-area-inset-bottom))" }}>
+    <div className="flex flex-col min-h-full" style={{ paddingBottom: "calc(96px + 68px + env(safe-area-inset-bottom))" }}>
       <PageHeader
         title={t("medications.my_medications")}
         subtitle={t("medications.active_count", { count: activeCount })}
@@ -85,11 +85,11 @@ export function MedicationsPage() {
 
       <div
         className="fixed left-0 right-0 z-40"
-        style={{ bottom: "calc(74px + env(safe-area-inset-bottom))", padding: "0 16px 12px 16px" }}
+        style={{ bottom: "calc(96px + env(safe-area-inset-bottom))", padding: "0 16px 12px 16px" }}
       >
         <button
           onClick={() => setAddOpen(true)}
-          className="w-full h-[52px] rounded-2xl text-[15px] font-semibold text-white cursor-pointer transition-all duration-150 active:scale-[0.98] flex items-center justify-center gap-2"
+          className="w-full h-[52px] rounded-full text-[15px] font-semibold text-white cursor-pointer transition-all duration-150 active:scale-[0.98] flex items-center justify-center gap-2"
           style={{
             background: "var(--gradient-primary)",
             boxShadow: "0 10px 22px -6px rgba(5,150,105,0.42)",
