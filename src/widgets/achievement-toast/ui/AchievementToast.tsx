@@ -1,0 +1,55 @@
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { ACHIEVEMENTS } from "@/entities/achievement";
+import { useAchievementQueueStore } from "@/features/mark-taken";
+import { hapticFeedback } from "@/shared/lib";
+import { Confetti } from "@/shared/ui";
+
+export function AchievementToast() {
+  const { t } = useTranslation();
+  const currentId = useAchievementQueueStore((s) => s.queue[0]);
+  const dequeue = useAchievementQueueStore((s) => s.dequeue);
+
+  useEffect(() => {
+    if (currentId) {
+      hapticFeedback("notification", "success");
+    }
+  }, [currentId]);
+
+  if (!currentId) {
+    return null;
+  }
+
+  const badge = ACHIEVEMENTS.find((a) => a.id === currentId);
+  if (!badge) {
+    return null;
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-[1100] flex items-center justify-center animate-fade-in"
+      style={{ backgroundColor: "rgba(28, 25, 23, 0.5)" }}
+    >
+      <Confetti />
+      <div
+        className="bg-white rounded-[24px] flex flex-col items-center animate-scale-in"
+        style={{ padding: "32px 28px", gap: 12, maxWidth: 280 }}
+      >
+        <span style={{ fontSize: 56, lineHeight: 1 }}>{badge.emoji}</span>
+        <p className="text-[13px] font-semibold uppercase" style={{ color: "#A8A29E", letterSpacing: "1px" }}>
+          {t("toast.unlocked")}
+        </p>
+        <p className="text-[18px] font-bold text-center" style={{ color: "#1C1917" }}>
+          {t(badge.nameKey)}
+        </p>
+        <button
+          onClick={dequeue}
+          className="w-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-[0.98]"
+          style={{ height: 44, borderRadius: 14, backgroundColor: "#059669", marginTop: 8 }}
+        >
+          <span className="text-[15px] font-semibold text-white">{t("toast.close")}</span>
+        </button>
+      </div>
+    </div>
+  );
+}

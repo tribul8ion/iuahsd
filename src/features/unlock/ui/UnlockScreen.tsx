@@ -1,0 +1,115 @@
+import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
+import { Loader2, LockKeyhole, ShieldAlert } from "lucide-react";
+import { hapticFeedback } from "@/shared/lib";
+import { useUnlock } from "../model/use-unlock";
+
+const ERROR_KEYS: Record<string, string> = {
+  wrong_passphrase: "unlock.error_wrong",
+  untrusted_params: "unlock.error_untrusted",
+  request_failed: "unlock.error_request",
+};
+
+export function UnlockScreen() {
+  const { t } = useTranslation();
+  const { passphrase, setPassphrase, error, isDeriving, submit } = useUnlock();
+
+  const handleSubmit = useCallback(() => {
+    void submit().then((ok) => {
+      hapticFeedback("notification", ok ? "success" : "error");
+    });
+  }, [submit]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex flex-col overflow-y-auto"
+      style={{ backgroundColor: "#F0F4F3" }}
+    >
+      <div className="flex-1 flex flex-col" style={{ padding: "60px 24px 32px 24px" }}>
+        <div
+          className="flex items-center justify-center"
+          style={{
+            width: 64,
+            height: 64,
+            borderRadius: 20,
+            flexShrink: 0,
+            background: "linear-gradient(160deg, #059669 0%, #0D9488 100%)",
+          }}
+        >
+          <LockKeyhole size={32} color="#FFFFFF" strokeWidth={2} />
+        </div>
+
+        <div style={{ height: 24, flexShrink: 0 }} />
+
+        <h1
+          className="text-[26px] font-bold"
+          style={{ color: "#1C1917", lineHeight: 1.2, flexShrink: 0 }}
+        >
+          {t("unlock.title")}
+        </h1>
+
+        <div style={{ height: 8, flexShrink: 0 }} />
+
+        <p
+          className="text-[15px] font-normal"
+          style={{ color: "#A8A29E", lineHeight: 1.5, flexShrink: 0 }}
+        >
+          {t("unlock.subtitle")}
+        </p>
+
+        <div style={{ height: 28, flexShrink: 0 }} />
+
+        <div className="flex flex-col" style={{ gap: 12, flexShrink: 0 }}>
+          <div
+            className="flex items-center rounded-xl"
+            style={{ backgroundColor: "#FFFFFF", padding: "0 14px", height: 52 }}
+          >
+            <input
+              type="password"
+              value={passphrase}
+              onChange={(e) => setPassphrase(e.target.value)}
+              onKeyUp={(e) => e.key === "Enter" && handleSubmit()}
+              placeholder={t("unlock.passphrase_placeholder")}
+              className="w-full text-[15px] bg-transparent outline-none placeholder:text-[#D6D3D1]"
+              style={{ color: "#1C1917" }}
+              aria-label="passphrase"
+              autoComplete="current-password"
+              autoFocus
+            />
+          </div>
+
+          {error && (
+            <div className="flex items-center" style={{ gap: 8 }} role="alert">
+              <ShieldAlert size={16} color="#E11D48" strokeWidth={2} />
+              <span className="text-[13px] font-medium" style={{ color: "#E11D48" }}>
+                {t(ERROR_KEYS[error])}
+              </span>
+            </div>
+          )}
+        </div>
+
+        <div style={{ flex: 1, minHeight: 24 }} />
+
+        <button
+          type="button"
+          onClick={handleSubmit}
+          disabled={isDeriving}
+          className="w-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
+          style={{
+            height: 52,
+            borderRadius: 16,
+            backgroundColor: "#059669",
+            color: "#FFFFFF",
+            fontSize: 16,
+            fontWeight: 700,
+            gap: 8,
+            flexShrink: 0,
+          }}
+        >
+          {isDeriving && <Loader2 size={18} className="animate-spin" />}
+          {isDeriving ? t("unlock.deriving") : t("unlock.submit")}
+        </button>
+      </div>
+    </div>
+  );
+}

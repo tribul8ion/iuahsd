@@ -1,0 +1,447 @@
+{
+  "checklist": {
+    "all_taken_congrats": "All done for today!",
+    "keep_going": "Keep going, almost there!",
+    "progress_count": "{{taken}} of {{total}} taken",
+    "mark_taken": "Mark as taken",
+    "undo_taken": "Mark as not taken"
+  },
+  "today": {
+    "title": "Today",
+    "empty_title": "Nothing for today",
+    "empty_subtitle": "Add a medication or a habit using the button below",
+    "corrupted_entry": "Corrupted entry"
+  },
+  "add_sheet": {
+    "title": "What would you like to add?",
+    "med": "Medication",
+    "med_sub": "Dose and intake schedule",
+    "habit": "Habit",
+    "habit_sub": "Days of the week and time",
+    "task": "Task",
+    "task_sub": "One-time, with a deadline",
+    "doc": "Doctor visit",
+    "doc_sub": "I'll remind you a day and 3 hours before",
+    "note": "Note",
+    "note_sub": "Plain text, encrypted as a whole"
+  },
+  "once": {
+    "add_task": "Add task",
+    "add_doc": "Add appointment",
+    "edit_task": "Edit task",
+    "edit_doc": "Edit appointment",
+    "task_name_prompt": "Task name",
+    "task_name_placeholder": "e.g. submit the report",
+    "doc_name_prompt": "Doctor or clinic",
+    "doc_name_placeholder": "e.g. dentist",
+    "task_note_prompt": "Note (optional)",
+    "task_note_placeholder": "Task details",
+    "doc_note_prompt": "Notes and questions (optional)",
+    "doc_note_placeholder": "What to ask the doctor",
+    "date_prompt": "Date",
+    "time_prompt": "Time",
+    "pre_remind_prompt": "Remind me ahead",
+    "pre_remind_hint": "Pick up to 3 reminders",
+    "pre_chip_30": "30 min",
+    "pre_chip_60": "1 h",
+    "pre_chip_180": "3 h",
+    "pre_chip_720": "12 h",
+    "pre_chip_1440": "1 day before",
+    "pre_chip_2880": "2 days before",
+    "pre_phrase_30": "30 minutes before",
+    "pre_phrase_60": "1 hour before",
+    "pre_phrase_180": "3 hours before",
+    "pre_phrase_720": "12 hours before",
+    "pre_phrase_1440": "1 day before",
+    "pre_phrase_2880": "2 days before",
+    "save_changes": "Save changes",
+    "delete_task": "Delete task",
+    "delete_doc": "Delete appointment",
+    "confirm_delete": "Delete \"{{name}}\"?",
+    "delete_description": "The entry and all its history will be permanently removed."
+  },
+  "habit": {
+    "add_habit": "Add habit",
+    "edit_habit": "Edit habit",
+    "name_prompt": "Habit name",
+    "name_placeholder": "e.g. morning workout",
+    "note_prompt": "Note (optional)",
+    "note_placeholder": "A short reminder note",
+    "time_prompt": "Time",
+    "frequency_prompt": "How often",
+    "frequency_daily": "Every day",
+    "frequency_weekly": "Days of the week",
+    "frequency_interval": "Every N days",
+    "days_short": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "every_n_days": "every {{n}} days",
+    "every_label": "Every",
+    "days_suffix": "days",
+    "validation_days": "Pick at least one day of the week",
+    "tag_prompt": "Tag (optional)",
+    "tag_hint": "The server sees the tag — it unlocks themed badges. Without a tag, the habit stays fully private.",
+    "save_changes": "Save changes",
+    "delete_habit": "Delete habit",
+    "confirm_delete": "Delete \"{{name}}\"?",
+    "delete_description": "The habit and all its history will be permanently removed."
+  },
+  "habits": {
+    "title": "Habits",
+    "active_count": "{{count}} habits active",
+    "empty_title": "No habits yet",
+    "empty_subtitle": "Add your first habit using the button below"
+  },
+  "medications": {
+    "add_medication": "Add Medication",
+    "medication_name_placeholder": "Enter medication name...",
+    "medication_name_prompt": "Medication Name",
+    "select_schedule": "Schedule",
+    "morning": "Morning",
+    "day": "Day",
+    "evening": "Evening",
+    "custom": "Custom time",
+    "my_medications": "My medications",
+    "no_medications": "You haven't added any medications yet.",
+    "delete_medication": "Delete medication",
+    "confirm_delete": "Are you sure you want to delete {{name}}?",
+    "edit_medication": "Edit medication",
+    "save_changes": "Save Changes",
+    "active_count": "{{count}} medications active",
+    "delete_description": "This medication and all its history will be permanently removed.",
+    "frequency": "How often",
+    "frequency_daily": "Every day",
+    "frequency_interval": "Interval",
+    "frequency_interval_short": "every {{n}} days",
+    "frequency_start_date": "Start from",
+    "frequency_every": "Every",
+    "frequency_days_suffix": "days",
+    "dosage": "Dosage (optional)",
+    "dosage_amount_placeholder": "1",
+    "dosage_unit_modal_title": "Dosage unit",
+    "dosage_unit_save": "Save",
+    "dosage_unit": {
+      "tablet": "tablet",
+      "ml": "ml",
+      "drop": "drop",
+      "mg": "mg",
+      "iu": "IU",
+      "pcs": "pcs"
+    },
+    "dosage_unit_short": {
+      "tablet": "tablet",
+      "ml": "ml",
+      "drop": "drop",
+      "mg": "mg",
+      "iu": "IU",
+      "pcs": "pcs"
+    },
+    "corrupted_entry": "Corrupted entry"
+  },
+  "med_color": {
+    "label": "Color in calendar",
+    "hint": "Visible only to you, helps tell medications apart"
+  },
+  "onboarding": {
+    "title": "Create a code word",
+    "subtitle": "It will encrypt your medication data on this device. The server never sees it.",
+    "passphrase_placeholder": "Code word (min 12 characters)",
+    "confirm_placeholder": "Repeat code word",
+    "ack": "I understand that the code word cannot be recovered and losing it means losing my data",
+    "submit": "Create and encrypt",
+    "deriving": "Generating encryption key...",
+    "error_short": "Code word must be at least 12 characters",
+    "error_weak": "Too simple. Use 16+ characters, or mix letters, digits and symbols.",
+    "error_mismatch": "Code words do not match",
+    "error_ack": "Please confirm that you understand",
+    "error_request": "Something went wrong. Please try again."
+  },
+  "unlock": {
+    "title": "Enter your code word",
+    "subtitle": "It is needed to decrypt your medication data on this device.",
+    "passphrase_placeholder": "Code word",
+    "submit": "Unlock",
+    "deriving": "Decrypting...",
+    "error_wrong": "Wrong code word",
+    "error_untrusted": "The server returned unsafe encryption settings. Do not enter your code word — report this.",
+    "error_request": "Something went wrong. Please try again."
+  },
+  "auth_error": {
+    "title": "Session expired",
+    "message": "Close the mini app and open it again from the bot — your session will refresh automatically.",
+    "close": "Close mini app"
+  },
+  "settings": {
+    "language": "Language",
+    "reminders_settings": "Reminders",
+    "reminders_enabled": "Reminders enabled",
+    "reminders_disabled": "Reminders disabled",
+    "notifications_today": "Notifications today",
+    "muted_today": "Muted until tomorrow",
+    "not_muted_today": "On",
+    "mute_today": "Mute for today",
+    "unmute_today": "Turn back on",
+    "select_repeat_interval": "Notification Repeat Interval",
+    "minutes": "minutes",
+    "custom": "Custom…",
+    "custom_interval": "Custom Interval",
+    "custom_interval_hint": "Set repeat interval in minutes",
+    "security": "Security",
+    "change_passphrase": "Change code word",
+    "export_data": "Export data",
+    "danger_zone": "Danger zone",
+    "delete_account": "Delete account",
+    "delete_account_confirm": "Delete your account?",
+    "delete_account_description": "All your medications, history and settings will be permanently deleted. This action cannot be undone.",
+    "admin_link": "Admin Panel",
+    "achievements": "Achievements",
+    "medications_link": "Medications",
+    "plans_link": "Plans & notes"
+  },
+  "profile": {
+    "title": "Profile",
+    "you": "You",
+    "member_since": "with us since {{date}}",
+    "stats_entries": "Entries",
+    "stats_achievements": "Achievements",
+    "stats_streak": "Best streak"
+  },
+  "more": {
+    "title": "More"
+  },
+  "achievements": {
+    "title": "Trophy Shelf",
+    "progress": "{{count}} of {{total}} earned",
+    "counter": "{{count}}/{{total}}",
+    "badges": {
+      "first_step": {
+        "name": "First Step",
+        "condition": "Log your very first check-in"
+      },
+      "combo_5": {
+        "name": "Combo Machine",
+        "condition": "5 check-ins in a single day"
+      },
+      "hundred": {
+        "name": "Century",
+        "condition": "100 check-ins, no big deal"
+      },
+      "iron_will_30": {
+        "name": "Iron Will",
+        "condition": "30-day streak, unbroken"
+      },
+      "marathon_365": {
+        "name": "Marathoner",
+        "condition": "Best streak hits 365 days"
+      },
+      "early_bird_10": {
+        "name": "Early Bird",
+        "condition": "10 check-ins before 8 AM"
+      },
+      "night_owl_10": {
+        "name": "Seasoned Night Owl",
+        "condition": "10 check-ins near midnight"
+      },
+      "phoenix": {
+        "name": "Phoenix",
+        "condition": "Bounced back after a broken streak"
+      },
+      "collector_10": {
+        "name": "Pill Tycoon",
+        "condition": "10 active entries in your list"
+      },
+      "perfect_week": {
+        "name": "Perfect Week",
+        "condition": "A full week, nothing missed"
+      },
+      "coffee_7": { "name": "CAFFEINE FIEND", "condition": "Best tag streak — 7 days" },
+      "coffee_30": { "name": "Coffee Baron", "condition": "Best tag streak — 30 days" },
+      "coffee_100": { "name": "Coffee King", "condition": "Best tag streak — 100 days" },
+      "coffee_365": { "name": "Coffee God", "condition": "Best tag streak — 365 days" },
+      "water_7": { "name": "Wet Whistle", "condition": "Best tag streak — 7 days" },
+      "water_30": { "name": "Aquaman", "condition": "Best tag streak — 30 days" },
+      "water_100": { "name": "Hydration 3000", "condition": "Best tag streak — 100 days" },
+      "water_365": { "name": "Living Ocean", "condition": "Best tag streak — 365 days" },
+      "gym_7": { "name": "Gym Newbie", "condition": "Best tag streak — 7 days" },
+      "gym_30": { "name": "Iron Addict", "condition": "Best tag streak — 30 days" },
+      "gym_100": { "name": "Gym Won't Let Go", "condition": "Best tag streak — 100 days" },
+      "gym_365": { "name": "Meat Machine", "condition": "Best tag streak — 365 days" },
+      "sleep_7": { "name": "Nap Cadet", "condition": "Best tag streak — 7 days" },
+      "sleep_30": { "name": "Sleep Pro", "condition": "Best tag streak — 30 days" },
+      "sleep_100": { "name": "Zombie Mode Off", "condition": "Best tag streak — 100 days" },
+      "sleep_365": { "name": "Sleep Tsar", "condition": "Best tag streak — 365 days" },
+      "book_7": { "name": "Page Opener", "condition": "Best tag streak — 7 days" },
+      "book_30": { "name": "Bookworm", "condition": "Best tag streak — 30 days" },
+      "book_100": { "name": "Read, Not Bought", "condition": "Best tag streak — 100 days" },
+      "book_365": { "name": "Walking Library", "condition": "Best tag streak — 365 days" },
+      "nosmoke_7": { "name": "First Breath", "condition": "Best tag streak — 7 days" },
+      "nosmoke_30": { "name": "Breathe Easy", "condition": "Best tag streak — 30 days" },
+      "nosmoke_100": { "name": "Lungs Are Singing", "condition": "Best tag streak — 100 days" },
+      "nosmoke_365": { "name": "Smoke-Free Legend", "condition": "Best tag streak — 365 days" },
+      "meditate_7": { "name": "Zen Rookie", "condition": "Best tag streak — 7 days" },
+      "meditate_30": { "name": "Calm & Collected", "condition": "Best tag streak — 30 days" },
+      "meditate_100": { "name": "Zen Master", "condition": "Best tag streak — 100 days" },
+      "meditate_365": { "name": "Enlightened One", "condition": "Best tag streak — 365 days" },
+      "food_7": { "name": "Salad Rookie", "condition": "Best tag streak — 7 days" },
+      "food_30": { "name": "Veggie Fighter", "condition": "Best tag streak — 30 days" },
+      "food_100": { "name": "Salad Lord", "condition": "Best tag streak — 100 days" },
+      "food_365": { "name": "Clean-Eating God", "condition": "Best tag streak — 365 days" }
+    }
+  },
+  "toast": {
+    "unlocked": "New achievement!",
+    "close": "Nice!"
+  },
+  "change_passphrase": {
+    "title": "Change code word",
+    "subtitle": "Enter your current code word to confirm, then set a new one. All your medications will be re-encrypted.",
+    "old_placeholder": "Current code word",
+    "new_placeholder": "New code word (min 12 characters)",
+    "confirm_placeholder": "Repeat new code word",
+    "submit": "Change code word",
+    "phase_verifying": "Verifying...",
+    "phase_decrypting": "Decrypting your data...",
+    "phase_reencrypting": "Encrypting with the new code word...",
+    "error_wrong_old": "Wrong current code word",
+    "error_short": "New code word must be at least 12 characters",
+    "error_weak": "Too simple. Use 16+ characters, or mix letters, digits and symbols.",
+    "error_mismatch": "New code words do not match",
+    "error_decrypt": "Could not decrypt your data. Nothing was changed.",
+    "error_reauth": "Reopen the mini app from the bot and try again — this action needs a fresh Telegram confirmation.",
+    "error_untrusted": "The server returned unsafe encryption settings. Nothing was changed — report this.",
+    "error_request": "Something went wrong. Nothing was changed."
+  },
+  "export": {
+    "title": "Export your data",
+    "description": "Download a readable copy of your medications, settings and consent history.",
+    "warning": "The downloaded file contains your decrypted medication data. Keep it safe and do not share it.",
+    "download": "Download",
+    "error": "Failed to export data. Please try again."
+  },
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "confirm": "Confirm",
+    "error": "An error occurred. Please try again later.",
+    "mute_notifications": "Mute notifications",
+    "unmute_notifications": "Unmute notifications",
+    "muted_today_hint": "Muted until tomorrow"
+  },
+  "nav": {
+    "today": "Today",
+    "calendar": "Calendar",
+    "habits": "Habits",
+    "profile": "Profile",
+    "more": "More"
+  },
+  "calendar": {
+    "title": "Calendar",
+    "marks_in_month": "{{count}} check-ins in {{month}}",
+    "prev_month": "Previous month",
+    "next_month": "Next month",
+    "legend_med": "Medications",
+    "legend_habit": "Habits",
+    "legend_task": "Tasks",
+    "legend_doc": "Doctor visits",
+    "agenda_progress": "{{taken}} of {{total}}",
+    "retro_hint": "A retroactive check-in recalculates the streak",
+    "empty_day": "Nothing planned for this day",
+    "and": "and"
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "overview": "Overview & Statistics",
+    "total_users": "Users",
+    "taken_rate": "Taken Rate",
+    "medications_label": "Medications",
+    "weekly_registrations": "Weekly Registrations",
+    "recent_activity": "Recent Activity",
+    "user_metrics": "User Metrics",
+    "engagement": "Engagement",
+    "top_medications": "Top Medications"
+  },
+  "consent": {
+    "welcome_title": "Welcome to\nMedReminder",
+    "welcome_subtitle": "Your personal medication\ntracking assistant",
+    "feature_secure": "Medication data is encrypted with your personal code word",
+    "feature_privacy": "We never share personal information",
+    "feature_delete": "Delete your data anytime from Settings",
+    "accept": "Accept & Continue",
+    "read_our": "Read our",
+    "privacy_link": "Privacy Policy"
+  },
+  "time_edit": {
+    "title": "Edit {{schedule}} Time",
+    "select_time": "Select time for {{schedule}} schedule",
+    "tap_hint": "Tap hours or minutes to adjust",
+    "save": "Save Time",
+    "reset": "Reset to default ({{time}})"
+  },
+  "tags": {
+    "coffee": "Coffee",
+    "water": "Water",
+    "gym": "Gym",
+    "sleep": "Sleep",
+    "book": "Books",
+    "nosmoke": "No Smoking",
+    "meditate": "Meditation",
+    "food": "Food"
+  },
+  "pet": {
+    "plant_name": "Ficus",
+    "title_line": "{{name}} · level {{level}}",
+    "mood": {
+      "waiting": "waiting for check-ins",
+      "encouraged": "cheering up",
+      "blooming": "in full bloom!"
+    },
+    "xp_label": "{{xp}} xp / to {{nextLevel}} — {{remaining}}",
+    "xp_label_max": "{{xp}} xp — max level",
+    "about_title": "How they live",
+    "about_body": "Grows from any check-in. Miss a day and it just misses you — it never gets sick and never dies."
+  },
+  "game": {
+    "title": "Pet",
+    "segment_pet": "Pet",
+    "segment_shelf": "Shelf",
+    "ladder_progress": "{{current}}/{{target}} — {{remaining}}d to “{{name}}”",
+    "ladder_complete": "All stages unlocked!"
+  },
+  "plans": {
+    "title": "Plans",
+    "items_count": "{{count}} items",
+    "search_placeholder": "Search — local, on decrypted data",
+    "projects_section": "Projects",
+    "notes_section": "Notes",
+    "empty_projects": "No projects yet",
+    "empty_notes": "No notes yet",
+    "no_results": "Nothing found"
+  },
+  "project": {
+    "picker_title": "Choose a project",
+    "no_project": "No project",
+    "field_prompt": "Project (optional)",
+    "create_title": "New project",
+    "name_prompt": "Project name",
+    "name_placeholder": "e.g. kitchen renovation",
+    "rename_title": "Rename project",
+    "delete_project": "Delete project",
+    "confirm_delete": "Delete \"{{name}}\"?",
+    "delete_description": "The project will be removed, but its tasks stay — just without a project.",
+    "add_task": "Add task",
+    "empty_tasks": "No tasks in this project yet"
+  },
+  "note": {
+    "add_title": "New note",
+    "edit_title": "Note",
+    "title_prompt": "Title",
+    "title_placeholder": "e.g. shopping list",
+    "text_prompt": "Text",
+    "text_placeholder": "Write anything — only you will see it",
+    "chars_remaining": "~{{count}} characters left",
+    "length_warning": "The note is getting long — close to the limit",
+    "too_long": "The note is too long to save. Please shorten it and try again.",
+    "save_changes": "Save",
+    "delete_note": "Delete note",
+    "encrypted_hint": "Encrypted as a whole, the server never sees the text",
+    "untitled": "Untitled"
+  }
+}
