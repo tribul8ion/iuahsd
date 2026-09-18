@@ -14,11 +14,15 @@ function AchievementTile({ item, earned }: AchievementTileProps) {
 
   return (
     <div
-      className="flex flex-col items-center rounded-2xl bg-white text-center"
+      className="flex flex-col items-center rounded-[20px] bg-white text-center"
       style={{
         padding: "16px 10px",
         gap: 6,
-        boxShadow: "0 1px 8px rgba(0,0,0,0.03)",
+        border: earned ? "1px solid rgba(5, 150, 105, 0.14)" : "1px solid rgba(30, 41, 59, 0.05)",
+        background: earned ? "var(--gradient-card-mint)" : "#FFFFFF",
+        boxShadow: earned
+          ? "0 6px 16px -10px rgba(5,150,105,0.3)"
+          : "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)",
         filter: earned ? "none" : "grayscale(1)",
         opacity: earned ? 1 : 0.55,
       }}

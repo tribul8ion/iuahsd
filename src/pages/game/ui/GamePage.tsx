@@ -13,20 +13,38 @@ export function GamePage() {
   return (
     <div className="min-h-full" style={{ paddingBottom: "calc(74px + 16px + env(safe-area-inset-bottom))" }}>
       <div
-        className="rounded-b-[28px] flex flex-col justify-center gap-1"
+        className="rounded-b-[32px] flex flex-col justify-center gap-1 overflow-hidden"
         style={{
-          background: "linear-gradient(160deg, #059669 0%, #0D9488 100%)",
+          position: "relative",
+          background: "var(--gradient-header)",
           height: 140,
           padding: "52px 20px 24px 20px",
         }}
       >
-        <h1 className="text-white text-[26px] font-bold leading-tight">{t("game.title")}</h1>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none rounded-full"
+          style={{
+            position: "absolute",
+            top: -70,
+            right: -40,
+            width: 190,
+            height: 190,
+            background: "radial-gradient(circle, rgba(167,243,208,0.35) 0%, rgba(167,243,208,0) 68%)",
+          }}
+        />
+        <h1
+          className="text-white text-[27px] font-extrabold leading-tight"
+          style={{ letterSpacing: "-0.4px" }}
+        >
+          {t("game.title")}
+        </h1>
       </div>
 
       <div style={{ padding: "16px 16px 0 16px" }}>
         <div
-          className="flex rounded-xl"
-          style={{ backgroundColor: "#E7EBE9", padding: 4, gap: 4 }}
+          className="flex rounded-2xl"
+          style={{ backgroundColor: "#E6EEEA", padding: 4, gap: 4 }}
           role="tablist"
           aria-label="game-segment"
         >
@@ -36,12 +54,12 @@ export function GamePage() {
               onClick={() => setSegment(seg)}
               role="tab"
               aria-selected={segment === seg}
-              className="flex-1 h-10 rounded-lg text-[13px] font-medium cursor-pointer transition-all"
+              className="flex-1 h-10 rounded-xl text-[13px] font-medium cursor-pointer transition-all"
               style={{
                 backgroundColor: segment === seg ? "#FFFFFF" : "transparent",
-                color: segment === seg ? "#1C1917" : "#57534E",
-                fontWeight: segment === seg ? 600 : 500,
-                boxShadow: segment === seg ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
+                color: segment === seg ? "#047857" : "#57534E",
+                fontWeight: segment === seg ? 700 : 500,
+                boxShadow: segment === seg ? "0 2px 6px rgba(30,41,59,0.08)" : "none",
               }}
             >
               {seg === "pet" ? t("game.segment_pet") : t("game.segment_shelf")}

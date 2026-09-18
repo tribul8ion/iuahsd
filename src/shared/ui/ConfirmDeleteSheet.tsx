@@ -48,7 +48,7 @@ export function ConfirmDeleteSheet({
           <button
             onClick={onClose}
             className="flex-1 h-12 rounded-[14px] text-[15px] font-semibold cursor-pointer transition-colors duration-150 active:opacity-80"
-            style={{ backgroundColor: "#F5F5F4", color: "#1C1917" }}
+            style={{ backgroundColor: "#F2F5F3", color: "#1C1917", border: "1px solid rgba(30,41,59,0.06)" }}
           >
             {t("common.cancel")}
           </button>
@@ -56,7 +56,7 @@ export function ConfirmDeleteSheet({
             onClick={onConfirm}
             disabled={isPending}
             className="flex-1 h-12 rounded-[14px] text-[15px] font-semibold text-white cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-40 flex items-center justify-center gap-1.5"
-            style={{ backgroundColor: "#E11D48" }}
+            style={{ backgroundColor: "#E11D48", boxShadow: "0 8px 18px -6px rgba(225,29,72,0.4)" }}
           >
             {isPending && <Loader2 size={16} className="animate-spin" />}
             {t("common.confirm")}

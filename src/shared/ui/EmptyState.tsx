@@ -19,13 +19,17 @@ interface SizeConfig {
 const SIZE_CONFIG: Record<EmptyStateSize, SizeConfig> = {
   lg: {
     containerClassName: "flex flex-col items-center justify-center gap-4 text-center",
-    boxClassName: "w-20 h-20 rounded-3xl bg-white flex items-center justify-center",
-    boxStyle: { boxShadow: "0 1px 8px rgba(0,0,0,0.03)" },
+    boxClassName: "w-20 h-20 rounded-[26px] flex items-center justify-center",
+    boxStyle: {
+      background: "linear-gradient(150deg, #FFFFFF 0%, #EBF8F1 100%)",
+      border: "1px solid rgba(5, 150, 105, 0.12)",
+      boxShadow: "0 8px 20px -10px rgba(5, 150, 105, 0.22)",
+    },
   },
   md: {
     containerClassName: "flex flex-col items-center justify-center gap-3 text-center",
-    boxClassName: "w-14 h-14 rounded-2xl flex items-center justify-center",
-    boxStyle: { backgroundColor: "#F5F5F4" },
+    boxClassName: "w-14 h-14 rounded-[18px] flex items-center justify-center",
+    boxStyle: { backgroundColor: "#EDF4F0", border: "1px solid rgba(30,41,59,0.05)" },
   },
 };
 

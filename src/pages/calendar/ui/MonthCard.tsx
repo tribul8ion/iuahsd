@@ -49,15 +49,19 @@ export function MonthCard({
 
   return (
     <div
-      className="rounded-2xl bg-white"
-      style={{ padding: "16px", boxShadow: "0 1px 8px rgba(0,0,0,0.03)" }}
+      className="rounded-[22px] bg-white"
+      style={{
+        padding: "16px",
+        border: "1px solid rgba(30, 41, 59, 0.05)",
+        boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)",
+      }}
     >
       <div className="flex items-center justify-between" style={{ marginBottom: 12 }}>
         <button
           onClick={onPrevMonth}
           disabled={!canGoPrev}
           className="cursor-pointer w-8 h-8 rounded-full flex items-center justify-center disabled:opacity-35 disabled:cursor-not-allowed"
-          style={{ backgroundColor: "#F5F5F4" }}
+          style={{ backgroundColor: "#F2F6F3", border: "1px solid rgba(30,41,59,0.05)" }}
           aria-label={t("calendar.prev_month")}
         >
           <ChevronLeft size={16} color="#57534E" strokeWidth={2} />
@@ -69,7 +73,7 @@ export function MonthCard({
           onClick={onNextMonth}
           disabled={!canGoNext}
           className="cursor-pointer w-8 h-8 rounded-full flex items-center justify-center disabled:opacity-35 disabled:cursor-not-allowed"
-          style={{ backgroundColor: "#F5F5F4" }}
+          style={{ backgroundColor: "#F2F6F3", border: "1px solid rgba(30,41,59,0.05)" }}
           aria-label={t("calendar.next_month")}
         >
           <ChevronRight size={16} color="#57534E" strokeWidth={2} />
@@ -111,8 +115,12 @@ export function MonthCard({
                 style={{
                   width: 28,
                   height: 28,
-                  backgroundColor: isToday ? "#059669" : "transparent",
-                  boxShadow: !isToday && isSelected ? "inset 0 0 0 1.6px #059669" : "none",
+                  background: isToday ? "var(--gradient-primary)" : "transparent",
+                  boxShadow: isToday
+                    ? "0 4px 10px -2px rgba(5,150,105,0.4)"
+                    : isSelected
+                      ? "inset 0 0 0 1.6px #059669"
+                      : "none",
                 }}
               >
                 <span

@@ -26,12 +26,24 @@ function ChoiceRow({ emoji, title, subtitle, onClick }: ChoiceRowProps) {
   return (
     <button
       onClick={onClick}
-      className="flex items-center w-full rounded-2xl cursor-pointer text-left"
-      style={{ backgroundColor: "#F5F5F4", padding: "12px 14px", gap: 12 }}
+      className="flex items-center w-full rounded-2xl cursor-pointer text-left transition-transform duration-150 active:scale-[0.98]"
+      style={{
+        backgroundColor: "#F7FAF8",
+        border: "1px solid rgba(30, 41, 59, 0.05)",
+        padding: "12px 14px",
+        gap: 12,
+      }}
     >
       <div
         className="flex-shrink-0 flex items-center justify-center rounded-[12px]"
-        style={{ width: 38, height: 38, backgroundColor: "#FFFFFF", fontSize: 20 }}
+        style={{
+          width: 38,
+          height: 38,
+          backgroundColor: "#FFFFFF",
+          border: "1px solid rgba(30, 41, 59, 0.06)",
+          boxShadow: "0 1px 2px rgba(30,41,59,0.05)",
+          fontSize: 20,
+        }}
       >
         {emoji}
       </div>

@@ -92,7 +92,7 @@ export function CustomIntervalModal({ isOpen, currentValue, onClose, onSave }: C
             onClick={handleSave}
             disabled={!value || parseInt(value, 10) < 1}
             className="w-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-35 disabled:cursor-not-allowed"
-            style={{ height: 48, borderRadius: 14, backgroundColor: "#059669", gap: 8 }}
+            style={{ height: 48, borderRadius: 14, background: "var(--gradient-primary)", gap: 8, boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)" }}
           >
             <Check size={18} color="#FFFFFF" strokeWidth={2.5} />
             <span className="text-[15px] font-semibold text-white">{t("common.save")}</span>

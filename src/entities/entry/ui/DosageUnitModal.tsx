@@ -69,7 +69,7 @@ export function DosageUnitModal({
                     {isSelected && (
                       <div
                         className="w-5 h-5 rounded-full flex-shrink-0"
-                        style={{ backgroundColor: "#059669" }}
+                        style={{ background: "var(--gradient-primary)", boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)" }}
                       />
                     )}
                   </button>
@@ -81,7 +81,7 @@ export function DosageUnitModal({
           <button
             onClick={handleSave}
             className="w-full h-12 rounded-[14px] text-[15px] font-semibold text-white cursor-pointer transition-all duration-150 active:scale-[0.98] flex items-center justify-center gap-2"
-            style={{ backgroundColor: "#059669" }}
+            style={{ background: "var(--gradient-primary)", boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)" }}
           >
             <Check size={18} strokeWidth={2.5} />
             {t("medications.dosage_unit_save")}

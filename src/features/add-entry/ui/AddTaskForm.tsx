@@ -208,7 +208,7 @@ export function AddTaskForm({ isOpen, onClose, initialProjectId = null }: AddTas
               disabled={!isValid || isPending}
               onClick={handleSubmit}
               className="w-full h-12 rounded-[14px] text-[15px] font-semibold text-white cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-35 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              style={{ backgroundColor: "#059669" }}
+              style={{ background: "var(--gradient-primary)", boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)" }}
             >
               {isPending && <Loader2 size={18} className="animate-spin" />}
               {t("once.add_task")}

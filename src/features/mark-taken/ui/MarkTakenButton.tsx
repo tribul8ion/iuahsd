@@ -15,7 +15,10 @@ export function MarkTakenButton({ markId, isTaken }: MarkTakenButtonProps) {
     return (
       <button
         className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-90 disabled:opacity-40"
-        style={{ backgroundColor: "#059669" }}
+        style={{
+          background: "var(--gradient-primary)",
+          boxShadow: "0 4px 12px -2px rgba(5,150,105,0.4)",
+        }}
         disabled={isPending}
         onClick={() => mutate({ markId, status: false })}
         aria-label={t("checklist.undo_taken")}
@@ -31,7 +34,7 @@ export function MarkTakenButton({ markId, isTaken }: MarkTakenButtonProps) {
   return (
     <div
       className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-90"
-      style={{ border: "2px solid #D6D3D1" }}
+      style={{ border: "2px solid #E7E5E4", backgroundColor: "#FAFAF9" }}
       onClick={() => !isPending && mutate({ markId, status: true })}
       role="button"
       aria-label={t("checklist.mark_taken")}

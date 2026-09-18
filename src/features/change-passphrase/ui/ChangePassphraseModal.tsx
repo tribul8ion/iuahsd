@@ -162,7 +162,8 @@ export function ChangePassphraseModal({ isOpen, onClose }: ChangePassphraseModal
           style={{
             height: 48,
             borderRadius: 14,
-            backgroundColor: "#059669",
+            background: "var(--gradient-primary)",
+            boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)",
             color: "#FFFFFF",
             fontSize: 15,
             fontWeight: 700,

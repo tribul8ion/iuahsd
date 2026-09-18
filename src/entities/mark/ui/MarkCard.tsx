@@ -39,11 +39,17 @@ export function MarkCard({ mark, entryName, subLabel, after, tag }: MarkCardProp
 
   return (
     <div
-      className="rounded-2xl bg-white flex items-center"
-      style={{ gap: 12, padding: "0 16px", height: 72, boxShadow: "0 1px 8px rgba(0,0,0,0.03)" }}
+      className="rounded-[20px] bg-white flex items-center"
+      style={{
+        gap: 12,
+        padding: "0 16px",
+        height: 72,
+        border: "1px solid rgba(30, 41, 59, 0.05)",
+        boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)",
+      }}
     >
       <div
-        className="flex-shrink-0 w-9 h-9 rounded-[12px] flex items-center justify-center"
+        className="flex-shrink-0 w-10 h-10 rounded-[14px] flex items-center justify-center"
         style={{ backgroundColor: tileBg }}
       >
         {isHabit ? (

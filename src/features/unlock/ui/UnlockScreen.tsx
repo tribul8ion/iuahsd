@@ -23,7 +23,7 @@ export function UnlockScreen() {
   return (
     <div
       className="fixed inset-0 z-50 flex flex-col overflow-y-auto"
-      style={{ backgroundColor: "#F0F4F3" }}
+      style={{ backgroundColor: "#F2F6F4" }}
     >
       <div className="flex-1 flex flex-col" style={{ padding: "60px 24px 32px 24px" }}>
         <div
@@ -33,7 +33,8 @@ export function UnlockScreen() {
             height: 64,
             borderRadius: 20,
             flexShrink: 0,
-            background: "linear-gradient(160deg, #059669 0%, #0D9488 100%)",
+            background: "var(--gradient-header)",
+          boxShadow: "0 14px 30px -10px rgba(5,150,105,0.5)",
           }}
         >
           <LockKeyhole size={32} color="#FFFFFF" strokeWidth={2} />
@@ -42,8 +43,8 @@ export function UnlockScreen() {
         <div style={{ height: 24, flexShrink: 0 }} />
 
         <h1
-          className="text-[26px] font-bold"
-          style={{ color: "#1C1917", lineHeight: 1.2, flexShrink: 0 }}
+          className="text-[27px] font-extrabold"
+          style={{ color: "#1C1917", lineHeight: 1.2, flexShrink: 0, letterSpacing: "-0.4px" }}
         >
           {t("unlock.title")}
         </h1>
@@ -61,8 +62,8 @@ export function UnlockScreen() {
 
         <div className="flex flex-col" style={{ gap: 12, flexShrink: 0 }}>
           <div
-            className="flex items-center rounded-xl"
-            style={{ backgroundColor: "#FFFFFF", padding: "0 14px", height: 52 }}
+            className="flex items-center rounded-2xl"
+            style={{ backgroundColor: "#FFFFFF", padding: "0 16px", height: 54, border: "1px solid rgba(30,41,59,0.08)", boxShadow: "0 1px 2px rgba(30,41,59,0.04)" }}
           >
             <input
               type="password"
@@ -97,8 +98,9 @@ export function UnlockScreen() {
           className="w-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
           style={{
             height: 52,
-            borderRadius: 16,
-            backgroundColor: "#059669",
+            borderRadius: 18,
+            background: "var(--gradient-primary)",
+            boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)",
             color: "#FFFFFF",
             fontSize: 16,
             fontWeight: 700,

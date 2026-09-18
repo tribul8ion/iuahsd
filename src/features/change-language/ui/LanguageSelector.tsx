@@ -13,8 +13,8 @@ export function LanguageSelector() {
 
   return (
     <div
-      className="rounded-2xl overflow-hidden"
-      style={{ backgroundColor: "#FFFFFF", boxShadow: "0 1px 8px rgba(0,0,0,0.03)" }}
+      className="rounded-[20px] overflow-hidden"
+      style={{ backgroundColor: "#FFFFFF", border: "1px solid rgba(30, 41, 59, 0.05)", boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)" }}
     >
       <div className="flex items-center" style={{ height: 40, padding: "0 16px", backgroundColor: "#F5F5F4" }}>
         <span

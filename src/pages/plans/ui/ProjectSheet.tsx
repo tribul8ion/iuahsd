@@ -108,7 +108,7 @@ export function ProjectSheet({ project, isOpen, onClose }: ProjectSheetProps) {
           <button
             onClick={() => setIsAddTaskOpen(true)}
             className="w-full h-12 rounded-[14px] text-[15px] font-semibold text-white cursor-pointer transition-all duration-150 active:scale-[0.98] flex items-center justify-center gap-2"
-            style={{ backgroundColor: "#059669", marginTop: 16 }}
+            style={{ background: "var(--gradient-primary)", marginTop: 16, boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)" }}
           >
             <Plus size={18} strokeWidth={2.5} />
             {t("project.add_task")}

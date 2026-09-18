@@ -29,7 +29,7 @@ interface AdminStats {
   top_medications: TopMed[];
 }
 
-const CARD_SHADOW = "0 1px 8px rgba(0,0,0,0.03)";
+const CARD_SHADOW = "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)";
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const BAR_COLORS = ["#D1FAE5", "#A7F3D0", "#6EE7B7", "#34D399", "#10B981", "#059669", "#34D399"];
 const AVATAR_COLORS = ["#D1FAE5", "#EDE9FE", "#FEF3C7"];

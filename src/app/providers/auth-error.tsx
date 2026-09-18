@@ -41,7 +41,8 @@ export function AuthErrorScreen() {
           style={{
             height: 52,
             borderRadius: 16,
-            backgroundColor: "#059669",
+            background: "var(--gradient-primary)",
+            boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)",
             color: "#FFFFFF",
             fontSize: 16,
             fontWeight: 700,

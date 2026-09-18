@@ -50,12 +50,22 @@ function NavButton({ item, isActive, onClick, t }: {
       aria-label={t(item.labelKey)}
       aria-current={isActive ? "page" : undefined}
     >
-      <Icon size={22} strokeWidth={isActive ? 2.2 : 1.8} color={isActive ? "#059669" : "#A8A29E"} />
+      <span
+        className="flex items-center justify-center rounded-full transition-colors duration-200"
+        style={{
+          width: 44,
+          height: 26,
+          marginBottom: 1,
+          backgroundColor: isActive ? "#DCF5E9" : "transparent",
+        }}
+      >
+        <Icon size={22} strokeWidth={isActive ? 2.2 : 1.8} color={isActive ? "#047857" : "#A8A29E"} />
+      </span>
       <span
         className="text-[9px] uppercase leading-none"
         style={{
-          color: isActive ? "#059669" : "#A8A29E",
-          fontWeight: isActive ? 600 : 500,
+          color: isActive ? "#047857" : "#A8A29E",
+          fontWeight: isActive ? 700 : 500,
           letterSpacing: "0.5px",
         }}
       >
@@ -72,9 +82,12 @@ export function BottomNav({ onAdd, onMore }: BottomNavProps) {
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-50 bg-white"
+      className="fixed bottom-0 left-0 right-0 z-50"
       style={{
-        boxShadow: "0 -2px 12px rgba(0,0,0,0.04)",
+        backgroundColor: "rgba(255, 255, 255, 0.82)",
+        backdropFilter: "blur(18px) saturate(1.6)",
+        WebkitBackdropFilter: "blur(18px) saturate(1.6)",
+        borderTop: "1px solid rgba(30, 41, 59, 0.07)",
         padding: "8px 16px calc(20px + env(safe-area-inset-bottom)) 16px",
       }}
     >
@@ -95,14 +108,14 @@ export function BottomNav({ onAdd, onMore }: BottomNavProps) {
             aria-label="add-entry"
             className="cursor-pointer flex items-center justify-center rounded-full transition-transform duration-150 active:scale-90"
             style={{
-              width: 46,
-              height: 46,
-              backgroundColor: "#059669",
-              transform: "translateY(-14px)",
-              boxShadow: "0 6px 16px rgba(5,150,105,0.35)",
+              width: 50,
+              height: 50,
+              background: "var(--gradient-primary)",
+              transform: "translateY(-16px)",
+              boxShadow: "var(--shadow-fab)",
             }}
           >
-            <Plus size={22} color="#FFFFFF" strokeWidth={2.5} />
+            <Plus size={24} color="#FFFFFF" strokeWidth={2.5} />
           </button>
         </div>
 

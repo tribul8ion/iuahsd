@@ -61,8 +61,8 @@ export function PlansPage() {
 
       <div className="flex flex-col" style={{ padding: "16px 16px 0 16px", gap: 20 }}>
         <div
-          className="flex items-center rounded-2xl bg-white"
-          style={{ gap: 10, padding: "0 14px", height: 48, boxShadow: "0 1px 8px rgba(0,0,0,0.03)" }}
+          className="flex items-center rounded-[20px] bg-white"
+          style={{ gap: 10, padding: "0 14px", height: 48, border: "1px solid rgba(30, 41, 59, 0.05)", boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)" }}
         >
           <Search size={18} color="#A8A29E" strokeWidth={1.8} />
           <input

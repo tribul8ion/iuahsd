@@ -88,9 +88,9 @@ export function FrequencyPicker({
             className={`flex-1 h-10 rounded-lg font-medium cursor-pointer transition-all ${showWeekly ? "text-[13px]" : "text-[14px]"}`}
             style={{
               backgroundColor: value === freq ? "#FFFFFF" : "transparent",
-              color: value === freq ? "#1C1917" : "#57534E",
-              fontWeight: value === freq ? 600 : 500,
-              boxShadow: value === freq ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
+              color: value === freq ? "#047857" : "#57534E",
+              fontWeight: value === freq ? 700 : 500,
+              boxShadow: value === freq ? "0 2px 6px rgba(30,41,59,0.08)" : "none",
             }}
           >
             {tabLabel(freq)}
@@ -110,8 +110,10 @@ export function FrequencyPicker({
                 aria-label={`day-${dayIndex}`}
                 className="flex-1 h-10 rounded-lg text-[13px] font-medium cursor-pointer transition-all"
                 style={{
-                  backgroundColor: isSelected ? "#059669" : "#F5F5F4",
+                  background: isSelected ? "var(--gradient-primary)" : "#EEF3F0",
                   color: isSelected ? "#FFFFFF" : "#57534E",
+                  boxShadow: isSelected ? "0 4px 10px -3px rgba(5,150,105,0.4)" : "none",
+                  fontWeight: isSelected ? 700 : 500,
                 }}
               >
                 {label}

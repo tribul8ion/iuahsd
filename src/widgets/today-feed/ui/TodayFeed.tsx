@@ -85,28 +85,40 @@ export function TodayFeed() {
   const groups = groupMarksByTime(items);
 
   return (
-    <div className="flex flex-col" style={{ gap: 12 }}>
+    <div className="flex flex-col" style={{ gap: 14 }}>
       {showConfetti && <Confetti />}
       <div
-        className="bg-white rounded-[20px] flex items-center"
-        style={{ padding: "16px 20px", gap: 16, boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}
+        className="rounded-[22px] flex items-center"
+        style={{
+          padding: "16px 20px",
+          gap: 16,
+          background: "var(--gradient-card-mint)",
+          border: "1px solid rgba(5, 150, 105, 0.1)",
+          boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(5,150,105,0.18)",
+        }}
       >
         <div style={{ position: "relative", width: 56, height: 56, flexShrink: 0 }}>
           <svg viewBox="0 0 36 36" style={{ width: 56, height: 56, transform: "rotate(-90deg)" }}>
-            <circle cx="18" cy="18" r="15" fill="none" stroke="#E5E7EB" strokeWidth="4" />
+            <defs>
+              <linearGradient id="progress-ring" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#34D399" />
+                <stop offset="100%" stopColor="#059669" />
+              </linearGradient>
+            </defs>
+            <circle cx="18" cy="18" r="15" fill="none" stroke="#DCEEE5" strokeWidth="4" />
             <circle
               cx="18"
               cy="18"
               r="15"
               fill="none"
-              stroke="#059669"
+              stroke="url(#progress-ring)"
               strokeWidth="4"
               strokeLinecap="round"
               strokeDasharray={`${pct * 0.942} 100`}
             />
           </svg>
           <span
-            className="absolute inset-0 flex items-center justify-center text-[13px] font-bold"
+            className="absolute inset-0 flex items-center justify-center text-[13px] font-extrabold"
             style={{ color: "#1C1917" }}
           >
             {pct}%
@@ -116,7 +128,7 @@ export function TodayFeed() {
           <p className="text-[16px] font-bold" style={{ color: "#1C1917" }}>
             {t("checklist.progress_count", { taken: takenCount, total: items.length })}
           </p>
-          <p className="text-[13px]" style={{ color: "#A8A29E", marginTop: 2 }}>
+          <p className="text-[13px]" style={{ color: "#78716C", marginTop: 2 }}>
             {allTaken ? t("checklist.all_taken_congrats") : t("checklist.keep_going")}
           </p>
         </div>
@@ -127,12 +139,24 @@ export function TodayFeed() {
 
       {groups.map((group) => (
         <div key={group.time} className="flex flex-col" style={{ gap: 8 }}>
-          <p
-            className="text-[10px] font-semibold uppercase"
-            style={{ color: "#A8A29E", letterSpacing: "1px", padding: "0 4px" }}
-          >
-            {group.time}
-          </p>
+          <div className="flex items-center" style={{ gap: 8, padding: "0 4px" }}>
+            <span
+              className="rounded-full"
+              style={{
+                width: 22,
+                height: 3,
+                background: "var(--gradient-primary)",
+                opacity: 0.85,
+              }}
+              aria-hidden="true"
+            />
+            <p
+              className="text-[11px] font-bold uppercase"
+              style={{ color: "#78716C", letterSpacing: "1.2px" }}
+            >
+              {group.time}
+            </p>
+          </div>
           <div className="flex flex-col" style={{ gap: 8 }}>
             {group.items.map((mark) => {
               const entry = entries?.find((e) => e.id === mark.entry_id);

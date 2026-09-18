@@ -29,7 +29,7 @@ export function PrivacyConsentScreen({ onAccept }: PrivacyConsentScreenProps) {
   return (
     <div
       className="fixed inset-0 z-50 flex flex-col overflow-y-auto"
-      style={{ backgroundColor: "#F0F4F3" }}
+      style={{ backgroundColor: "#F2F6F4" }}
     >
       <div
         className="flex-1 flex flex-col"
@@ -42,7 +42,8 @@ export function PrivacyConsentScreen({ onAccept }: PrivacyConsentScreenProps) {
             height: 64,
             borderRadius: 20,
             flexShrink: 0,
-            background: "linear-gradient(160deg, #059669 0%, #0D9488 100%)",
+            background: "var(--gradient-header)",
+            boxShadow: "0 14px 30px -10px rgba(5,150,105,0.5)",
           }}
         >
           <HeartPulse size={32} color="#FFFFFF" strokeWidth={2} />
@@ -91,8 +92,9 @@ export function PrivacyConsentScreen({ onAccept }: PrivacyConsentScreenProps) {
             className="w-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-[0.98]"
             style={{
               height: 52,
-              borderRadius: 16,
-              backgroundColor: "#059669",
+              borderRadius: 18,
+              background: "var(--gradient-primary)",
+              boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)",
               color: "#FFFFFF",
               fontSize: 16,
               fontWeight: 700,

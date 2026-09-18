@@ -47,7 +47,7 @@ export function ScheduleTimePicker({
               </button>
               <div className="flex items-center gap-2 flex-shrink-0">
                 {isSelected && (
-                  <div className="w-5 h-5 rounded-full" style={{ backgroundColor: "#059669" }} />
+                  <div className="w-5 h-5 rounded-full" style={{ background: "var(--gradient-primary)", boxShadow: "0 2px 6px rgba(5,150,105,0.4)" }} />
                 )}
                 <button
                   onClick={(e) => {

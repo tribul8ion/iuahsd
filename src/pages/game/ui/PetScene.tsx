@@ -62,12 +62,28 @@ export function PetScene() {
   return (
     <div className="flex flex-col" style={{ gap: 12 }}>
       <div
-        className="rounded-2xl bg-white flex flex-col items-center text-center"
-        style={{ padding: "24px 20px", gap: 8, boxShadow: "0 1px 8px rgba(0,0,0,0.03)" }}
+        className="rounded-[22px] flex flex-col items-center text-center"
+        style={{
+          padding: "24px 20px",
+          gap: 8,
+          background: "var(--gradient-card-mint)",
+          border: "1px solid rgba(5, 150, 105, 0.1)",
+          boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(5,150,105,0.18)",
+        }}
       >
-        <span style={{ fontSize: 64, lineHeight: 1 }} aria-hidden="true">
-          {stageEmoji}
-        </span>
+        <div
+          className="flex items-center justify-center rounded-full"
+          style={{
+            width: 96,
+            height: 96,
+            background: "radial-gradient(circle at 35% 30%, #FFFFFF 0%, #D9F5E6 100%)",
+            boxShadow: "0 8px 20px -8px rgba(5,150,105,0.35), inset 0 -4px 8px rgba(5,150,105,0.08)",
+          }}
+        >
+          <span style={{ fontSize: 56, lineHeight: 1 }} aria-hidden="true">
+            {stageEmoji}
+          </span>
+        </div>
         <p className="text-[16px] font-bold" style={{ color: "#1C1917" }}>
           {t("pet.title_line", { name: t("pet.plant_name"), level: pet.level })}
         </p>
@@ -78,7 +94,11 @@ export function PetScene() {
         <div className="w-full" style={{ marginTop: 8 }}>
           <div
             className="w-full rounded-full overflow-hidden"
-            style={{ height: 10, backgroundColor: "#F5F5F4" }}
+            style={{
+              height: 10,
+              backgroundColor: "#E4EFE9",
+              boxShadow: "inset 0 1px 2px rgba(30,41,59,0.06)",
+            }}
           >
             <div
               role="progressbar"
@@ -88,7 +108,10 @@ export function PetScene() {
               style={{
                 width: `${barPct}%`,
                 height: "100%",
-                background: "linear-gradient(90deg, #059669 0%, #0D9488 100%)",
+                borderRadius: 999,
+                background: "var(--gradient-primary)",
+                boxShadow: "0 0 10px rgba(52,211,153,0.55)",
+                transition: "width 400ms ease",
               }}
             />
           </div>
@@ -107,8 +130,12 @@ export function PetScene() {
       </div>
 
       <div
-        className="rounded-2xl bg-white"
-        style={{ padding: "16px 20px", boxShadow: "0 1px 8px rgba(0,0,0,0.03)" }}
+        className="rounded-[20px] bg-white"
+        style={{
+          padding: "16px 20px",
+          border: "1px solid rgba(30, 41, 59, 0.05)",
+          boxShadow: "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)",
+        }}
       >
         <p className="text-[13px] font-semibold" style={{ color: "#1C1917", marginBottom: 4 }}>
           {t("pet.about_title")}

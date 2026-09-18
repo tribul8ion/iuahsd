@@ -91,8 +91,8 @@ export function MedicationsPage() {
           onClick={() => setAddOpen(true)}
           className="w-full h-[52px] rounded-2xl text-[15px] font-semibold text-white cursor-pointer transition-all duration-150 active:scale-[0.98] flex items-center justify-center gap-2"
           style={{
-            backgroundColor: "#059669",
-            boxShadow: "0 4px 16px rgba(5,150,105,0.2)",
+            background: "var(--gradient-primary)",
+            boxShadow: "0 10px 22px -6px rgba(5,150,105,0.42)",
           }}
         >
           <Plus size={20} strokeWidth={2.5} />
