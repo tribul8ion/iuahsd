@@ -32,8 +32,15 @@ export function AchievementToast() {
     >
       <Confetti />
       <div
-        className="bg-white rounded-[24px] flex flex-col items-center animate-scale-in"
-        style={{ padding: "32px 28px", gap: 12, maxWidth: 280 }}
+        className="rounded-[24px] flex flex-col items-center animate-scale-in"
+        style={{
+          padding: "32px 28px",
+          gap: 12,
+          maxWidth: 280,
+          backgroundColor: "#1C1C1E",
+          border: "1px solid rgba(255,255,255,0.07)",
+          boxShadow: "0 20px 56px -8px rgba(0,0,0,0.7)",
+        }}
       >
         <span style={{ fontSize: 56, lineHeight: 1 }}>{badge.emoji}</span>
         <p className="text-[13px] font-semibold uppercase" style={{ color: "var(--color-text-hint)", letterSpacing: "1px" }}>

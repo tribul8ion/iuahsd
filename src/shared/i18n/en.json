@@ -4,7 +4,8 @@
     "keep_going": "Keep going, almost there!",
     "progress_count": "{{taken}} of {{total}} taken",
     "mark_taken": "Mark as taken",
-    "undo_taken": "Mark as not taken"
+    "undo_taken": "Mark as not taken",
+    "title": "Daily progress"
   },
   "today": {
     "title": "Today",

@@ -30,13 +30,12 @@ function ChoiceRow({ emoji, title, subtitle, onClick }: ChoiceRowProps) {
       style={{ padding: "12px 14px", gap: 12 }}
     >
       <div
-        className="flex-shrink-0 flex items-center justify-center rounded-[12px]"
+        className="flex-shrink-0 flex items-center justify-center rounded-full"
         style={{
-          width: 38,
-          height: 38,
-          backgroundColor: "rgba(255,255,255,0.08)",
-          border: "1px solid rgba(255,255,255,0.07)",
-          fontSize: 20,
+          width: 40,
+          height: 40,
+          backgroundColor: "#2C2C2E",
+          fontSize: 19,
         }}
       >
         {emoji}

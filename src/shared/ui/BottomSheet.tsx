@@ -52,8 +52,8 @@ export function BottomSheet({ isOpen, onClose, children }: BottomSheetProps) {
           maxHeight: "85dvh",
           overflowY: "auto",
           overscrollBehavior: "contain",
-          backgroundColor: "#1B200D",
-          borderTop: "1px solid rgba(249,255,208,0.16)",
+          backgroundColor: "#1C1C1E",
+          borderTop: "1px solid rgba(255,255,255,0.07)",
         }}
         onClick={(e) => e.stopPropagation()}
         onFocusCapture={(e) => {

@@ -4,7 +4,8 @@
     "keep_going": "Продолжай, почти всё!",
     "progress_count": "{{taken}} из {{total}} принято",
     "mark_taken": "Отметить как принятое",
-    "undo_taken": "Снять отметку"
+    "undo_taken": "Снять отметку",
+    "title": "Прогресс дня"
   },
   "today": {
     "title": "Сегодня",

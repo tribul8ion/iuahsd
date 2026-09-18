@@ -109,7 +109,7 @@ export function TodayFeed() {
         style={{ padding: "20px 22px", gap: 16 }}
       >
         <div className="flex-1 min-w-0 flex flex-col" style={{ gap: 4 }}>
-          <p className="section-label">{t("nav.today")}</p>
+          <p className="section-label">{t("checklist.title")}</p>
           <p
             className="font-bold"
             style={{ fontSize: 44, lineHeight: "44px", letterSpacing: "-0.03em", color: "#F9FFD0" }}
