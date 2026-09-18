@@ -9,9 +9,9 @@ interface NotificationBellProps {
 }
 
 const STATE_COLORS = {
-  on: "#059669",
-  muted_today: "#D97706",
-  off: "#A8A29E",
+  on: "#F9FFD0",
+  muted_today: "#FBBF24",
+  off: "var(--color-text-hint)",
 } as const;
 
 export function NotificationBell({ entry, onToggle }: NotificationBellProps) {

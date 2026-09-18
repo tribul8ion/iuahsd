@@ -105,7 +105,7 @@ export function AddMedicationForm({ isOpen, onClose }: AddMedicationFormProps) {
                   onChange={(e) => setName(e.target.value)}
                   placeholder={t("medications.medication_name_placeholder")}
                   maxLength={100}
-                  className="w-full text-[15px] bg-transparent outline-none placeholder:text-[#D6D3D1]"
+                  className="w-full text-[15px] bg-transparent outline-none placeholder:text-[rgba(255,255,255,0.28)]"
                   style={{ color: "var(--color-text)" }}
                   autoFocus
                 />
@@ -169,8 +169,8 @@ export function AddMedicationForm({ isOpen, onClose }: AddMedicationFormProps) {
             <button
               disabled={!isValid || isPending}
               onClick={handleSubmit}
-              className="w-full h-12 rounded-full text-[15px] font-semibold text-white cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-35 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              style={{ background: "var(--gradient-primary)", boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)" }}
+              className="w-full h-12 rounded-[22px] text-[15px] font-semibold text-[#2C3400] cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-35 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              style={{ background: "var(--gradient-primary)", boxShadow: "0 10px 24px -6px rgba(249,255,208,0.18), inset 0 1px 0 rgba(255,255,255,0.4)" }}
             >
               {isPending ? <Loader2 size={18} className="animate-spin" /> : <Plus size={18} strokeWidth={2.5} />}
               {t("medications.add_medication")}

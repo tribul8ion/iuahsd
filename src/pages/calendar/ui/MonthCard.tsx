@@ -49,7 +49,7 @@ export function MonthCard({
 
   return (
     <div
-      className="glass rounded-[26px]"
+      className="glass rounded-[24px]"
       style={{ padding: "16px" }}
     >
       <div className="flex items-center justify-between" style={{ marginBottom: 12 }}>
@@ -58,15 +58,15 @@ export function MonthCard({
           disabled={!canGoPrev}
           className="cursor-pointer w-8 h-8 rounded-full flex items-center justify-center disabled:opacity-35 disabled:cursor-not-allowed"
           style={{
-            backgroundColor: "rgba(255,255,255,0.65)",
-            border: "1px solid rgba(255,255,255,0.7)",
-            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.7)",
+            backgroundColor: "rgba(255,255,255,0.07)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)",
           }}
           aria-label={t("calendar.prev_month")}
         >
-          <ChevronLeft size={16} color="#57534E" strokeWidth={2} />
+          <ChevronLeft size={16} color="var(--color-text-secondary)" strokeWidth={2} />
         </button>
-        <p className="text-[15px] font-bold capitalize" style={{ color: "#1C1917" }}>
+        <p className="text-[15px] font-bold capitalize" style={{ color: "var(--color-text)" }}>
           {monthLabel}
         </p>
         <button
@@ -74,13 +74,13 @@ export function MonthCard({
           disabled={!canGoNext}
           className="cursor-pointer w-8 h-8 rounded-full flex items-center justify-center disabled:opacity-35 disabled:cursor-not-allowed"
           style={{
-            backgroundColor: "rgba(255,255,255,0.65)",
-            border: "1px solid rgba(255,255,255,0.7)",
-            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.7)",
+            backgroundColor: "rgba(255,255,255,0.07)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)",
           }}
           aria-label={t("calendar.next_month")}
         >
-          <ChevronRight size={16} color="#57534E" strokeWidth={2} />
+          <ChevronRight size={16} color="var(--color-text-secondary)" strokeWidth={2} />
         </button>
       </div>
 
@@ -89,7 +89,7 @@ export function MonthCard({
           <p
             key={label}
             className="text-center text-[10px] font-semibold uppercase"
-            style={{ color: "#A8A29E" }}
+            style={{ color: "var(--color-text-hint)" }}
           >
             {label}
           </p>
@@ -130,7 +130,7 @@ export function MonthCard({
                 <span
                   className="text-[13px]"
                   style={{
-                    color: isToday ? "#FFFFFF" : "#1C1917",
+                    color: isToday ? "#2C3400" : "var(--color-text)",
                     fontWeight: isToday || isSelected ? 700 : 500,
                   }}
                 >
@@ -151,7 +151,7 @@ export function MonthCard({
                   />
                 ))}
                 {hasOverflow && (
-                  <span className="text-[8px] font-bold leading-none" style={{ color: "#A8A29E" }}>
+                  <span className="text-[8px] font-bold leading-none" style={{ color: "var(--color-text-hint)" }}>
                     +
                   </span>
                 )}
@@ -168,7 +168,7 @@ export function MonthCard({
               className="rounded-full"
               style={{ width: 6, height: 6, backgroundColor: KIND_DOT_COLORS[kind] }}
             />
-            <span className="text-[11px]" style={{ color: "#A8A29E" }}>
+            <span className="text-[11px]" style={{ color: "var(--color-text-hint)" }}>
               {t(`calendar.legend_${kind}`)}
             </span>
           </div>

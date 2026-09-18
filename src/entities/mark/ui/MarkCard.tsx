@@ -11,9 +11,9 @@ interface MarkCardProps {
   tag?: string | null;
 }
 
-const HABIT_COLORS = { icon: "#EA580C", bg: "#FFF7ED" };
-const TASK_COLORS = { icon: "#7C3AED", bg: "#F1EDFD" };
-const DOC_COLORS = { icon: "#E11D48", bg: "#FFF1F2" };
+const HABIT_COLORS = { icon: "#F26D21", bg: "#2C2C2E" };
+const TASK_COLORS = { icon: "#A78BFA", bg: "#2C2C2E" };
+const DOC_COLORS = { icon: "#FB7185", bg: "#2C2C2E" };
 
 const KIND_ICONS: Partial<Record<string, LucideIcon>> = {
   task: ListTodo,
@@ -33,18 +33,19 @@ export function MarkCard({ mark, entryName, subLabel, after, tag }: MarkCardProp
   const isHabit = mark.entry_kind === "habit";
   const slot = daySlotForTime(mark.entry_time);
   const Icon = isMed ? DAY_SLOT_ICONS[slot] : KIND_ICONS[mark.entry_kind] ?? Clock;
-  const colors = isMed ? DAY_SLOT_COLORS[slot] : KIND_COLORS[mark.entry_kind] ?? HABIT_COLORS;
-  const tileBg = isHabit ? (tag ? HABIT_COLORS.bg : "#F5F5F4") : colors.bg;
+  const colors = isMed
+    ? { icon: DAY_SLOT_COLORS[slot].icon, bg: "#2C2C2E" }
+    : (KIND_COLORS[mark.entry_kind] ?? HABIT_COLORS);
   const medColorHex = isMed ? colorHex(mark.entry_color) : null;
 
   return (
     <div
       className="glass rounded-[24px] flex items-center"
-      style={{ gap: 12, padding: "0 16px", height: 72 }}
+      style={{ gap: 14, padding: "0 16px", height: 72 }}
     >
       <div
-        className="flex-shrink-0 w-10 h-10 rounded-[14px] flex items-center justify-center"
-        style={{ backgroundColor: tileBg }}
+        className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
+        style={{ backgroundColor: colors.bg }}
       >
         {isHabit ? (
           <span style={{ fontSize: 16, lineHeight: 1 }} aria-hidden="true">
@@ -59,7 +60,7 @@ export function MarkCard({ mark, entryName, subLabel, after, tag }: MarkCardProp
         <div className="flex items-center" style={{ gap: 6 }}>
           <p
             className="text-[15px] font-semibold leading-snug truncate"
-            style={{ color: entryName === null ? "#A8A29E" : "#1C1917" }}
+            style={{ color: entryName === null ? "var(--color-text-hint)" : "var(--color-text)" }}
           >
             {entryName ?? t("today.corrupted_entry")}
           </p>
@@ -71,7 +72,7 @@ export function MarkCard({ mark, entryName, subLabel, after, tag }: MarkCardProp
             />
           )}
         </div>
-        <p className="text-[12px]" style={{ color: "#A8A29E", marginTop: 2 }}>
+        <p className="text-[12px]" style={{ color: "var(--color-text-hint)", marginTop: 2 }}>
           {subLabel}
         </p>
       </div>

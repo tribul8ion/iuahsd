@@ -32,17 +32,17 @@ export function NoteRow({ note, onClick }: NoteRowProps) {
       <span className="flex-1 min-w-0 text-left">
         <p
           className="text-[15px] font-semibold truncate"
-          style={{ color: note.corrupted ? "#A8A29E" : "#1C1917" }}
+          style={{ color: note.corrupted ? "var(--color-text-hint)" : "var(--color-text)" }}
         >
           {note.corrupted
             ? t("today.corrupted_entry")
             : note.name || t("note.untitled")}
         </p>
       </span>
-      <span className="text-[12px] flex-shrink-0" style={{ color: "#A8A29E" }}>
+      <span className="text-[12px] flex-shrink-0" style={{ color: "var(--color-text-hint)" }}>
         {formatDate(note.created_at, i18n.language)}
       </span>
-      <Lock size={14} color="#A8A29E" strokeWidth={1.8} style={{ flexShrink: 0 }} />
+      <Lock size={14} color="var(--color-text-hint)" strokeWidth={1.8} style={{ flexShrink: 0 }} />
     </button>
   );
 }

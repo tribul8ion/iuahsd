@@ -26,18 +26,18 @@ export function DeleteAccountModal({
         <div className="flex flex-col items-center pt-2">
           <div
             className="w-14 h-14 rounded-full flex items-center justify-center"
-            style={{ backgroundColor: "#FFF1F2" }}
+            style={{ backgroundColor: "rgba(251,94,126,0.14)" }}
           >
-            <Trash2 size={26} color="#E11D48" strokeWidth={1.8} />
+            <Trash2 size={26} color="#FB7185" strokeWidth={1.8} />
           </div>
           <div className="h-4" />
-          <h2 className="text-[18px] font-bold text-center leading-snug" style={{ color: "#1C1917" }}>
+          <h2 className="text-[18px] font-bold text-center leading-snug" style={{ color: "var(--color-text)" }}>
             {t("settings.delete_account_confirm")}
           </h2>
           <div className="h-1.5" />
           <p
             className="text-[14px] text-center leading-[1.5]"
-            style={{ color: "#A8A29E", maxWidth: 280 }}
+            style={{ color: "var(--color-text-hint)", maxWidth: 280 }}
           >
             {t("settings.delete_account_description")}
           </p>
@@ -47,7 +47,7 @@ export function DeleteAccountModal({
           <button
             onClick={onClose}
             className="flex-1 h-12 rounded-[14px] text-[15px] font-semibold cursor-pointer transition-colors duration-150 active:opacity-80"
-            style={{ backgroundColor: "#F5F5F4", color: "#1C1917" }}
+            style={{ backgroundColor: "rgba(255,255,255,0.06)", color: "var(--color-text)" }}
           >
             {t("common.cancel")}
           </button>

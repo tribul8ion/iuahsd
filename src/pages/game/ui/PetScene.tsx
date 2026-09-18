@@ -24,7 +24,7 @@ function CosmeticSlotTile({ slot }: { slot: CosmeticSlot }) {
     <div
       className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0"
       style={{
-        backgroundColor: slot.earned ? "#ECFDF5" : "#F5F5F4",
+        backgroundColor: slot.earned ? "rgba(249,255,208,0.12)" : "rgba(255,255,255,0.06)",
         border: slot.earned ? "2px solid #34D399" : "2px solid transparent",
         filter: slot.earned ? "none" : "grayscale(1)",
         opacity: slot.earned ? 1 : 0.55,
@@ -62,7 +62,7 @@ export function PetScene() {
   return (
     <div className="flex flex-col" style={{ gap: 12 }}>
       <div
-        className="glass-mint rounded-[26px] flex flex-col items-center text-center"
+        className="glass-mint rounded-[24px] flex flex-col items-center text-center"
         style={{ padding: "24px 20px", gap: 8 }}
       >
         <div
@@ -70,18 +70,19 @@ export function PetScene() {
           style={{
             width: 96,
             height: 96,
-            background: "radial-gradient(circle at 35% 30%, #FFFFFF 0%, #D9F5E6 100%)",
-            boxShadow: "0 8px 20px -8px rgba(5,150,105,0.35), inset 0 -4px 8px rgba(5,150,105,0.08)",
+            background: "radial-gradient(circle at 35% 30%, rgba(249,255,208,0.22) 0%, rgba(249,255,208,0.08) 70%)",
+            border: "1px solid rgba(249,255,208,0.25)",
+            boxShadow: "0 10px 24px -10px rgba(249,255,208,0.3), inset 0 1px 0 rgba(249,255,208,0.18)",
           }}
         >
           <span style={{ fontSize: 56, lineHeight: 1 }} aria-hidden="true">
             {stageEmoji}
           </span>
         </div>
-        <p className="text-[16px] font-bold" style={{ color: "#1C1917" }}>
+        <p className="text-[16px] font-bold" style={{ color: "var(--color-text)" }}>
           {t("pet.title_line", { name: t("pet.plant_name"), level: pet.level })}
         </p>
-        <p className="text-[13px]" style={{ color: "#57534E" }}>
+        <p className="text-[13px]" style={{ color: "var(--color-text-secondary)" }}>
           {t(`pet.mood.${mood}`)}
         </p>
 
@@ -90,7 +91,7 @@ export function PetScene() {
             className="w-full rounded-full overflow-hidden"
             style={{
               height: 10,
-              backgroundColor: "#E4EFE9",
+              backgroundColor: "rgba(255,255,255,0.1)",
               boxShadow: "inset 0 1px 2px rgba(30,41,59,0.06)",
             }}
           >
@@ -102,14 +103,14 @@ export function PetScene() {
               style={{
                 width: `${barPct}%`,
                 height: "100%",
-                borderRadius: 999,
+                borderRadius: 22,
                 background: "var(--gradient-primary)",
-                boxShadow: "0 0 10px rgba(52,211,153,0.55)",
+                boxShadow: "0 0 12px rgba(249,255,208,0.5)",
                 transition: "width 400ms ease",
               }}
             />
           </div>
-          <p className="text-[12px] mt-1" style={{ color: "#A8A29E" }}>
+          <p className="text-[12px] mt-1" style={{ color: "var(--color-text-hint)" }}>
             {ceiling
               ? t("pet.xp_label", { xp: pet.xp, nextLevel: pet.level + 1, remaining: ceiling - pet.xp })
               : t("pet.xp_label_max", { xp: pet.xp })}
@@ -127,10 +128,10 @@ export function PetScene() {
         className="glass rounded-[22px]"
         style={{ padding: "16px 20px" }}
       >
-        <p className="text-[13px] font-semibold" style={{ color: "#1C1917", marginBottom: 4 }}>
+        <p className="text-[13px] font-semibold" style={{ color: "var(--color-text)", marginBottom: 4 }}>
           {t("pet.about_title")}
         </p>
-        <p className="text-[13px]" style={{ color: "#57534E" }}>
+        <p className="text-[13px]" style={{ color: "var(--color-text-secondary)" }}>
           {t("pet.about_body")}
         </p>
       </div>

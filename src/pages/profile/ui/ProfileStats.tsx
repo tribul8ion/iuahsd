@@ -13,10 +13,10 @@ function StatColumn({ value, label }: { value: string; label: string }) {
       className="flex-1 flex flex-col items-center text-center min-w-0"
       style={{ padding: "14px 8px", gap: 4 }}
     >
-      <span className="text-[18px] font-bold truncate" style={{ color: "#1C1917" }}>
+      <span className="text-[18px] font-bold truncate" style={{ color: "var(--color-text)" }}>
         {value}
       </span>
-      <span className="text-[11px] leading-tight" style={{ color: "#A8A29E" }}>
+      <span className="text-[11px] leading-tight" style={{ color: "var(--color-text-hint)" }}>
         {label}
       </span>
     </div>
@@ -36,12 +36,12 @@ export function ProfileStats({
       className="glass rounded-[24px] flex items-stretch"
     >
       <StatColumn value={String(entriesCount)} label={t("profile.stats_entries")} />
-      <div style={{ width: 1, backgroundColor: "#F5F5F4" }} />
+      <div style={{ width: 1, backgroundColor: "rgba(255,255,255,0.06)" }} />
       <StatColumn
         value={t("achievements.counter", { count: achievementsEarned, total: achievementsTotal })}
         label={t("profile.stats_achievements")}
       />
-      <div style={{ width: 1, backgroundColor: "#F5F5F4" }} />
+      <div style={{ width: 1, backgroundColor: "rgba(255,255,255,0.06)" }} />
       <StatColumn
         value={bestStreak > 0 ? `🔥 ${bestStreak}` : "—"}
         label={t("profile.stats_streak")}

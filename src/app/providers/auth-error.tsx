@@ -18,7 +18,7 @@ export function AuthErrorScreen() {
       <div className="max-w-sm flex flex-col items-center">
         <h1
           className="text-[26px] font-bold"
-          style={{ color: "#1C1917", lineHeight: 1.2 }}
+          style={{ color: "var(--color-text)", lineHeight: 1.2 }}
         >
           {t("auth_error.title")}
         </h1>
@@ -27,7 +27,7 @@ export function AuthErrorScreen() {
 
         <p
           className="text-[15px] font-normal"
-          style={{ color: "#A8A29E", lineHeight: 1.5 }}
+          style={{ color: "var(--color-text-hint)", lineHeight: 1.5 }}
         >
           {t("auth_error.message")}
         </p>
@@ -40,10 +40,10 @@ export function AuthErrorScreen() {
           className="w-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-[0.98]"
           style={{
             height: 52,
-            borderRadius: 999,
+            borderRadius: 22,
             background: "var(--gradient-primary)",
-            boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)",
-            color: "#FFFFFF",
+            boxShadow: "0 10px 24px -6px rgba(249,255,208,0.18), inset 0 1px 0 rgba(255,255,255,0.4)",
+            color: "#2C3400",
             fontSize: 16,
             fontWeight: 700,
           }}

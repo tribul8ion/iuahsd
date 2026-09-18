@@ -88,11 +88,11 @@ export function NoteModal({ isOpen, onClose, note }: NoteModalProps) {
     <BottomSheet isOpen={isOpen} onClose={onClose}>
       <div style={{ padding: "8px 20px calc(24px + env(safe-area-inset-bottom)) 20px" }}>
         <div className="flex items-center justify-between h-12 mb-2">
-          <h2 className="text-[18px] font-bold" style={{ color: "#1C1917" }}>
+          <h2 className="text-[18px] font-bold" style={{ color: "var(--color-text)" }}>
             {isEditMode ? t("note.edit_title") : t("note.add_title")}
           </h2>
           <button onClick={onClose} className="cursor-pointer p-1" aria-label="close">
-            <X size={20} color="#A8A29E" strokeWidth={2} />
+            <X size={20} color="var(--color-text-hint)" strokeWidth={2} />
           </button>
         </div>
 
@@ -100,11 +100,11 @@ export function NoteModal({ isOpen, onClose, note }: NoteModalProps) {
           <div className="flex items-center gap-2">
             <div
               className="flex-shrink-0 w-9 h-9 rounded-[12px] flex items-center justify-center"
-              style={{ backgroundColor: "#FEF9C3" }}
+              style={{ backgroundColor: "rgba(253,224,71,0.12)" }}
             >
               <StickyNote size={18} color="#CA8A04" strokeWidth={1.8} />
             </div>
-            <p className="text-[13px] flex items-center gap-1" style={{ color: "#A8A29E" }}>
+            <p className="text-[13px] flex items-center gap-1" style={{ color: "var(--color-text-hint)" }}>
               <Lock size={12} strokeWidth={2} />
               {t("note.encrypted_hint")}
             </p>
@@ -114,7 +114,7 @@ export function NoteModal({ isOpen, onClose, note }: NoteModalProps) {
             <FieldLabel>{t("note.title_prompt")}</FieldLabel>
             <div
               className="flex items-center rounded-xl"
-              style={{ backgroundColor: "#F5F5F4", padding: "0 14px", height: 48 }}
+              style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "0 14px", height: 48 }}
             >
               <input
                 id="note-title"
@@ -123,8 +123,8 @@ export function NoteModal({ isOpen, onClose, note }: NoteModalProps) {
                 onChange={handleNameChange}
                 placeholder={t("note.title_placeholder")}
                 maxLength={TITLE_MAX_LENGTH}
-                className="w-full text-[15px] bg-transparent outline-none placeholder:text-[#D6D3D1]"
-                style={{ color: "#1C1917" }}
+                className="w-full text-[15px] bg-transparent outline-none placeholder:text-[rgba(255,255,255,0.28)]"
+                style={{ color: "var(--color-text)" }}
                 autoFocus
               />
             </div>
@@ -135,7 +135,7 @@ export function NoteModal({ isOpen, onClose, note }: NoteModalProps) {
               <FieldLabel marginBottom={0}>{t("note.text_prompt")}</FieldLabel>
               <span
                 className="text-[11px] font-medium"
-                style={{ color: isWarnLength ? "#EA580C" : "#A8A29E" }}
+                style={{ color: isWarnLength ? "#EA580C" : "var(--color-text-hint)" }}
               >
                 {t("note.chars_remaining", { count: remainingChars })}
               </span>
@@ -147,12 +147,12 @@ export function NoteModal({ isOpen, onClose, note }: NoteModalProps) {
               onChange={handleTextChange}
               placeholder={t("note.text_placeholder")}
               rows={4}
-              className="w-full text-[15px] bg-transparent outline-none placeholder:text-[#D6D3D1] resize-none"
+              className="w-full text-[15px] bg-transparent outline-none placeholder:text-[rgba(255,255,255,0.28)] resize-none"
               style={{
-                backgroundColor: "#F5F5F4",
+                backgroundColor: "rgba(255,255,255,0.06)",
                 padding: "12px 14px",
                 borderRadius: 12,
-                color: "#1C1917",
+                color: "var(--color-text)",
                 minHeight: 96,
                 maxHeight: 320,
                 overflowY: "auto",
@@ -178,8 +178,8 @@ export function NoteModal({ isOpen, onClose, note }: NoteModalProps) {
           <button
             disabled={!isValid || isPending}
             onClick={handleSubmit}
-            className="w-full h-12 rounded-[14px] text-[15px] font-semibold text-white cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-35 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-            style={{ background: "var(--gradient-primary)", boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)" }}
+            className="w-full h-12 rounded-[14px] text-[15px] font-semibold text-[#2C3400] cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-35 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            style={{ background: "var(--gradient-primary)", boxShadow: "0 10px 24px -6px rgba(249,255,208,0.18), inset 0 1px 0 rgba(255,255,255,0.4)" }}
           >
             {isPending ? (
               <Loader2 size={18} className="animate-spin" />
@@ -205,14 +205,14 @@ export function NoteModal({ isOpen, onClose, note }: NoteModalProps) {
               <button
                 onClick={() => setConfirmingDelete(false)}
                 className="flex-1 h-11 rounded-[14px] text-[14px] font-semibold cursor-pointer"
-                style={{ backgroundColor: "#F5F5F4", color: "#1C1917" }}
+                style={{ backgroundColor: "rgba(255,255,255,0.06)", color: "var(--color-text)" }}
               >
                 {t("common.cancel")}
               </button>
               <button
                 onClick={handleDelete}
                 disabled={isDeleting}
-                className="flex-1 h-11 rounded-[14px] text-[14px] font-semibold text-white cursor-pointer disabled:opacity-40 flex items-center justify-center gap-1.5"
+                className="flex-1 h-11 rounded-[14px] text-[14px] font-semibold text-[#2C3400] cursor-pointer disabled:opacity-40 flex items-center justify-center gap-1.5"
                 style={{ backgroundColor: "#E11D48" }}
               >
                 {isDeleting && <Loader2 size={15} className="animate-spin" />}

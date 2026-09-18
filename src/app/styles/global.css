@@ -1,54 +1,55 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #059669;
-  --color-primary-light: #34D399;
-  --color-primary-dark: #047857;
-  --color-primary-soft: #ECFDF5;
+  /* Палитра «Performance Cockpit»: нейтральный уголь + бледно-лаймовый акцент */
+  --color-primary: #F9FFD0;
+  --color-primary-light: #FEFFE2;
+  --color-primary-dark: #D0EB3C;
+  --color-primary-soft: rgba(249, 255, 208, 0.1);
+  --color-primary-dim: #B8D220;
+  --color-on-primary: #2C3400;
 
-  --color-accent: #F97316;
-  --color-accent-soft: #FFF7ED;
+  --color-accent: #F26D21;
+  --color-accent-soft: rgba(242, 109, 33, 0.14);
 
-  --color-success: #16A34A;
-  --color-success-soft: #F0FDF4;
-  --color-danger: #E11D48;
-  --color-danger-soft: #FFF1F2;
-  --color-warning: #D97706;
-  --color-warning-soft: #FFFBEB;
+  --color-success: #F9FFD0;
+  --color-success-soft: rgba(249, 255, 208, 0.1);
+  --color-danger: #FFB4AB;
+  --color-danger-soft: rgba(255, 180, 171, 0.12);
+  --color-warning: #F26D21;
+  --color-warning-soft: rgba(242, 109, 33, 0.12);
 
-  --color-surface: #F2F6F4;
-  --color-surface-card: #FFFFFF;
-  --color-surface-elevated: #FFFFFF;
-  --color-surface-muted: #F5F5F4;
+  --color-surface: #131313;
+  --color-surface-card: #1C1C1E;
+  --color-surface-elevated: #242425;
+  --color-surface-muted: #2C2C2E;
 
-  --color-text: #1C1917;
-  --color-text-secondary: #57534E;
-  --color-text-hint: #A8A29E;
+  --color-text: #E5E2E1;
+  --color-text-secondary: #C6C9AE;
+  --color-text-hint: rgba(198, 201, 174, 0.55);
 
-  --color-border: #E7E5E4;
-  --color-border-light: #F5F5F4;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-light: rgba(255, 255, 255, 0.04);
 
-  --color-overlay: rgba(28, 25, 23, 0.45);
+  --color-overlay: rgba(6, 6, 6, 0.62);
 
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Hanken Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  --shadow-xs: 0 1px 2px rgba(30, 41, 59, 0.05);
-  --shadow-card: 0 1px 2px rgba(30, 41, 59, 0.05), 0 8px 20px -12px rgba(30, 41, 59, 0.1);
-  --shadow-elevated: 0 6px 20px -6px rgba(30, 41, 59, 0.12);
-  --shadow-modal: 0 16px 48px -8px rgba(30, 41, 59, 0.18);
-  --shadow-fab: 0 8px 22px -4px rgba(5, 150, 105, 0.45);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3), 0 18px 44px -18px rgba(0, 0, 0, 0.55);
+  --shadow-elevated: 0 8px 24px -6px rgba(0, 0, 0, 0.55);
+  --shadow-modal: 0 20px 56px -8px rgba(0, 0, 0, 0.7);
+  --shadow-fab: 0 10px 24px -6px rgba(249, 255, 208, 0.22);
 
   --animate-slide-up: slide-up 280ms cubic-bezier(0.32, 0.72, 0, 1);
   --animate-fade-in: fade-in 200ms ease-out;
   --animate-scale-in: scale-in 220ms cubic-bezier(0.32, 0.72, 0, 1);
   --animate-confetti-fall: confetti-fall 1400ms ease-in forwards;
 
-  --gradient-header: linear-gradient(150deg, #0B7A6B 0%, #059669 44%, #0E9590 100%);
-  --gradient-primary:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 46%),
-    linear-gradient(135deg, #3BDCA0 0%, #059669 88%);
+  --gradient-header: linear-gradient(180deg, #1C1C1E 0%, #131313 100%);
+  --gradient-primary: #F9FFD0;
   --gradient-card-mint:
-    linear-gradient(165deg, rgba(255, 255, 255, 0.82) 0%, rgba(226, 250, 240, 0.62) 100%);
+    linear-gradient(165deg, rgba(249, 255, 208, 0.12) 0%, rgba(249, 255, 208, 0.05) 100%);
 }
 
 @keyframes slide-up {
@@ -72,14 +73,14 @@
 }
 
 :root {
-  --tg-theme-bg-color: var(--tg-theme-bg-color, #F2F6F4);
-  --tg-theme-text-color: var(--tg-theme-text-color, #1C1917);
-  --tg-theme-hint-color: var(--tg-theme-hint-color, #A8A29E);
-  --tg-theme-link-color: var(--tg-theme-link-color, #059669);
-  --tg-theme-button-color: var(--tg-theme-button-color, #059669);
-  --tg-theme-button-text-color: var(--tg-theme-button-text-color, #ffffff);
-  --tg-theme-secondary-bg-color: var(--tg-theme-secondary-bg-color, #F5F5F4);
-  --tg-theme-destructive-text-color: var(--tg-theme-destructive-text-color, #E11D48);
+  --tg-theme-bg-color: var(--tg-theme-bg-color, #131313);
+  --tg-theme-text-color: var(--tg-theme-text-color, #E5E2E1);
+  --tg-theme-hint-color: var(--tg-theme-hint-color, rgba(198, 201, 174, 0.55));
+  --tg-theme-link-color: var(--tg-theme-link-color, #F9FFD0);
+  --tg-theme-button-color: var(--tg-theme-button-color, #F9FFD0);
+  --tg-theme-button-text-color: var(--tg-theme-button-text-color, #2C3400);
+  --tg-theme-secondary-bg-color: var(--tg-theme-secondary-bg-color, #1C1C1E);
+  --tg-theme-destructive-text-color: var(--tg-theme-destructive-text-color, #FFB4AB);
 }
 
 * {
@@ -96,7 +97,7 @@ html, body, #root {
 
 body {
   font-family: var(--font-sans);
-  background-color: #E9F2EE;
+  background-color: #131313;
   color: var(--tg-theme-text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -106,50 +107,40 @@ body {
   line-height: 1.5;
 }
 
-/* Лёгкая «аврора»: цветные свечения, над которыми лежит стекло */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(65% 42% at 12% 0%, rgba(45, 212, 191, 0.38) 0%, transparent 62%),
-    radial-gradient(55% 38% at 92% 6%, rgba(96, 165, 250, 0.3) 0%, transparent 62%),
-    radial-gradient(50% 30% at 50% 52%, rgba(216, 240, 255, 0.35) 0%, transparent 70%),
-    radial-gradient(80% 48% at 50% 108%, rgba(52, 211, 153, 0.34) 0%, transparent 66%),
-    linear-gradient(180deg, #EDF5F1 0%, #E6F0EB 100%);
-}
-
-/* «Жидкое стекло»: полупрозрачная панель с блюром, рамкой и бликом сверху */
+/* Плоская угольная карточка */
 .glass {
-  background: linear-gradient(165deg, rgba(255, 255, 255, 0.74) 0%, rgba(255, 255, 255, 0.54) 100%);
-  -webkit-backdrop-filter: blur(20px) saturate(1.8);
-  backdrop-filter: blur(20px) saturate(1.8);
-  border: 1px solid rgba(255, 255, 255, 0.62);
+  background-color: #1C1C1E;
+  border: 1px solid rgba(255, 255, 255, 0.045);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.78),
-    0 2px 6px rgba(16, 24, 40, 0.05),
-    0 18px 44px -18px rgba(13, 84, 73, 0.25);
+    inset 0 1px 0 rgba(255, 255, 255, 0.045),
+    0 2px 6px rgba(0, 0, 0, 0.28),
+    0 18px 44px -18px rgba(0, 0, 0, 0.55);
 }
 
-/* Стеклянная мятная панель для акцентных карточек */
+/* Акцентная бледно-лаймовая панель */
 .glass-mint {
   background: var(--gradient-card-mint);
-  -webkit-backdrop-filter: blur(20px) saturate(1.8);
-  backdrop-filter: blur(20px) saturate(1.8);
-  border: 1px solid rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(249, 255, 208, 0.14);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.85),
-    0 2px 6px rgba(16, 24, 40, 0.05),
-    0 18px 44px -16px rgba(5, 150, 105, 0.28);
+    inset 0 1px 0 rgba(249, 255, 208, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.24);
 }
 
-/* Лёгкий стеклянный элемент внутри шторок (без блюра — лист сам стеклянный) */
+/* Элемент списка внутри листа */
 .glass-item {
-  background: rgba(255, 255, 255, 0.52);
-  border: 1px solid rgba(255, 255, 255, 0.66);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Капсовый лейбл секций, как в референсе */
+.section-label {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
 }
 
 a {

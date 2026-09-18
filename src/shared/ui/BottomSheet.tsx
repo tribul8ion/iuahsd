@@ -35,7 +35,7 @@ export function BottomSheet({ isOpen, onClose, children }: BottomSheetProps) {
     <div
       className="fixed inset-0 z-[1000] flex items-end justify-center animate-fade-in"
       style={{
-        backgroundColor: "rgba(28, 25, 23, 0.42)",
+        backgroundColor: "rgba(6, 8, 3, 0.62)",
         backdropFilter: "blur(3px)",
         WebkitBackdropFilter: "blur(3px)",
       }}
@@ -52,10 +52,8 @@ export function BottomSheet({ isOpen, onClose, children }: BottomSheetProps) {
           maxHeight: "85dvh",
           overflowY: "auto",
           overscrollBehavior: "contain",
-          background: "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.82) 100%)",
-          backdropFilter: "blur(24px) saturate(1.8)",
-          WebkitBackdropFilter: "blur(24px) saturate(1.8)",
-          borderTop: "1px solid rgba(255,255,255,0.7)",
+          backgroundColor: "#1B200D",
+          borderTop: "1px solid rgba(249,255,208,0.16)",
         }}
         onClick={(e) => e.stopPropagation()}
         onFocusCapture={(e) => {
@@ -70,7 +68,7 @@ export function BottomSheet({ isOpen, onClose, children }: BottomSheetProps) {
         }}
       >
         <div className="flex justify-center" style={{ padding: "10px 0 8px 0" }}>
-          <div className="rounded-full" style={{ width: 40, height: 5, backgroundColor: "rgba(30,41,59,0.16)" }} />
+          <div className="rounded-full" style={{ width: 40, height: 5, backgroundColor: "rgba(255,255,255,0.18)" }} />
         </div>
         {children}
       </div>

@@ -16,7 +16,7 @@ function chipStyle(selected: boolean): React.CSSProperties {
     alignItems: "center",
     justifyContent: "center",
     fontSize: 18,
-    backgroundColor: selected ? "#ECFDF5" : "#F5F5F4",
+    backgroundColor: selected ? "rgba(249,255,208,0.12)" : "rgba(255,255,255,0.06)",
     border: selected ? "2px solid #059669" : "2px solid transparent",
   };
 }
@@ -28,7 +28,7 @@ export function TagPicker({ value, onChange }: TagPickerProps) {
     <div>
       <p
         className="text-[11px] font-semibold uppercase"
-        style={{ color: "#A8A29E", letterSpacing: "1px", marginBottom: 8 }}
+        style={{ color: "var(--color-text-hint)", letterSpacing: "1px", marginBottom: 8 }}
       >
         {t("habit.tag_prompt")}
       </p>
@@ -57,7 +57,7 @@ export function TagPicker({ value, onChange }: TagPickerProps) {
           </button>
         ))}
       </div>
-      <p className="text-[11px]" style={{ color: "#A8A29E", marginTop: 6 }}>
+      <p className="text-[11px]" style={{ color: "var(--color-text-hint)", marginTop: 6 }}>
         {t("habit.tag_hint")}
       </p>
     </div>

@@ -25,7 +25,7 @@ export function DosageInput({
   return (
     <div
       className="flex items-center rounded-xl"
-      style={{ backgroundColor: "#F5F5F4", padding: "0 14px", height: 48, gap: 8 }}
+      style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "0 14px", height: 48, gap: 8 }}
     >
       <input
         type="text"
@@ -34,16 +34,16 @@ export function DosageInput({
         onChange={(e) => handleChange(e.target.value)}
         placeholder={amountPlaceholder}
         maxLength={5}
-        className="flex-1 min-w-0 text-[15px] bg-transparent outline-none placeholder:text-[#D6D3D1]"
-        style={{ color: "#1C1917" }}
+        className="flex-1 min-w-0 text-[15px] bg-transparent outline-none placeholder:text-[rgba(255,255,255,0.28)]"
+        style={{ color: "var(--color-text)" }}
         aria-label="dosage-amount"
       />
       <button
         onClick={onOpenUnitModal}
         className="h-9 rounded-full text-[13px] font-medium cursor-pointer flex-shrink-0"
         style={{
-          backgroundColor: "#E7E5E4",
-          color: "#1C1917",
+          backgroundColor: "rgba(255,255,255,0.1)",
+          color: "var(--color-text)",
           padding: "0 14px",
           maxWidth: "50%",
         }}

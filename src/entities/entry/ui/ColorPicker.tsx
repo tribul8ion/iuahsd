@@ -33,7 +33,7 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
           aria-label="color-none"
           aria-pressed={value === null}
           className="cursor-pointer"
-          style={swatchStyle(value === null, "#F5F5F4")}
+          style={swatchStyle(value === null, "rgba(255,255,255,0.06)")}
         >
           <span
             aria-hidden="true"
@@ -43,7 +43,7 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
               left: "50%",
               width: 26,
               height: 2,
-              backgroundColor: "#D6D3D1",
+              backgroundColor: "rgba(255,255,255,0.25)",
               transform: "translate(-50%, -50%) rotate(-45deg)",
             }}
           />
@@ -60,7 +60,7 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
           />
         ))}
       </div>
-      <p className="text-[11px]" style={{ color: "#A8A29E", marginTop: 6 }}>
+      <p className="text-[11px]" style={{ color: "var(--color-text-hint)", marginTop: 6 }}>
         {t("med_color.hint")}
       </p>
     </div>

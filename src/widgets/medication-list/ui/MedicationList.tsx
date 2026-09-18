@@ -39,10 +39,10 @@ export function MedicationList({
   if (!medications || medications.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center gap-3 text-center" style={{ minHeight: "calc(100vh - 160px - 96px - 68px)" }}>
-        <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ backgroundColor: "#F5F5F4" }}>
-          <Pill size={28} color="#A8A29E" strokeWidth={1.5} />
+        <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
+          <Pill size={28} color="var(--color-text-hint)" strokeWidth={1.5} />
         </div>
-        <p className="text-[14px]" style={{ color: "#A8A29E" }}>{t("medications.no_medications")}</p>
+        <p className="text-[14px]" style={{ color: "var(--color-text-hint)" }}>{t("medications.no_medications")}</p>
       </div>
     );
   }

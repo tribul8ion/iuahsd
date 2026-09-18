@@ -5,62 +5,59 @@ interface ProfileHeaderProps {
   memberSinceDate: string | null;
 }
 
+function initialsOf(name: string): string {
+  return name
+    .trim()
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((part) => part.charAt(0).toUpperCase())
+    .join("");
+}
+
 export function ProfileHeader({ displayName, memberSinceDate }: ProfileHeaderProps) {
   const { t } = useTranslation();
 
   return (
     <header
-      className="rounded-b-[36px] flex flex-col justify-center gap-1 overflow-hidden"
+      className="flex items-center flex-shrink-0"
       style={{
-        position: "relative",
-        background: "var(--gradient-header)",
-        minHeight: 160,
-        padding: "52px 20px 24px 20px",
-        borderBottom: "1px solid rgba(255,255,255,0.22)",
-        boxShadow: "0 18px 40px -18px rgba(7, 94, 84, 0.45)",
+        backgroundColor: "#131313",
+        minHeight: 96,
+        padding: "56px 20px 16px 20px",
+        gap: 14,
+        borderBottom: "1px solid rgba(255,255,255,0.05)",
       }}
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none rounded-full"
+      <span
+        className="flex items-center justify-center rounded-full flex-shrink-0"
         style={{
-          position: "absolute",
-          top: -80,
-          right: -50,
-          width: 230,
-          height: 230,
-          background: "radial-gradient(circle, rgba(167,243,208,0.42) 0%, rgba(167,243,208,0) 66%)",
+          width: 48,
+          height: 48,
+          backgroundColor: "#2C2C2E",
+          border: "1px solid rgba(249,255,208,0.22)",
+          color: "#F9FFD0",
+          fontSize: 17,
+          fontWeight: 700,
+          letterSpacing: "0.02em",
         }}
-      />
-      <div
         aria-hidden="true"
-        className="pointer-events-none rounded-full"
-        style={{
-          position: "absolute",
-          bottom: -110,
-          left: "30%",
-          width: 240,
-          height: 240,
-          background: "radial-gradient(circle, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0) 70%)",
-        }}
-      />
-      <h1
-        className="text-[15px] font-semibold leading-tight"
-        style={{ color: "rgba(255,255,255,0.82)", letterSpacing: "0.2px" }}
       >
-        {t("profile.title")}
-      </h1>
-      <p
-        className="text-[26px] font-extrabold text-white leading-tight"
-        style={{ letterSpacing: "-0.4px" }}
-      >
-        {displayName}
-      </p>
-      {memberSinceDate && (
-        <p className="text-[13px] font-medium" style={{ color: "rgba(255,255,255,0.82)" }}>
-          {t("profile.member_since", { date: memberSinceDate })}
+        {initialsOf(displayName) || "·"}
+      </span>
+      <div className="flex flex-col min-w-0" style={{ gap: 2 }}>
+        <h1 className="section-label">{t("profile.title")}</h1>
+        <p
+          className="text-[20px] font-bold leading-tight uppercase truncate"
+          style={{ color: "var(--color-text)", letterSpacing: "-0.01em" }}
+        >
+          {displayName}
         </p>
-      )}
+        {memberSinceDate && (
+          <p className="text-[12px] font-medium" style={{ color: "var(--color-text-hint)" }}>
+            {t("profile.member_since", { date: memberSinceDate })}
+          </p>
+        )}
+      </div>
     </header>
   );
 }

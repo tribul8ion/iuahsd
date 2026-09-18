@@ -31,7 +31,7 @@ interface AdminStats {
 
 const CARD_SHADOW = "0 1px 2px rgba(30,41,59,0.05), 0 8px 20px -12px rgba(30,41,59,0.1)";
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-const BAR_COLORS = ["#D1FAE5", "#A7F3D0", "#6EE7B7", "#34D399", "#10B981", "#059669", "#34D399"];
+const BAR_COLORS = ["#D1FAE5", "#A7F3D0", "#6EE7B7", "#34D399", "#10B981", "#F9FFD0", "#34D399"];
 const AVATAR_COLORS = ["#D1FAE5", "#EDE9FE", "#FEF3C7"];
 
 function StatCard({ icon, iconColor, value, label }: {
@@ -43,11 +43,11 @@ function StatCard({ icon, iconColor, value, label }: {
   return (
     <div
       className="flex-1 flex flex-col rounded-2xl"
-      style={{ backgroundColor: "#FFFFFF", boxShadow: CARD_SHADOW, padding: 14, gap: 4 }}
+      style={{ backgroundColor: "rgba(255,255,255,0.05)", boxShadow: CARD_SHADOW, padding: 14, gap: 4 }}
     >
       <span style={{ color: iconColor }}>{icon}</span>
-      <span className="text-[22px] font-bold" style={{ color: "#1C1917" }}>{value}</span>
-      <span className="text-[11px] font-medium" style={{ color: "#A8A29E" }}>{label}</span>
+      <span className="text-[22px] font-bold" style={{ color: "var(--color-text)" }}>{value}</span>
+      <span className="text-[11px] font-medium" style={{ color: "var(--color-text-hint)" }}>{label}</span>
     </div>
   );
 }
@@ -59,8 +59,8 @@ function MetricCell({ value, label, valueColor }: {
 }) {
   return (
     <div className="flex-1 flex flex-col items-center justify-center" style={{ gap: 2 }}>
-      <span className="text-[22px] font-bold" style={{ color: valueColor ?? "#1C1917" }}>{value}</span>
-      <span className="text-[11px] font-medium" style={{ color: "#A8A29E" }}>{label}</span>
+      <span className="text-[22px] font-bold" style={{ color: valueColor ?? "var(--color-text)" }}>{value}</span>
+      <span className="text-[11px] font-medium" style={{ color: "var(--color-text-hint)" }}>{label}</span>
     </div>
   );
 }
@@ -86,7 +86,7 @@ export function AdminPage() {
   if (!stats) {
     return (
       <div className="flex items-center justify-center h-screen">
-        <p style={{ color: "#A8A29E" }}>{t("common.error")}</p>
+        <p style={{ color: "var(--color-text-hint)" }}>{t("common.error")}</p>
       </div>
     );
   }
@@ -105,7 +105,7 @@ export function AdminPage() {
         }}
       >
         <h1 className="text-[22px] font-bold text-white">{t("admin.title")}</h1>
-        <p className="text-[13px] font-medium" style={{ color: "#A8A29E" }}>
+        <p className="text-[13px] font-medium" style={{ color: "var(--color-text-hint)" }}>
           {t("admin.overview")}
         </p>
       </div>
@@ -114,7 +114,7 @@ export function AdminPage() {
         <div className="flex" style={{ gap: 10 }}>
           <StatCard
             icon={<Users size={18} strokeWidth={1.8} />}
-            iconColor="#059669"
+            iconColor="#F9FFD0"
             value={stats.total_users.toLocaleString()}
             label={t("admin.total_users")}
           />
@@ -129,7 +129,7 @@ export function AdminPage() {
         <div className="flex" style={{ gap: 10 }}>
           <StatCard
             icon={<CircleCheck size={18} strokeWidth={1.8} />}
-            iconColor="#059669"
+            iconColor="#F9FFD0"
             value={`${stats.taken_rate}%`}
             label={t("admin.taken_rate")}
           />
@@ -137,9 +137,9 @@ export function AdminPage() {
 
         <div
           className="rounded-2xl flex flex-col"
-          style={{ backgroundColor: "#FFFFFF", boxShadow: CARD_SHADOW, padding: 16, gap: 12 }}
+          style={{ backgroundColor: "rgba(255,255,255,0.05)", boxShadow: CARD_SHADOW, padding: 16, gap: 12 }}
         >
-          <span className="text-[14px] font-semibold" style={{ color: "#1C1917" }}>
+          <span className="text-[14px] font-semibold" style={{ color: "var(--color-text)" }}>
             {t("admin.weekly_registrations")}
           </span>
           <div className="flex items-end" style={{ gap: 8, height: 100 }}>
@@ -161,7 +161,7 @@ export function AdminPage() {
               <span
                 key={d}
                 className="text-[10px] font-medium"
-                style={{ flex: 1, color: "#A8A29E", textAlign: "center" }}
+                style={{ flex: 1, color: "var(--color-text-hint)", textAlign: "center" }}
               >
                 {d}
               </span>
@@ -171,22 +171,22 @@ export function AdminPage() {
 
         <div
           className="rounded-2xl overflow-hidden"
-          style={{ backgroundColor: "#FFFFFF", boxShadow: CARD_SHADOW }}
+          style={{ backgroundColor: "rgba(255,255,255,0.05)", boxShadow: CARD_SHADOW }}
         >
           <SectionHeader title={t("admin.recent_activity")} />
           {stats.recent_users.map((user, i) => (
             <div key={user.id}>
-              {i > 0 && <div style={{ height: 1, backgroundColor: "#F5F5F4" }} />}
+              {i > 0 && <div style={{ height: 1, backgroundColor: "rgba(255,255,255,0.06)" }} />}
               <div className="flex items-center" style={{ gap: 10, height: 52, padding: "0 16px" }}>
                 <div
                   className="rounded-full"
                   style={{ width: 32, height: 32, flexShrink: 0, backgroundColor: AVATAR_COLORS[i % AVATAR_COLORS.length] }}
                 />
                 <div className="flex-1 min-w-0">
-                  <p className="text-[14px] font-medium truncate" style={{ color: "#1C1917" }}>
+                  <p className="text-[14px] font-medium truncate" style={{ color: "var(--color-text)" }}>
                     User #{user.id}
                   </p>
-                  <p className="text-[11px] truncate" style={{ color: "#A8A29E" }}>
+                  <p className="text-[11px] truncate" style={{ color: "var(--color-text-hint)" }}>
                     {user.registered_ago} &middot; {user.meds_count} meds
                   </p>
                 </div>
@@ -197,7 +197,7 @@ export function AdminPage() {
 
         <div
           className="rounded-2xl overflow-hidden"
-          style={{ backgroundColor: "#FFFFFF", boxShadow: CARD_SHADOW }}
+          style={{ backgroundColor: "rgba(255,255,255,0.05)", boxShadow: CARD_SHADOW }}
         >
           <SectionHeader title={t("admin.user_metrics")} />
           <div className="flex" style={{ height: 64, padding: "0 16px" }}>
@@ -205,21 +205,21 @@ export function AdminPage() {
             <MetricCell value={stats.active_users.toLocaleString()} label="WAU (7d)" />
             <MetricCell value={stats.total_users.toLocaleString()} label="MAU (30d)" />
           </div>
-          <div style={{ height: 1, backgroundColor: "#F5F5F4" }} />
+          <div style={{ height: 1, backgroundColor: "rgba(255,255,255,0.06)" }} />
           <div className="flex" style={{ height: 64, padding: "0 16px" }}>
-            <MetricCell value={`+${stats.new_today}`} label="Today" valueColor="#059669" />
-            <MetricCell value={`+${stats.new_week}`} label="This week" valueColor="#059669" />
-            <MetricCell value={`+${stats.new_month}`} label="This month" valueColor="#059669" />
+            <MetricCell value={`+${stats.new_today}`} label="Today" valueColor="#F9FFD0" />
+            <MetricCell value={`+${stats.new_week}`} label="This week" valueColor="#F9FFD0" />
+            <MetricCell value={`+${stats.new_month}`} label="This month" valueColor="#F9FFD0" />
           </div>
         </div>
 
         <div
           className="rounded-2xl overflow-hidden"
-          style={{ backgroundColor: "#FFFFFF", boxShadow: CARD_SHADOW }}
+          style={{ backgroundColor: "rgba(255,255,255,0.05)", boxShadow: CARD_SHADOW }}
         >
           <SectionHeader title={t("admin.engagement")} />
           <div className="flex" style={{ height: 64, padding: "0 16px" }}>
-            <MetricCell value={`${stats.taken_rate}%`} label={t("admin.taken_rate")} valueColor="#059669" />
+            <MetricCell value={`${stats.taken_rate}%`} label={t("admin.taken_rate")} valueColor="#F9FFD0" />
             <MetricCell value={stats.avg_pills.toFixed(1)} label="Avg meds/user" />
             <MetricCell value={stats.active_users.toLocaleString()} label="Active (7d)" />
           </div>
@@ -228,16 +228,16 @@ export function AdminPage() {
         {stats.top_medications.length > 0 && (
           <div
             className="rounded-2xl overflow-hidden"
-            style={{ backgroundColor: "#FFFFFF", boxShadow: CARD_SHADOW }}
+            style={{ backgroundColor: "rgba(255,255,255,0.05)", boxShadow: CARD_SHADOW }}
           >
             <SectionHeader title={t("admin.top_medications")} />
             {stats.top_medications.map((med, i) => (
               <div key={med.name}>
-                {i > 0 && <div style={{ height: 1, backgroundColor: "#F5F5F4" }} />}
+                {i > 0 && <div style={{ height: 1, backgroundColor: "rgba(255,255,255,0.06)" }} />}
                 <div className="flex items-center" style={{ gap: 8, height: 44, padding: "0 16px" }}>
-                  <span className="text-[14px] font-bold" style={{ color: "#A8A29E" }}>{i + 1}.</span>
-                  <span className="flex-1 text-[14px] font-medium" style={{ color: "#1C1917" }}>{med.name}</span>
-                  <span className="text-[12px] font-medium" style={{ color: "#A8A29E" }}>{med.users} users</span>
+                  <span className="text-[14px] font-bold" style={{ color: "var(--color-text-hint)" }}>{i + 1}.</span>
+                  <span className="flex-1 text-[14px] font-medium" style={{ color: "var(--color-text)" }}>{med.name}</span>
+                  <span className="text-[12px] font-medium" style={{ color: "var(--color-text-hint)" }}>{med.users} users</span>
                 </div>
               </div>
             ))}

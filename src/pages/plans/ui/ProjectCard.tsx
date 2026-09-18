@@ -20,17 +20,17 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
       <div className="flex items-center justify-between" style={{ marginBottom: 8 }}>
         <p
           className="text-[15px] font-semibold truncate"
-          style={{ color: project.corrupted ? "#A8A29E" : "#1C1917" }}
+          style={{ color: project.corrupted ? "var(--color-text-hint)" : "var(--color-text)" }}
         >
           {project.corrupted ? t("today.corrupted_entry") : project.name}
         </p>
-        <span className="text-[12px] flex-shrink-0" style={{ color: "#A8A29E", marginLeft: 8 }}>
+        <span className="text-[12px] flex-shrink-0" style={{ color: "var(--color-text-hint)", marginLeft: 8 }}>
           {project.done}/{project.total}
         </span>
       </div>
       <div
         className="rounded-full overflow-hidden"
-        style={{ height: 6, backgroundColor: "#E7E5E4" }}
+        style={{ height: 6, backgroundColor: "rgba(255,255,255,0.1)" }}
       >
         <div
           className="h-full rounded-full transition-all duration-200"

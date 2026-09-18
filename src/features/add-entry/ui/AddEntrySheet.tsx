@@ -34,19 +34,18 @@ function ChoiceRow({ emoji, title, subtitle, onClick }: ChoiceRowProps) {
         style={{
           width: 38,
           height: 38,
-          backgroundColor: "#FFFFFF",
-          border: "1px solid rgba(30, 41, 59, 0.06)",
-          boxShadow: "0 1px 2px rgba(30,41,59,0.05)",
+          backgroundColor: "rgba(255,255,255,0.08)",
+          border: "1px solid rgba(255,255,255,0.07)",
           fontSize: 20,
         }}
       >
         {emoji}
       </div>
       <div className="flex-1 min-w-0">
-        <p className="text-[15px] font-semibold" style={{ color: "#1C1917" }}>
+        <p className="text-[15px] font-semibold" style={{ color: "var(--color-text)" }}>
           {title}
         </p>
-        <p className="text-[12px]" style={{ color: "#A8A29E" }}>
+        <p className="text-[12px]" style={{ color: "var(--color-text-hint)" }}>
           {subtitle}
         </p>
       </div>
@@ -92,11 +91,11 @@ export function AddEntrySheet({ isOpen, onClose }: AddEntrySheetProps) {
     <BottomSheet isOpen={isOpen} onClose={handleClose}>
       <div style={{ padding: "8px 20px calc(24px + env(safe-area-inset-bottom)) 20px" }}>
         <div className="flex items-center justify-between h-12 mb-2">
-          <h2 className="text-[18px] font-bold" style={{ color: "#1C1917" }}>
+          <h2 className="text-[18px] font-bold" style={{ color: "var(--color-text)" }}>
             {t("add_sheet.title")}
           </h2>
           <button onClick={handleClose} className="cursor-pointer p-1" aria-label="close">
-            <X size={20} color="#A8A29E" strokeWidth={2} />
+            <X size={20} color="var(--color-text-hint)" strokeWidth={2} />
           </button>
         </div>
 

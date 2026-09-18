@@ -135,28 +135,29 @@ export function ProfilePage() {
             <div
               className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
               style={{
-                backgroundColor: settings?.reminders_enabled ? "#ECFDF5" : "#F5F5F4",
+                backgroundColor: settings?.reminders_enabled ? "rgba(249,255,208,0.12)" : "rgba(255,255,255,0.06)",
               }}
             >
               {settings?.reminders_enabled
-                ? <Bell size={20} strokeWidth={1.8} color="#059669" />
-                : <BellOff size={20} strokeWidth={1.8} color="#A8A29E" />
+                ? <Bell size={20} strokeWidth={1.8} color="#F9FFD0" />
+                : <BellOff size={20} strokeWidth={1.8} color="var(--color-text-hint)" />
               }
             </div>
-            <span className="flex-1 text-left text-[15px] font-medium" style={{ color: "#1C1917" }}>
+            <span className="flex-1 text-left text-[15px] font-medium" style={{ color: "var(--color-text)" }}>
               {settings?.reminders_enabled
                 ? t("settings.reminders_enabled")
                 : t("settings.reminders_disabled")}
             </span>
             <div
               className="w-[46px] h-[28px] rounded-full relative flex-shrink-0 transition-colors duration-200"
-              style={{ backgroundColor: settings?.reminders_enabled ? "#059669" : "rgba(120,120,128,0.24)", boxShadow: settings?.reminders_enabled ? "0 2px 8px rgba(5,150,105,0.35)" : "none" }}
+              style={{ backgroundColor: settings?.reminders_enabled ? "#F9FFD0" : "rgba(255,255,255,0.18)", boxShadow: settings?.reminders_enabled ? "0 2px 8px rgba(249,255,208,0.3)" : "none" }}
             >
               <div
-                className="absolute top-[3px] w-[22px] h-[22px] rounded-full bg-white transition-transform duration-200"
+                className="absolute top-[3px] w-[22px] h-[22px] rounded-full transition-transform duration-200"
                 style={{
                   transform: settings?.reminders_enabled ? "translateX(21px)" : "translateX(3px)",
-                  boxShadow: "0 1px 4px rgba(0,0,0,0.13)",
+                  backgroundColor: settings?.reminders_enabled ? "#1C1C1E" : "#E5E2E1",
+                  boxShadow: "0 1px 4px rgba(0,0,0,0.3)",
                 }}
               />
             </div>
@@ -164,7 +165,7 @@ export function ProfilePage() {
 
           {settings?.reminders_enabled && (
             <>
-              <div style={{ height: 1, backgroundColor: "rgba(30,41,59,0.07)" }} />
+              <div style={{ height: 1, backgroundColor: "rgba(255,255,255,0.08)" }} />
               <NotificationToday settings={settings} />
             </>
           )}
@@ -179,7 +180,7 @@ export function ProfilePage() {
               const isSelected = settings?.reminder_repeat_minutes === minutes;
               return (
                 <div key={minutes}>
-                  {idx > 0 && <div style={{ height: 1, backgroundColor: "rgba(30,41,59,0.07)" }} />}
+                  {idx > 0 && <div style={{ height: 1, backgroundColor: "rgba(255,255,255,0.08)" }} />}
                   <button
                     onClick={() => handleRepeatChange(minutes)}
                     className="flex items-center w-full cursor-pointer"
@@ -188,26 +189,26 @@ export function ProfilePage() {
                     <div
                       className="flex-shrink-0 w-9 h-9 rounded-[10px] flex items-center justify-center"
                       style={{
-                        backgroundColor: isSelected ? "#ECFDF5" : "#F5F5F4",
+                        backgroundColor: isSelected ? "rgba(249,255,208,0.12)" : "rgba(255,255,255,0.06)",
                       }}
                     >
-                      <Timer size={18} strokeWidth={1.8} color={isSelected ? "#059669" : "#A8A29E"} />
+                      <Timer size={18} strokeWidth={1.8} color={isSelected ? "#F9FFD0" : "var(--color-text-hint)"} />
                     </div>
                     <span
                       className="flex-1 text-left text-[15px]"
                       style={{
-                        color: isSelected ? "#1C1917" : "#57534E",
+                        color: isSelected ? "var(--color-text)" : "var(--color-text-secondary)",
                         fontWeight: isSelected ? 600 : 400,
                       }}
                     >
                       {minutes} {t("settings.minutes")}
                     </span>
-                    {isSelected && <Check size={18} color="#059669" strokeWidth={2.5} />}
+                    {isSelected && <Check size={18} color="#F9FFD0" strokeWidth={2.5} />}
                   </button>
                 </div>
               );
             })}
-            <div style={{ height: 1, backgroundColor: "rgba(30,41,59,0.07)" }} />
+            <div style={{ height: 1, backgroundColor: "rgba(255,255,255,0.08)" }} />
             {(() => {
               const isCustomSelected = !REPEAT_OPTIONS.includes(settings?.reminder_repeat_minutes ?? 5);
               const hasCustom = lastCustom !== null;
@@ -229,14 +230,14 @@ export function ProfilePage() {
                   >
                     <div
                       className="flex-shrink-0 w-9 h-9 rounded-[10px] flex items-center justify-center"
-                      style={{ backgroundColor: isCustomSelected ? "#ECFDF5" : "#F5F5F4" }}
+                      style={{ backgroundColor: isCustomSelected ? "rgba(249,255,208,0.12)" : "rgba(255,255,255,0.06)" }}
                     >
-                      <Timer size={18} strokeWidth={1.8} color={isCustomSelected ? "#059669" : "#A8A29E"} />
+                      <Timer size={18} strokeWidth={1.8} color={isCustomSelected ? "#F9FFD0" : "var(--color-text-hint)"} />
                     </div>
                     <span
                       className="flex-1 text-left text-[15px] truncate"
                       style={{
-                        color: isCustomSelected ? "#1C1917" : "#57534E",
+                        color: isCustomSelected ? "var(--color-text)" : "var(--color-text-secondary)",
                         fontWeight: isCustomSelected ? 600 : 400,
                       }}
                     >
@@ -245,17 +246,17 @@ export function ProfilePage() {
                         : t("settings.custom")}
                     </span>
                   </button>
-                  {isCustomSelected && <Check size={18} color="#059669" strokeWidth={2.5} style={{ flexShrink: 0 }} />}
+                  {isCustomSelected && <Check size={18} color="#F9FFD0" strokeWidth={2.5} style={{ flexShrink: 0 }} />}
                   {hasCustom && (
                     <button
                       onClick={() => setCustomModalOpen(true)}
                       className="cursor-pointer p-1 flex-shrink-0"
                       style={{ marginLeft: 8 }}
                     >
-                      <Pencil size={14} color="#A8A29E" strokeWidth={1.8} />
+                      <Pencil size={14} color="var(--color-text-hint)" strokeWidth={1.8} />
                     </button>
                   )}
-                  {!hasCustom && <span className="text-[11px] flex-shrink-0" style={{ color: "#A8A29E" }}>1-60</span>}
+                  {!hasCustom && <span className="text-[11px] flex-shrink-0" style={{ color: "var(--color-text-hint)" }}>1-60</span>}
                 </div>
               );
             })()}
@@ -267,15 +268,15 @@ export function ProfilePage() {
         >
           <SectionHeader title={t("settings.security")} />
           <SettingsRow
-            icon={<KeyRound size={20} strokeWidth={1.8} color="#059669" />}
-            iconBackground="#ECFDF5"
+            icon={<KeyRound size={20} strokeWidth={1.8} color="#F9FFD0" />}
+            iconBackground="rgba(249,255,208,0.12)"
             label={t("settings.change_passphrase")}
             onClick={() => setChangePassphraseOpen(true)}
           />
-          <div style={{ height: 1, backgroundColor: "rgba(30,41,59,0.07)" }} />
+          <div style={{ height: 1, backgroundColor: "rgba(255,255,255,0.08)" }} />
           <SettingsRow
-            icon={<Download size={20} strokeWidth={1.8} color="#059669" />}
-            iconBackground="#ECFDF5"
+            icon={<Download size={20} strokeWidth={1.8} color="#F9FFD0" />}
+            iconBackground="rgba(249,255,208,0.12)"
             label={t("settings.export_data")}
             onClick={() => setExportModalOpen(true)}
           />
@@ -287,7 +288,7 @@ export function ProfilePage() {
           <SectionHeader title={t("settings.danger_zone")} />
           <SettingsRow
             icon={<Trash2 size={20} strokeWidth={1.8} color="#E11D48" />}
-            iconBackground="#FFF1F2"
+            iconBackground="rgba(251,94,126,0.14)"
             label={t("settings.delete_account")}
             labelColor="#E11D48"
             labelWeight="semibold"

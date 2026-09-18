@@ -33,12 +33,12 @@ function MenuRow({ icon: Icon, title, onClick }: MenuRowProps) {
           boxShadow: "inset 0 1px 0 rgba(255,255,255,0.9)",
         }}
       >
-        <Icon size={20} strokeWidth={1.8} color="#059669" />
+        <Icon size={20} strokeWidth={1.8} color="#F9FFD0" />
       </div>
-      <span className="flex-1 min-w-0 text-[15px] font-semibold" style={{ color: "#1C1917" }}>
+      <span className="flex-1 min-w-0 text-[15px] font-semibold" style={{ color: "var(--color-text)" }}>
         {title}
       </span>
-      <ChevronRight size={18} color="#A8A29E" strokeWidth={2} />
+      <ChevronRight size={18} color="var(--color-text-hint)" strokeWidth={2} />
     </button>
   );
 }
@@ -60,11 +60,11 @@ export function MoreMenuSheet({ isOpen, onClose }: MoreMenuSheetProps) {
     <BottomSheet isOpen={isOpen} onClose={onClose}>
       <div style={{ padding: "8px 20px calc(24px + env(safe-area-inset-bottom)) 20px" }}>
         <div className="flex items-center justify-between h-12 mb-2">
-          <h2 className="text-[18px] font-bold" style={{ color: "#1C1917" }}>
+          <h2 className="text-[18px] font-bold" style={{ color: "var(--color-text)" }}>
             {t("more.title")}
           </h2>
           <button onClick={onClose} className="cursor-pointer p-1" aria-label="close">
-            <X size={20} color="#A8A29E" strokeWidth={2} />
+            <X size={20} color="var(--color-text-hint)" strokeWidth={2} />
           </button>
         </div>
 

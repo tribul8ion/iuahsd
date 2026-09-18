@@ -68,11 +68,11 @@ export function AddDocForm({ isOpen, onClose }: AddDocFormProps) {
       <BottomSheet isOpen={isOpen && !isTimeModalOpen} onClose={onClose}>
         <div style={{ padding: "8px 20px calc(24px + env(safe-area-inset-bottom)) 20px" }}>
           <div className="flex items-center justify-between h-12 mb-2">
-            <h2 className="text-[18px] font-bold" style={{ color: "#1C1917" }}>
+            <h2 className="text-[18px] font-bold" style={{ color: "var(--color-text)" }}>
               {t("once.add_doc")}
             </h2>
             <button onClick={onClose} className="cursor-pointer p-1" aria-label="close">
-              <X size={20} color="#A8A29E" strokeWidth={2} />
+              <X size={20} color="var(--color-text-hint)" strokeWidth={2} />
             </button>
           </div>
 
@@ -80,11 +80,11 @@ export function AddDocForm({ isOpen, onClose }: AddDocFormProps) {
             <div className="flex items-center gap-2">
               <div
                 className="flex-shrink-0 w-9 h-9 rounded-[12px] flex items-center justify-center"
-                style={{ backgroundColor: "#FFF1F2" }}
+                style={{ backgroundColor: "rgba(251,94,126,0.14)" }}
               >
-                <Stethoscope size={18} color="#E11D48" strokeWidth={1.8} />
+                <Stethoscope size={18} color="#FB7185" strokeWidth={1.8} />
               </div>
-              <p className="text-[13px]" style={{ color: "#A8A29E" }}>
+              <p className="text-[13px]" style={{ color: "var(--color-text-hint)" }}>
                 {t("add_sheet.doc_sub")}
               </p>
             </div>
@@ -93,7 +93,7 @@ export function AddDocForm({ isOpen, onClose }: AddDocFormProps) {
               <FieldLabel>{t("once.doc_name_prompt")}</FieldLabel>
               <div
                 className="flex items-center rounded-xl"
-                style={{ backgroundColor: "#F5F5F4", padding: "0 14px", height: 48 }}
+                style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "0 14px", height: 48 }}
               >
                 <input
                   id="doc-name"
@@ -102,8 +102,8 @@ export function AddDocForm({ isOpen, onClose }: AddDocFormProps) {
                   onChange={(e) => setName(e.target.value)}
                   placeholder={t("once.doc_name_placeholder")}
                   maxLength={100}
-                  className="w-full text-[15px] bg-transparent outline-none placeholder:text-[#D6D3D1]"
-                  style={{ color: "#1C1917" }}
+                  className="w-full text-[15px] bg-transparent outline-none placeholder:text-[rgba(255,255,255,0.28)]"
+                  style={{ color: "var(--color-text)" }}
                   autoFocus
                 />
               </div>
@@ -113,7 +113,7 @@ export function AddDocForm({ isOpen, onClose }: AddDocFormProps) {
               <FieldLabel>{t("once.doc_note_prompt")}</FieldLabel>
               <div
                 className="flex items-center rounded-xl"
-                style={{ backgroundColor: "#F5F5F4", padding: "0 14px", height: 48 }}
+                style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "0 14px", height: 48 }}
               >
                 <input
                   id="doc-note"
@@ -122,8 +122,8 @@ export function AddDocForm({ isOpen, onClose }: AddDocFormProps) {
                   onChange={(e) => setNotes(e.target.value)}
                   placeholder={t("once.doc_note_placeholder")}
                   maxLength={200}
-                  className="w-full text-[15px] bg-transparent outline-none placeholder:text-[#D6D3D1]"
-                  style={{ color: "#1C1917" }}
+                  className="w-full text-[15px] bg-transparent outline-none placeholder:text-[rgba(255,255,255,0.28)]"
+                  style={{ color: "var(--color-text)" }}
                 />
               </div>
             </div>
@@ -133,7 +133,7 @@ export function AddDocForm({ isOpen, onClose }: AddDocFormProps) {
                 <FieldLabel>{t("once.date_prompt")}</FieldLabel>
                 <div
                   className="flex items-center rounded-xl"
-                  style={{ backgroundColor: "#F5F5F4", padding: "0 14px", height: 48 }}
+                  style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "0 14px", height: 48 }}
                 >
                   <input
                     id="doc-date"
@@ -143,7 +143,7 @@ export function AddDocForm({ isOpen, onClose }: AddDocFormProps) {
                     max={maxDateISO()}
                     onChange={(e) => setDateOnce(e.target.value || todayISO())}
                     className="w-full text-[15px] bg-transparent outline-none cursor-pointer"
-                    style={{ color: "#1C1917", fontWeight: 600 }}
+                    style={{ color: "var(--color-text)", fontWeight: 600 }}
                     aria-label="doc-date"
                   />
                 </div>
@@ -154,20 +154,20 @@ export function AddDocForm({ isOpen, onClose }: AddDocFormProps) {
                 <button
                   onClick={() => setIsTimeModalOpen(true)}
                   className="flex items-center justify-between rounded-xl w-full cursor-pointer"
-                  style={{ backgroundColor: "#F5F5F4", padding: "0 14px", height: 48 }}
+                  style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "0 14px", height: 48 }}
                   aria-label="edit-doc-time"
                 >
-                  <span className="text-[15px] font-semibold" style={{ color: "#1C1917" }}>
+                  <span className="text-[15px] font-semibold" style={{ color: "var(--color-text)" }}>
                     {time}
                   </span>
-                  <Pencil size={14} color="#A8A29E" strokeWidth={1.8} />
+                  <Pencil size={14} color="var(--color-text-hint)" strokeWidth={1.8} />
                 </button>
               </div>
             </div>
 
             <div>
               <FieldLabel marginBottom={4}>{t("once.pre_remind_prompt")}</FieldLabel>
-              <p className="text-[12px]" style={{ color: "#A8A29E", marginBottom: 8 }}>
+              <p className="text-[12px]" style={{ color: "var(--color-text-hint)", marginBottom: 8 }}>
                 {t("once.pre_remind_hint")}
               </p>
               <PreRemindChips selected={preRemind} onToggle={handleTogglePreRemind} />
@@ -176,8 +176,8 @@ export function AddDocForm({ isOpen, onClose }: AddDocFormProps) {
             <button
               disabled={!isValid || isPending}
               onClick={handleSubmit}
-              className="w-full h-12 rounded-[14px] text-[15px] font-semibold text-white cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-35 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              style={{ background: "var(--gradient-primary)", boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)" }}
+              className="w-full h-12 rounded-[14px] text-[15px] font-semibold text-[#2C3400] cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-35 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              style={{ background: "var(--gradient-primary)", boxShadow: "0 10px 24px -6px rgba(249,255,208,0.18), inset 0 1px 0 rgba(255,255,255,0.4)" }}
             >
               {isPending && <Loader2 size={18} className="animate-spin" />}
               {t("once.add_doc")}

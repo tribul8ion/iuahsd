@@ -23,11 +23,11 @@ export function ProjectPickerModal({
     <BottomSheet isOpen={isOpen} onClose={onClose}>
       <div style={{ padding: "8px 20px calc(24px + env(safe-area-inset-bottom)) 20px" }}>
         <div className="flex items-center justify-between h-12 mb-2">
-          <h2 className="text-[18px] font-bold" style={{ color: "#1C1917" }}>
+          <h2 className="text-[18px] font-bold" style={{ color: "var(--color-text)" }}>
             {t("project.picker_title")}
           </h2>
           <button onClick={onClose} className="cursor-pointer p-1" aria-label="close">
-            <X size={20} color="#A8A29E" strokeWidth={2} />
+            <X size={20} color="var(--color-text-hint)" strokeWidth={2} />
           </button>
         </div>
 
@@ -38,18 +38,18 @@ export function ProjectPickerModal({
               onClose();
             }}
             className="flex items-center w-full rounded-xl cursor-pointer text-left"
-            style={{ backgroundColor: "#F5F5F4", padding: "12px 14px", gap: 12 }}
+            style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "12px 14px", gap: 12 }}
           >
             <div
               className="flex-shrink-0 flex items-center justify-center rounded-[10px]"
-              style={{ width: 32, height: 32, backgroundColor: "#FFFFFF" }}
+              style={{ width: 32, height: 32, backgroundColor: "rgba(255,255,255,0.1)", borderRadius: 10 }}
             >
-              <FolderX size={16} color="#A8A29E" strokeWidth={1.8} />
+              <FolderX size={16} color="var(--color-text-hint)" strokeWidth={1.8} />
             </div>
-            <span className="flex-1 text-[14px] font-medium" style={{ color: "#1C1917" }}>
+            <span className="flex-1 text-[14px] font-medium" style={{ color: "var(--color-text)" }}>
               {t("project.no_project")}
             </span>
-            {selectedId === null && <Check size={18} color="#059669" strokeWidth={2.5} />}
+            {selectedId === null && <Check size={18} color="#F9FFD0" strokeWidth={2.5} />}
           </button>
 
           {projects
@@ -62,16 +62,16 @@ export function ProjectPickerModal({
                   onClose();
                 }}
                 className="flex items-center w-full rounded-xl cursor-pointer text-left"
-                style={{ backgroundColor: "#F5F5F4", padding: "12px 14px", gap: 12 }}
+                style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "12px 14px", gap: 12 }}
               >
                 <span
                   className="flex-1 text-[14px] font-medium truncate"
-                  style={{ color: "#1C1917" }}
+                  style={{ color: "var(--color-text)" }}
                 >
                   {project.name}
                 </span>
                 {selectedId === project.id && (
-                  <Check size={18} color="#059669" strokeWidth={2.5} />
+                  <Check size={18} color="#F9FFD0" strokeWidth={2.5} />
                 )}
               </button>
             ))}

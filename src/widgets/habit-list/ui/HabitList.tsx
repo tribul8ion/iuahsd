@@ -33,7 +33,7 @@ export function HabitList({ onEdit, onToggleActive, onToggleNotifications }: Hab
   if (!habits || habits.length === 0) {
     return (
       <EmptyState
-        icon={<Target size={28} color="#A8A29E" strokeWidth={1.5} />}
+        icon={<Target size={28} color="var(--color-text-hint)" strokeWidth={1.5} />}
         title={t("habits.empty_title")}
         subtitle={t("habits.empty_subtitle")}
         minHeight="calc(100vh - 160px - 96px - 32px)"

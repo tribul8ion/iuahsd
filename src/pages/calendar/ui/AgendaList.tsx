@@ -47,7 +47,7 @@ export function AgendaList({ date, onEditOnce }: AgendaListProps) {
     return (
       <div className="flex flex-col items-center gap-3 py-10 text-center">
         <AlertCircle size={28} color="#E11D48" strokeWidth={1.5} />
-        <p className="text-[13px]" style={{ color: "#A8A29E" }}>
+        <p className="text-[13px]" style={{ color: "var(--color-text-hint)" }}>
           {t("common.error")}
         </p>
       </div>
@@ -59,8 +59,8 @@ export function AgendaList({ date, onEditOnce }: AgendaListProps) {
   if (items.length === 0) {
     return (
       <div className="flex flex-col items-center gap-3 py-10 text-center">
-        <CalendarX size={28} color="#A8A29E" strokeWidth={1.5} />
-        <p className="text-[13px]" style={{ color: "#A8A29E" }}>
+        <CalendarX size={28} color="var(--color-text-hint)" strokeWidth={1.5} />
+        <p className="text-[13px]" style={{ color: "var(--color-text-hint)" }}>
           {t("calendar.empty_day")}
         </p>
       </div>
@@ -86,7 +86,7 @@ export function AgendaList({ date, onEditOnce }: AgendaListProps) {
   return (
     <div className="flex flex-col" style={{ gap: 8 }}>
       <div className="flex items-center justify-between" style={{ padding: "0 2px" }}>
-        <p className="text-[13px] font-semibold" style={{ color: "#A8A29E" }}>
+        <p className="text-[13px] font-semibold" style={{ color: "var(--color-text-hint)" }}>
           {t("calendar.agenda_progress", { taken, total })}
         </p>
       </div>
@@ -120,7 +120,7 @@ export function AgendaList({ date, onEditOnce }: AgendaListProps) {
             {preRemindSummary && (
               <p
                 className="text-[11px]"
-                style={{ color: "#A8A29E", padding: "0 16px 0 57px" }}
+                style={{ color: "var(--color-text-hint)", padding: "0 16px 0 57px" }}
               >
                 {preRemindSummary}
               </p>
@@ -130,7 +130,7 @@ export function AgendaList({ date, onEditOnce }: AgendaListProps) {
       })}
 
       {isPast && (
-        <p className="text-[11px] text-center" style={{ color: "#A8A29E", marginTop: 4 }}>
+        <p className="text-[11px] text-center" style={{ color: "var(--color-text-hint)", marginTop: 4 }}>
           {t("calendar.retro_hint")}
         </p>
       )}

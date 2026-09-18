@@ -30,11 +30,11 @@ export function RenameProjectModal({ project, isOpen, onClose }: RenameProjectMo
     <BottomSheet isOpen={isOpen} onClose={onClose}>
       <div style={{ padding: "8px 20px calc(24px + env(safe-area-inset-bottom)) 20px" }}>
         <div className="flex items-center justify-between h-12 mb-2">
-          <h2 className="text-[18px] font-bold" style={{ color: "#1C1917" }}>
+          <h2 className="text-[18px] font-bold" style={{ color: "var(--color-text)" }}>
             {t("project.rename_title")}
           </h2>
           <button onClick={onClose} className="cursor-pointer p-1" aria-label="close">
-            <X size={20} color="#A8A29E" strokeWidth={2} />
+            <X size={20} color="var(--color-text-hint)" strokeWidth={2} />
           </button>
         </div>
 
@@ -42,22 +42,22 @@ export function RenameProjectModal({ project, isOpen, onClose }: RenameProjectMo
           <div className="flex items-center gap-2">
             <div
               className="flex-shrink-0 w-9 h-9 rounded-[12px] flex items-center justify-center"
-              style={{ backgroundColor: "#ECFDF5" }}
+              style={{ backgroundColor: "rgba(249,255,208,0.12)" }}
             >
-              <Pencil size={16} color="#059669" strokeWidth={1.8} />
+              <Pencil size={16} color="#F9FFD0" strokeWidth={1.8} />
             </div>
           </div>
 
           <div>
             <p
               className="text-[11px] font-semibold uppercase"
-              style={{ color: "#A8A29E", letterSpacing: "1px", marginBottom: 8 }}
+              style={{ color: "var(--color-text-hint)", letterSpacing: "1px", marginBottom: 8 }}
             >
               {t("project.name_prompt")}
             </p>
             <div
               className="flex items-center rounded-xl"
-              style={{ backgroundColor: "#F5F5F4", padding: "0 14px", height: 48 }}
+              style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "0 14px", height: 48 }}
             >
               <input
                 id="rename-project-name"
@@ -66,7 +66,7 @@ export function RenameProjectModal({ project, isOpen, onClose }: RenameProjectMo
                 onChange={(e) => setName(e.target.value)}
                 maxLength={NAME_MAX_LENGTH}
                 className="w-full text-[15px] bg-transparent outline-none"
-                style={{ color: "#1C1917" }}
+                style={{ color: "var(--color-text)" }}
                 autoFocus
               />
             </div>
@@ -75,8 +75,8 @@ export function RenameProjectModal({ project, isOpen, onClose }: RenameProjectMo
           <button
             disabled={!isValid || isPending}
             onClick={handleSubmit}
-            className="w-full h-12 rounded-[14px] text-[15px] font-semibold text-white cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-35 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-            style={{ background: "var(--gradient-primary)", boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)" }}
+            className="w-full h-12 rounded-[14px] text-[15px] font-semibold text-[#2C3400] cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-35 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            style={{ background: "var(--gradient-primary)", boxShadow: "0 10px 24px -6px rgba(249,255,208,0.18), inset 0 1px 0 rgba(255,255,255,0.4)" }}
           >
             {isPending ? (
               <Loader2 size={18} className="animate-spin" />

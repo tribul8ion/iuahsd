@@ -117,16 +117,16 @@ export function EditTimeModal({
     <BottomSheet isOpen={isOpen} onClose={onClose}>
       <div style={{ padding: "8px 20px calc(32px + env(safe-area-inset-bottom)) 20px" }}>
         <div className="flex items-center justify-between h-12">
-          <h2 className="text-[18px] font-bold" style={{ color: "#1C1917" }}>
+          <h2 className="text-[18px] font-bold" style={{ color: "var(--color-text)" }}>
             {t("time_edit.title", { schedule: scheduleLabel })}
           </h2>
           <button onClick={onClose} className="cursor-pointer p-1">
-            <X size={20} color="#A8A29E" strokeWidth={2} />
+            <X size={20} color="var(--color-text-hint)" strokeWidth={2} />
           </button>
         </div>
 
         <div className="flex flex-col items-center gap-4 pt-4">
-          <p className="text-[13px]" style={{ color: "#A8A29E" }}>
+          <p className="text-[13px]" style={{ color: "var(--color-text-hint)" }}>
             {t("time_edit.select_time", { schedule: scheduleLabel })}
           </p>
 
@@ -134,7 +134,7 @@ export function EditTimeModal({
             <div
               className="w-[72px] h-[72px] rounded-2xl flex items-center justify-center cursor-pointer transition-all duration-150"
               style={{
-                backgroundColor: activeField === "hours" ? "#ECFDF5" : "#F0F4F3",
+                backgroundColor: activeField === "hours" ? "rgba(249,255,208,0.12)" : "rgba(255,255,255,0.06)",
                 boxShadow: activeField === "hours" ? "0 0 0 2px #059669" : "none",
               }}
               onClick={() => {
@@ -152,17 +152,17 @@ export function EditTimeModal({
                 onKeyDown={handleHoursKey}
                 onFocus={() => handleFieldFocus("hours")}
                 className="w-12 text-[32px] font-bold text-center bg-transparent outline-none caret-transparent"
-                style={{ color: activeField === "hours" ? "#059669" : "#1C1917" }}
+                style={{ color: activeField === "hours" ? "#F9FFD0" : "var(--color-text)" }}
                 maxLength={2}
               />
             </div>
 
-            <span className="text-[32px] font-bold" style={{ color: "#A8A29E" }}>:</span>
+            <span className="text-[32px] font-bold" style={{ color: "var(--color-text-hint)" }}>:</span>
 
             <div
               className="w-[72px] h-[72px] rounded-2xl flex items-center justify-center cursor-pointer transition-all duration-150"
               style={{
-                backgroundColor: activeField === "minutes" ? "#ECFDF5" : "#F0F4F3",
+                backgroundColor: activeField === "minutes" ? "rgba(249,255,208,0.12)" : "rgba(255,255,255,0.06)",
                 boxShadow: activeField === "minutes" ? "0 0 0 2px #059669" : "none",
               }}
               onClick={() => {
@@ -180,20 +180,20 @@ export function EditTimeModal({
                 onKeyDown={handleMinutesKey}
                 onFocus={() => handleFieldFocus("minutes")}
                 className="w-12 text-[32px] font-bold text-center bg-transparent outline-none caret-transparent"
-                style={{ color: activeField === "minutes" ? "#059669" : "#1C1917" }}
+                style={{ color: activeField === "minutes" ? "#F9FFD0" : "var(--color-text)" }}
                 maxLength={2}
               />
             </div>
           </div>
 
-          <p className="text-[12px]" style={{ color: "#A8A29E" }}>
+          <p className="text-[12px]" style={{ color: "var(--color-text-hint)" }}>
             {t("time_edit.tap_hint")}
           </p>
 
           <button
             onClick={handleSave}
-            className="w-full h-12 rounded-[14px] text-[15px] font-semibold text-white cursor-pointer transition-all duration-150 active:scale-[0.98] flex items-center justify-center gap-2"
-            style={{ background: "var(--gradient-primary)", boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)" }}
+            className="w-full h-12 rounded-[14px] text-[15px] font-semibold text-[#2C3400] cursor-pointer transition-all duration-150 active:scale-[0.98] flex items-center justify-center gap-2"
+            style={{ background: "var(--gradient-primary)", boxShadow: "0 10px 24px -6px rgba(249,255,208,0.18), inset 0 1px 0 rgba(255,255,255,0.4)" }}
           >
             <Check size={18} strokeWidth={2.5} />
             {t("time_edit.save")}
@@ -202,7 +202,7 @@ export function EditTimeModal({
           <button
             onClick={handleReset}
             className="w-full h-11 rounded-[14px] text-[13px] font-medium text-center cursor-pointer"
-            style={{ color: "#A8A29E" }}
+            style={{ color: "var(--color-text-hint)" }}
           >
             {t("time_edit.reset", { time: defaultTime })}
           </button>

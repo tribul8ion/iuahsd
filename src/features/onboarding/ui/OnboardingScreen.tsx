@@ -45,18 +45,18 @@ export function OnboardingScreen() {
             height: 64,
             borderRadius: 20,
             flexShrink: 0,
-            background: "var(--gradient-header)",
-          boxShadow: "0 14px 30px -10px rgba(5,150,105,0.5)",
+            background: "var(--gradient-primary)",
+          boxShadow: "0 16px 36px -12px rgba(249,255,208,0.2)",
           }}
         >
-          <KeyRound size={32} color="#FFFFFF" strokeWidth={2} />
+          <KeyRound size={32} color="#2C3400" strokeWidth={2} />
         </div>
 
         <div style={{ height: 24, flexShrink: 0 }} />
 
         <h1
           className="text-[27px] font-extrabold"
-          style={{ color: "#1C1917", lineHeight: 1.2, flexShrink: 0, letterSpacing: "-0.4px" }}
+          style={{ color: "var(--color-text)", lineHeight: 1.2, flexShrink: 0, letterSpacing: "-0.4px" }}
         >
           {t("onboarding.title")}
         </h1>
@@ -65,7 +65,7 @@ export function OnboardingScreen() {
 
         <p
           className="text-[15px] font-normal"
-          style={{ color: "#A8A29E", lineHeight: 1.5, flexShrink: 0 }}
+          style={{ color: "var(--color-text-hint)", lineHeight: 1.5, flexShrink: 0 }}
         >
           {t("onboarding.subtitle")}
         </p>
@@ -75,15 +75,15 @@ export function OnboardingScreen() {
         <div className="flex flex-col" style={{ gap: 12, flexShrink: 0 }}>
           <div
             className="flex items-center rounded-2xl"
-            style={{ backgroundColor: "#FFFFFF", padding: "0 16px", height: 54, border: "1px solid rgba(30,41,59,0.08)", boxShadow: "0 1px 2px rgba(30,41,59,0.04)" }}
+            style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "0 16px", height: 54, border: "1px solid rgba(255,255,255,0.1)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.05)" }}
           >
             <input
               type="password"
               value={passphrase}
               onChange={(e) => setPassphrase(e.target.value)}
               placeholder={t("onboarding.passphrase_placeholder")}
-              className="w-full text-[15px] bg-transparent outline-none placeholder:text-[#D6D3D1]"
-              style={{ color: "#1C1917" }}
+              className="w-full text-[15px] bg-transparent outline-none placeholder:text-[rgba(255,255,255,0.28)]"
+              style={{ color: "var(--color-text)" }}
               aria-label="passphrase"
               autoComplete="new-password"
             />
@@ -91,15 +91,15 @@ export function OnboardingScreen() {
 
           <div
             className="flex items-center rounded-2xl"
-            style={{ backgroundColor: "#FFFFFF", padding: "0 16px", height: 54, border: "1px solid rgba(30,41,59,0.08)", boxShadow: "0 1px 2px rgba(30,41,59,0.04)" }}
+            style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "0 16px", height: 54, border: "1px solid rgba(255,255,255,0.1)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.05)" }}
           >
             <input
               type="password"
               value={confirmation}
               onChange={(e) => setConfirmation(e.target.value)}
               placeholder={t("onboarding.confirm_placeholder")}
-              className="w-full text-[15px] bg-transparent outline-none placeholder:text-[#D6D3D1]"
-              style={{ color: "#1C1917" }}
+              className="w-full text-[15px] bg-transparent outline-none placeholder:text-[rgba(255,255,255,0.28)]"
+              style={{ color: "var(--color-text)" }}
               aria-label="passphrase-confirmation"
               autoComplete="new-password"
             />
@@ -114,9 +114,9 @@ export function OnboardingScreen() {
               checked={acknowledged}
               onChange={(e) => setAcknowledged(e.target.checked)}
               aria-label="acknowledge-no-recovery"
-              style={{ marginTop: 3, accentColor: "#059669", width: 16, height: 16 }}
+              style={{ marginTop: 3, accentColor: "#F9FFD0", width: 16, height: 16 }}
             />
-            <span className="text-[13px]" style={{ color: "#57534E", lineHeight: 1.45 }}>
+            <span className="text-[13px]" style={{ color: "var(--color-text-secondary)", lineHeight: 1.45 }}>
               {t("onboarding.ack")}
             </span>
           </label>
@@ -140,10 +140,10 @@ export function OnboardingScreen() {
           className="w-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
           style={{
             height: 52,
-            borderRadius: 999,
+            borderRadius: 22,
             background: "var(--gradient-primary)",
-            boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)",
-            color: "#FFFFFF",
+            boxShadow: "0 10px 24px -6px rgba(249,255,208,0.18), inset 0 1px 0 rgba(255,255,255,0.4)",
+            color: "#2C3400",
             fontSize: 16,
             fontWeight: 700,
             gap: 8,

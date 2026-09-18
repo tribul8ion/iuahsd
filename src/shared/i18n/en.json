@@ -10,7 +10,8 @@
     "title": "Today",
     "empty_title": "Nothing for today",
     "empty_subtitle": "Add a medication or a habit using the button below",
-    "corrupted_entry": "Corrupted entry"
+    "corrupted_entry": "Corrupted entry",
+    "week_progress": "This week"
   },
   "add_sheet": {
     "title": "What would you like to add?",
@@ -72,7 +73,15 @@
     "frequency_daily": "Every day",
     "frequency_weekly": "Days of the week",
     "frequency_interval": "Every N days",
-    "days_short": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "days_short": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
+    ],
     "every_n_days": "every {{n}} days",
     "every_label": "Every",
     "days_suffix": "days",
@@ -252,38 +261,134 @@
         "name": "Perfect Week",
         "condition": "A full week, nothing missed"
       },
-      "coffee_7": { "name": "CAFFEINE FIEND", "condition": "Best tag streak — 7 days" },
-      "coffee_30": { "name": "Coffee Baron", "condition": "Best tag streak — 30 days" },
-      "coffee_100": { "name": "Coffee King", "condition": "Best tag streak — 100 days" },
-      "coffee_365": { "name": "Coffee God", "condition": "Best tag streak — 365 days" },
-      "water_7": { "name": "Wet Whistle", "condition": "Best tag streak — 7 days" },
-      "water_30": { "name": "Aquaman", "condition": "Best tag streak — 30 days" },
-      "water_100": { "name": "Hydration 3000", "condition": "Best tag streak — 100 days" },
-      "water_365": { "name": "Living Ocean", "condition": "Best tag streak — 365 days" },
-      "gym_7": { "name": "Gym Newbie", "condition": "Best tag streak — 7 days" },
-      "gym_30": { "name": "Iron Addict", "condition": "Best tag streak — 30 days" },
-      "gym_100": { "name": "Gym Won't Let Go", "condition": "Best tag streak — 100 days" },
-      "gym_365": { "name": "Meat Machine", "condition": "Best tag streak — 365 days" },
-      "sleep_7": { "name": "Nap Cadet", "condition": "Best tag streak — 7 days" },
-      "sleep_30": { "name": "Sleep Pro", "condition": "Best tag streak — 30 days" },
-      "sleep_100": { "name": "Zombie Mode Off", "condition": "Best tag streak — 100 days" },
-      "sleep_365": { "name": "Sleep Tsar", "condition": "Best tag streak — 365 days" },
-      "book_7": { "name": "Page Opener", "condition": "Best tag streak — 7 days" },
-      "book_30": { "name": "Bookworm", "condition": "Best tag streak — 30 days" },
-      "book_100": { "name": "Read, Not Bought", "condition": "Best tag streak — 100 days" },
-      "book_365": { "name": "Walking Library", "condition": "Best tag streak — 365 days" },
-      "nosmoke_7": { "name": "First Breath", "condition": "Best tag streak — 7 days" },
-      "nosmoke_30": { "name": "Breathe Easy", "condition": "Best tag streak — 30 days" },
-      "nosmoke_100": { "name": "Lungs Are Singing", "condition": "Best tag streak — 100 days" },
-      "nosmoke_365": { "name": "Smoke-Free Legend", "condition": "Best tag streak — 365 days" },
-      "meditate_7": { "name": "Zen Rookie", "condition": "Best tag streak — 7 days" },
-      "meditate_30": { "name": "Calm & Collected", "condition": "Best tag streak — 30 days" },
-      "meditate_100": { "name": "Zen Master", "condition": "Best tag streak — 100 days" },
-      "meditate_365": { "name": "Enlightened One", "condition": "Best tag streak — 365 days" },
-      "food_7": { "name": "Salad Rookie", "condition": "Best tag streak — 7 days" },
-      "food_30": { "name": "Veggie Fighter", "condition": "Best tag streak — 30 days" },
-      "food_100": { "name": "Salad Lord", "condition": "Best tag streak — 100 days" },
-      "food_365": { "name": "Clean-Eating God", "condition": "Best tag streak — 365 days" }
+      "coffee_7": {
+        "name": "CAFFEINE FIEND",
+        "condition": "Best tag streak — 7 days"
+      },
+      "coffee_30": {
+        "name": "Coffee Baron",
+        "condition": "Best tag streak — 30 days"
+      },
+      "coffee_100": {
+        "name": "Coffee King",
+        "condition": "Best tag streak — 100 days"
+      },
+      "coffee_365": {
+        "name": "Coffee God",
+        "condition": "Best tag streak — 365 days"
+      },
+      "water_7": {
+        "name": "Wet Whistle",
+        "condition": "Best tag streak — 7 days"
+      },
+      "water_30": {
+        "name": "Aquaman",
+        "condition": "Best tag streak — 30 days"
+      },
+      "water_100": {
+        "name": "Hydration 3000",
+        "condition": "Best tag streak — 100 days"
+      },
+      "water_365": {
+        "name": "Living Ocean",
+        "condition": "Best tag streak — 365 days"
+      },
+      "gym_7": {
+        "name": "Gym Newbie",
+        "condition": "Best tag streak — 7 days"
+      },
+      "gym_30": {
+        "name": "Iron Addict",
+        "condition": "Best tag streak — 30 days"
+      },
+      "gym_100": {
+        "name": "Gym Won't Let Go",
+        "condition": "Best tag streak — 100 days"
+      },
+      "gym_365": {
+        "name": "Meat Machine",
+        "condition": "Best tag streak — 365 days"
+      },
+      "sleep_7": {
+        "name": "Nap Cadet",
+        "condition": "Best tag streak — 7 days"
+      },
+      "sleep_30": {
+        "name": "Sleep Pro",
+        "condition": "Best tag streak — 30 days"
+      },
+      "sleep_100": {
+        "name": "Zombie Mode Off",
+        "condition": "Best tag streak — 100 days"
+      },
+      "sleep_365": {
+        "name": "Sleep Tsar",
+        "condition": "Best tag streak — 365 days"
+      },
+      "book_7": {
+        "name": "Page Opener",
+        "condition": "Best tag streak — 7 days"
+      },
+      "book_30": {
+        "name": "Bookworm",
+        "condition": "Best tag streak — 30 days"
+      },
+      "book_100": {
+        "name": "Read, Not Bought",
+        "condition": "Best tag streak — 100 days"
+      },
+      "book_365": {
+        "name": "Walking Library",
+        "condition": "Best tag streak — 365 days"
+      },
+      "nosmoke_7": {
+        "name": "First Breath",
+        "condition": "Best tag streak — 7 days"
+      },
+      "nosmoke_30": {
+        "name": "Breathe Easy",
+        "condition": "Best tag streak — 30 days"
+      },
+      "nosmoke_100": {
+        "name": "Lungs Are Singing",
+        "condition": "Best tag streak — 100 days"
+      },
+      "nosmoke_365": {
+        "name": "Smoke-Free Legend",
+        "condition": "Best tag streak — 365 days"
+      },
+      "meditate_7": {
+        "name": "Zen Rookie",
+        "condition": "Best tag streak — 7 days"
+      },
+      "meditate_30": {
+        "name": "Calm & Collected",
+        "condition": "Best tag streak — 30 days"
+      },
+      "meditate_100": {
+        "name": "Zen Master",
+        "condition": "Best tag streak — 100 days"
+      },
+      "meditate_365": {
+        "name": "Enlightened One",
+        "condition": "Best tag streak — 365 days"
+      },
+      "food_7": {
+        "name": "Salad Rookie",
+        "condition": "Best tag streak — 7 days"
+      },
+      "food_30": {
+        "name": "Veggie Fighter",
+        "condition": "Best tag streak — 30 days"
+      },
+      "food_100": {
+        "name": "Salad Lord",
+        "condition": "Best tag streak — 100 days"
+      },
+      "food_365": {
+        "name": "Clean-Eating God",
+        "condition": "Best tag streak — 365 days"
+      }
     }
   },
   "toast": {

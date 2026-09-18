@@ -16,7 +16,7 @@ export function LanguageSelector() {
       <div className="flex items-center" style={{ height: 40, padding: "0 16px" }}>
         <span
           className="text-[11px] font-semibold uppercase"
-          style={{ color: "#A8A29E", letterSpacing: "1px" }}
+          style={{ color: "var(--color-text-hint)", letterSpacing: "1px" }}
         >
           {t("settings.language")}
         </span>
@@ -25,7 +25,7 @@ export function LanguageSelector() {
         const isSelected = i18n.language === lang.code;
         return (
           <div key={lang.code}>
-            {idx > 0 && <div style={{ height: 1, backgroundColor: "rgba(30,41,59,0.07)" }} />}
+            {idx > 0 && <div style={{ height: 1, backgroundColor: "rgba(255,255,255,0.08)" }} />}
             <button
               onClick={() => mutate(lang.code)}
               className="flex items-center w-full cursor-pointer"
@@ -34,13 +34,13 @@ export function LanguageSelector() {
               <span
                 className="flex-1 text-left text-[15px]"
                 style={{
-                  color: isSelected ? "#1C1917" : "#57534E",
+                  color: isSelected ? "var(--color-text)" : "var(--color-text-secondary)",
                   fontWeight: isSelected ? 600 : 400,
                 }}
               >
                 {lang.label}
               </span>
-              {isSelected && <Check size={18} color="#059669" strokeWidth={2.5} />}
+              {isSelected && <Check size={18} color="#F9FFD0" strokeWidth={2.5} />}
             </button>
           </div>
         );

@@ -13,7 +13,7 @@ export function SettingsRow({
   icon,
   iconBackground,
   label,
-  labelColor = "#1C1917",
+  labelColor = "var(--color-text)",
   labelWeight = "medium",
   onClick,
 }: SettingsRowProps) {

@@ -24,11 +24,11 @@ function AchievementTile({ item, earned }: AchievementTileProps) {
       }}
     >
       <span style={{ fontSize: 32, lineHeight: 1 }}>{item.emoji}</span>
-      <p className="text-[12px] font-semibold leading-tight" style={{ color: "#1C1917" }}>
+      <p className="text-[12px] font-semibold leading-tight" style={{ color: "var(--color-text)" }}>
         {t(item.nameKey)}
       </p>
       {!earned && (
-        <p className="text-[10px] leading-tight" style={{ color: "#A8A29E" }}>
+        <p className="text-[10px] leading-tight" style={{ color: "var(--color-text-hint)" }}>
           {t(item.conditionKey)}
         </p>
       )}
@@ -52,7 +52,7 @@ export function AchievementsShelf() {
 
   return (
     <div className="flex flex-col" style={{ gap: 12 }}>
-      <p className="text-[13px] font-medium" style={{ color: "#A8A29E" }}>
+      <p className="text-[13px] font-medium" style={{ color: "var(--color-text-hint)" }}>
         {t("achievements.progress", { count: earnedIds.size, total: ACHIEVEMENTS.length })}
       </p>
 

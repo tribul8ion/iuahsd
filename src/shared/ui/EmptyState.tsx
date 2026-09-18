@@ -19,7 +19,7 @@ interface SizeConfig {
 const SIZE_CONFIG: Record<EmptyStateSize, SizeConfig> = {
   lg: {
     containerClassName: "flex flex-col items-center justify-center gap-4 text-center",
-    boxClassName: "glass-mint w-20 h-20 rounded-[28px] flex items-center justify-center",
+    boxClassName: "glass-mint w-20 h-20 rounded-[24px] flex items-center justify-center",
     boxStyle: {},
   },
   md: {
@@ -38,10 +38,10 @@ export function EmptyState({ icon, title, subtitle, minHeight, size = "lg" }: Em
         {icon}
       </div>
       <div>
-        <p className="text-[15px] font-semibold mb-1" style={{ color: "#1C1917" }}>
+        <p className="text-[15px] font-semibold mb-1" style={{ color: "var(--color-text)" }}>
           {title}
         </p>
-        <p className="text-[13px]" style={{ color: "#A8A29E" }}>
+        <p className="text-[13px]" style={{ color: "var(--color-text-hint)" }}>
           {subtitle}
         </p>
       </div>

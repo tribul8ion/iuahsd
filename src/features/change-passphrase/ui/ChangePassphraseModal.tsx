@@ -64,32 +64,32 @@ export function ChangePassphraseModal({ isOpen, onClose }: ChangePassphraseModal
       <div style={{ padding: "8px 20px calc(24px + env(safe-area-inset-bottom)) 20px" }}>
         <div className="flex items-center justify-between h-12 mb-2">
           <div className="flex items-center" style={{ gap: 10 }}>
-            <KeyRound size={20} color="#059669" strokeWidth={2} />
-            <h2 className="text-[18px] font-bold" style={{ color: "#1C1917" }}>
+            <KeyRound size={20} color="#F9FFD0" strokeWidth={2} />
+            <h2 className="text-[18px] font-bold" style={{ color: "var(--color-text)" }}>
               {t("change_passphrase.title")}
             </h2>
           </div>
           <button onClick={onClose} className="cursor-pointer p-1" aria-label="close">
-            <X size={20} color="#A8A29E" strokeWidth={2} />
+            <X size={20} color="var(--color-text-hint)" strokeWidth={2} />
           </button>
         </div>
 
-        <p className="text-[13px]" style={{ color: "#A8A29E", lineHeight: 1.5, marginBottom: 16 }}>
+        <p className="text-[13px]" style={{ color: "var(--color-text-hint)", lineHeight: 1.5, marginBottom: 16 }}>
           {t("change_passphrase.subtitle")}
         </p>
 
         <div className="flex flex-col" style={{ gap: 10 }}>
           <div
             className="flex items-center rounded-xl"
-            style={{ backgroundColor: "#F5F5F4", padding: "0 14px", height: 48 }}
+            style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "0 14px", height: 48 }}
           >
             <input
               type="password"
               value={oldPassphrase}
               onChange={(e) => setOldPassphrase(e.target.value)}
               placeholder={t("change_passphrase.old_placeholder")}
-              className="w-full text-[15px] bg-transparent outline-none placeholder:text-[#D6D3D1]"
-              style={{ color: "#1C1917" }}
+              className="w-full text-[15px] bg-transparent outline-none placeholder:text-[rgba(255,255,255,0.28)]"
+              style={{ color: "var(--color-text)" }}
               aria-label="old-passphrase"
               autoComplete="current-password"
               disabled={isBusy}
@@ -98,15 +98,15 @@ export function ChangePassphraseModal({ isOpen, onClose }: ChangePassphraseModal
 
           <div
             className="flex items-center rounded-xl"
-            style={{ backgroundColor: "#F5F5F4", padding: "0 14px", height: 48 }}
+            style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "0 14px", height: 48 }}
           >
             <input
               type="password"
               value={newPassphrase}
               onChange={(e) => setNewPassphrase(e.target.value)}
               placeholder={t("change_passphrase.new_placeholder")}
-              className="w-full text-[15px] bg-transparent outline-none placeholder:text-[#D6D3D1]"
-              style={{ color: "#1C1917" }}
+              className="w-full text-[15px] bg-transparent outline-none placeholder:text-[rgba(255,255,255,0.28)]"
+              style={{ color: "var(--color-text)" }}
               aria-label="new-passphrase"
               autoComplete="new-password"
               disabled={isBusy}
@@ -115,15 +115,15 @@ export function ChangePassphraseModal({ isOpen, onClose }: ChangePassphraseModal
 
           <div
             className="flex items-center rounded-xl"
-            style={{ backgroundColor: "#F5F5F4", padding: "0 14px", height: 48 }}
+            style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "0 14px", height: 48 }}
           >
             <input
               type="password"
               value={confirmation}
               onChange={(e) => setConfirmation(e.target.value)}
               placeholder={t("change_passphrase.confirm_placeholder")}
-              className="w-full text-[15px] bg-transparent outline-none placeholder:text-[#D6D3D1]"
-              style={{ color: "#1C1917" }}
+              className="w-full text-[15px] bg-transparent outline-none placeholder:text-[rgba(255,255,255,0.28)]"
+              style={{ color: "var(--color-text)" }}
               aria-label="new-passphrase-confirmation"
               autoComplete="new-password"
               disabled={isBusy}
@@ -132,8 +132,8 @@ export function ChangePassphraseModal({ isOpen, onClose }: ChangePassphraseModal
 
           {isBusy && (
             <div className="flex items-center" style={{ gap: 8 }} role="status">
-              <Loader2 size={16} className="animate-spin" color="#059669" />
-              <span className="text-[13px] font-medium" style={{ color: "#57534E" }}>
+              <Loader2 size={16} className="animate-spin" color="#F9FFD0" />
+              <span className="text-[13px] font-medium" style={{ color: "var(--color-text-secondary)" }}>
                 {t(PHASE_KEYS[phase] ?? "change_passphrase.phase_verifying")}
                 {progress.total > 0 &&
                   phase !== "verifying" &&
@@ -163,8 +163,8 @@ export function ChangePassphraseModal({ isOpen, onClose }: ChangePassphraseModal
             height: 48,
             borderRadius: 14,
             background: "var(--gradient-primary)",
-            boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)",
-            color: "#FFFFFF",
+            boxShadow: "0 10px 24px -6px rgba(249,255,208,0.18), inset 0 1px 0 rgba(255,255,255,0.4)",
+            color: "#2C3400",
             fontSize: 15,
             fontWeight: 700,
             gap: 8,

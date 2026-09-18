@@ -42,18 +42,18 @@ export function PrivacyConsentScreen({ onAccept }: PrivacyConsentScreenProps) {
             height: 64,
             borderRadius: 20,
             flexShrink: 0,
-            background: "var(--gradient-header)",
-            boxShadow: "0 14px 30px -10px rgba(5,150,105,0.5)",
+            background: "var(--gradient-primary)",
+            boxShadow: "0 16px 36px -12px rgba(249,255,208,0.2)",
           }}
         >
-          <HeartPulse size={32} color="#FFFFFF" strokeWidth={2} />
+          <HeartPulse size={32} color="#2C3400" strokeWidth={2} />
         </div>
 
         <div style={{ height: 24, flexShrink: 0 }} />
 
         <h1
           className="text-[28px] font-bold whitespace-pre-line"
-          style={{ color: "#1C1917", lineHeight: 1.2, flexShrink: 0 }}
+          style={{ color: "var(--color-text)", lineHeight: 1.2, flexShrink: 0 }}
         >
           {t("consent.welcome_title")}
         </h1>
@@ -62,7 +62,7 @@ export function PrivacyConsentScreen({ onAccept }: PrivacyConsentScreenProps) {
 
         <p
           className="text-[15px] font-normal whitespace-pre-line"
-          style={{ color: "#A8A29E", lineHeight: 1.5, flexShrink: 0 }}
+          style={{ color: "var(--color-text-hint)", lineHeight: 1.5, flexShrink: 0 }}
         >
           {t("consent.welcome_subtitle")}
         </p>
@@ -74,8 +74,8 @@ export function PrivacyConsentScreen({ onAccept }: PrivacyConsentScreenProps) {
             const Icon = feature.icon;
             return (
               <div key={feature.labelKey} className="flex items-center" style={{ gap: 12 }}>
-                <Icon size={20} color="#059669" strokeWidth={2} style={{ flexShrink: 0 }} />
-                <span className="text-[14px] font-medium" style={{ color: "#57534E" }}>
+                <Icon size={20} color="#F9FFD0" strokeWidth={2} style={{ flexShrink: 0 }} />
+                <span className="text-[14px] font-medium" style={{ color: "var(--color-text-secondary)" }}>
                   {t(feature.labelKey)}
                 </span>
               </div>
@@ -92,10 +92,10 @@ export function PrivacyConsentScreen({ onAccept }: PrivacyConsentScreenProps) {
             className="w-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-[0.98]"
             style={{
               height: 52,
-              borderRadius: 999,
+              borderRadius: 22,
               background: "var(--gradient-primary)",
-              boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)",
-              color: "#FFFFFF",
+              boxShadow: "0 10px 24px -6px rgba(249,255,208,0.18), inset 0 1px 0 rgba(255,255,255,0.4)",
+              color: "#2C3400",
               fontSize: 16,
               fontWeight: 700,
             }}
@@ -104,7 +104,7 @@ export function PrivacyConsentScreen({ onAccept }: PrivacyConsentScreenProps) {
           </button>
 
           <div className="flex items-center justify-center" style={{ gap: 4 }}>
-            <span className="text-[12px] font-normal" style={{ color: "#A8A29E" }}>
+            <span className="text-[12px] font-normal" style={{ color: "var(--color-text-hint)" }}>
               {t("consent.read_our")}
             </span>
             <a
@@ -112,7 +112,7 @@ export function PrivacyConsentScreen({ onAccept }: PrivacyConsentScreenProps) {
               target="_blank"
               rel="noopener noreferrer"
               className="text-[12px] font-semibold"
-              style={{ color: "#059669" }}
+              style={{ color: "#F9FFD0" }}
             >
               {t("consent.privacy_link")}
             </a>

@@ -45,7 +45,7 @@ export function HabitCard({
     >
       <div
         className="flex-shrink-0 w-12 h-12 rounded-[14px] flex items-center justify-center"
-        style={{ backgroundColor: habit.tag ? "#FFF7ED" : "#F5F5F4" }}
+        style={{ backgroundColor: habit.tag ? "#FFF7ED" : "rgba(255,255,255,0.06)" }}
       >
         <span style={{ fontSize: 22, lineHeight: 1 }} aria-hidden="true">
           {tagEmoji(habit.tag)}
@@ -55,11 +55,11 @@ export function HabitCard({
       <div className="flex-1 min-w-0">
         <p
           className="text-[16px] font-semibold leading-snug truncate"
-          style={{ color: habit.corrupted ? "#A8A29E" : "#1C1917" }}
+          style={{ color: habit.corrupted ? "var(--color-text-hint)" : "var(--color-text)" }}
         >
           {habit.corrupted ? t("today.corrupted_entry") : habit.name}
         </p>
-        <p className="text-[12px] mt-0.5 truncate" style={{ color: "#A8A29E" }}>
+        <p className="text-[12px] mt-0.5 truncate" style={{ color: "var(--color-text-hint)" }}>
           {habit.time} &middot; {freqLabel}
         </p>
       </div>
@@ -82,15 +82,16 @@ export function HabitCard({
               aria-label="toggle-active"
               className="cursor-pointer w-[42px] h-[26px] rounded-full relative transition-colors duration-200"
               style={{
-                backgroundColor: habit.active ? "#059669" : "rgba(120,120,128,0.24)",
-                boxShadow: habit.active ? "0 2px 8px rgba(5,150,105,0.35)" : "inset 0 1px 2px rgba(30,41,59,0.06)",
+                backgroundColor: habit.active ? "#F9FFD0" : "rgba(255,255,255,0.18)",
+                boxShadow: habit.active ? "0 2px 8px rgba(249,255,208,0.3)" : "inset 0 1px 2px rgba(30,41,59,0.06)",
               }}
             >
               <span
-                className="absolute top-[3px] w-[20px] h-[20px] rounded-full bg-white transition-transform duration-200"
+                className="absolute top-[3px] w-[20px] h-[20px] rounded-full transition-transform duration-200"
                 style={{
                   transform: habit.active ? "translateX(19px)" : "translateX(3px)",
-                  boxShadow: "0 1px 4px rgba(0,0,0,0.13)",
+                  backgroundColor: habit.active ? "#1C1C1E" : "#E5E2E1",
+                  boxShadow: "0 1px 4px rgba(0,0,0,0.3)",
                   left: 0,
                 }}
               />

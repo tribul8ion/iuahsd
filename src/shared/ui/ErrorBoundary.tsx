@@ -46,7 +46,7 @@ export class ErrorBoundary extends Component<Props, State> {
           <div className="flex items-center gap-3">
             <button
               onClick={this.handleRetry}
-              className="px-6 py-2.5 text-sm font-semibold text-white bg-primary rounded-xl transition-all duration-150 active:scale-95"
+              className="px-6 py-2.5 text-sm font-semibold text-[#2C3400] bg-primary rounded-xl transition-all duration-150 active:scale-95"
             >
               Try again
             </button>

@@ -18,13 +18,13 @@ export function ScheduleTimePicker({
   scheduleLabel,
 }: ScheduleTimePickerProps) {
   return (
-    <div className="rounded-xl overflow-hidden" style={{ backgroundColor: "#F5F5F4" }}>
+    <div className="rounded-xl overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
       {SCHEDULES.map((s, idx) => {
         const isSelected = schedule === s;
         const Icon = SCHEDULE_ICONS[s];
         return (
           <div key={s}>
-            {idx > 0 && <div className="h-px" style={{ backgroundColor: "#E7E5E4" }} />}
+            {idx > 0 && <div className="h-px" style={{ backgroundColor: "rgba(255,255,255,0.1)" }} />}
             <div className="flex items-center w-full h-12" style={{ padding: "0 14px" }}>
               <button
                 onClick={() => onScheduleChange(s)}
@@ -33,12 +33,12 @@ export function ScheduleTimePicker({
                 <Icon
                   size={16}
                   strokeWidth={1.8}
-                  color={isSelected ? "#059669" : "#A8A29E"}
+                  color={isSelected ? "#F9FFD0" : "var(--color-text-hint)"}
                 />
                 <span
                   className="text-[15px] truncate"
                   style={{
-                    color: isSelected ? "#1C1917" : "#57534E",
+                    color: isSelected ? "var(--color-text)" : "var(--color-text-secondary)",
                     fontWeight: isSelected ? 600 : 400,
                   }}
                 >
@@ -47,7 +47,7 @@ export function ScheduleTimePicker({
               </button>
               <div className="flex items-center gap-2 flex-shrink-0">
                 {isSelected && (
-                  <div className="w-5 h-5 rounded-full" style={{ background: "var(--gradient-primary)", boxShadow: "0 2px 6px rgba(5,150,105,0.4)" }} />
+                  <div className="w-5 h-5 rounded-full" style={{ background: "var(--gradient-primary)", boxShadow: "0 2px 6px rgba(249,255,208,0.2)" }} />
                 )}
                 <button
                   onClick={(e) => {
@@ -57,7 +57,7 @@ export function ScheduleTimePicker({
                   className="cursor-pointer p-1"
                   aria-label={`edit-time-${s}`}
                 >
-                  <Pencil size={14} color="#A8A29E" strokeWidth={1.8} />
+                  <Pencil size={14} color="var(--color-text-hint)" strokeWidth={1.8} />
                 </button>
               </div>
             </div>

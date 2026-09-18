@@ -41,11 +41,11 @@ export function TodayPage() {
               gap: 6,
               padding: "4px 10px 4px 4px",
               borderRadius: 999,
-              backgroundColor: "rgba(255,255,255,.18)",
+              backgroundColor: "rgba(255,255,255,.1)",
               backdropFilter: "blur(10px)",
               WebkitBackdropFilter: "blur(10px)",
-              border: "1px solid rgba(255,255,255,.32)",
-              boxShadow: "inset 0 1px 0 rgba(255,255,255,.35)",
+              border: "1px solid rgba(249,255,208,.28)",
+              boxShadow: "inset 0 1px 0 rgba(255,255,255,.14)",
             }}
           >
             <span
@@ -58,7 +58,7 @@ export function TodayPage() {
             <span className="text-[11px] font-medium text-white">{t(`pet.mood.${mood}`)}</span>
           </button>
         )}
-        <p className="text-[#A7F3D0] text-[11px] font-semibold tracking-[1.5px] uppercase">
+        <p className="text-[#F9FFD0] text-[11px] font-semibold tracking-[1.5px] uppercase">
           MedReminder
         </p>
       </PageHeader>

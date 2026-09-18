@@ -64,15 +64,15 @@ export function PlansPage() {
           className="flex items-center glass rounded-[24px]"
           style={{ gap: 10, padding: "0 14px", height: 48 }}
         >
-          <Search size={18} color="#A8A29E" strokeWidth={1.8} />
+          <Search size={18} color="var(--color-text-hint)" strokeWidth={1.8} />
           <input
             type="text"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
             placeholder={t("plans.search_placeholder")}
             aria-label="plans-search"
-            className="w-full text-[14px] bg-transparent outline-none placeholder:text-[#A8A29E]"
-            style={{ color: "#1C1917" }}
+            className="w-full text-[14px] bg-transparent outline-none placeholder:text-[rgba(242,245,234,0.35)]"
+            style={{ color: "var(--color-text)" }}
           />
         </div>
 
@@ -81,7 +81,7 @@ export function PlansPage() {
         ) : (
           <>
             {hasNoResults && (
-              <p className="text-[13px] text-center" style={{ color: "#A8A29E", padding: "16px 0" }}>
+              <p className="text-[13px] text-center" style={{ color: "var(--color-text-hint)", padding: "16px 0" }}>
                 {t("plans.no_results")}
               </p>
             )}
@@ -92,22 +92,22 @@ export function PlansPage() {
                   <div className="flex items-center justify-between">
                     <p
                       className="text-[11px] font-semibold uppercase"
-                      style={{ color: "#A8A29E", letterSpacing: "1px" }}
+                      style={{ color: "var(--color-text-hint)", letterSpacing: "1px" }}
                     >
                       {t("plans.projects_section")}
                     </p>
                     <button
                       onClick={() => setIsCreateProjectOpen(true)}
                       className="flex items-center justify-center cursor-pointer rounded-full"
-                      style={{ width: 26, height: 26, backgroundColor: "#ECFDF5" }}
+                      style={{ width: 26, height: 26, backgroundColor: "rgba(249,255,208,0.12)" }}
                       aria-label="create-project"
                     >
-                      <Plus size={15} color="#059669" strokeWidth={2.2} />
+                      <Plus size={15} color="#F9FFD0" strokeWidth={2.2} />
                     </button>
                   </div>
 
                   {filteredProjects.length === 0 ? (
-                    <p className="text-[13px]" style={{ color: "#A8A29E", padding: "4px 2px" }}>
+                    <p className="text-[13px]" style={{ color: "var(--color-text-hint)", padding: "4px 2px" }}>
                       {t("plans.empty_projects")}
                     </p>
                   ) : (
@@ -127,22 +127,22 @@ export function PlansPage() {
                   <div className="flex items-center justify-between">
                     <p
                       className="text-[11px] font-semibold uppercase"
-                      style={{ color: "#A8A29E", letterSpacing: "1px" }}
+                      style={{ color: "var(--color-text-hint)", letterSpacing: "1px" }}
                     >
                       {t("plans.notes_section")}
                     </p>
                     <button
                       onClick={() => setIsAddNoteOpen(true)}
                       className="flex items-center justify-center cursor-pointer rounded-full"
-                      style={{ width: 26, height: 26, backgroundColor: "#ECFDF5" }}
+                      style={{ width: 26, height: 26, backgroundColor: "rgba(249,255,208,0.12)" }}
                       aria-label="create-note"
                     >
-                      <Plus size={15} color="#059669" strokeWidth={2.2} />
+                      <Plus size={15} color="#F9FFD0" strokeWidth={2.2} />
                     </button>
                   </div>
 
                   {filteredNotes.length === 0 ? (
-                    <p className="text-[13px]" style={{ color: "#A8A29E", padding: "4px 2px" }}>
+                    <p className="text-[13px]" style={{ color: "var(--color-text-hint)", padding: "4px 2px" }}>
                       {t("plans.empty_notes")}
                     </p>
                   ) : (

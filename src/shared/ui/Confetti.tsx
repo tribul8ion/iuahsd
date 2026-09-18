@@ -8,7 +8,7 @@ interface ConfettiPiece {
   rotate: number;
 }
 
-const COLORS = ["#059669", "#F97316", "#FBBF24", "#7C3AED", "#EC4899"];
+const COLORS = ["#F9FFD0", "#F97316", "#FBBF24", "#7C3AED", "#EC4899"];
 const PIECE_COUNT = 24;
 
 function buildPieces(): ConfettiPiece[] {

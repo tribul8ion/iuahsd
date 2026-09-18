@@ -63,7 +63,7 @@ export function MedicationCard({
         <div className="flex items-center" style={{ gap: 6 }}>
           <p
             className="text-[16px] font-semibold leading-snug truncate"
-            style={{ color: medication.corrupted ? "#A8A29E" : "#1C1917" }}
+            style={{ color: medication.corrupted ? "var(--color-text-hint)" : "var(--color-text)" }}
           >
             {medication.corrupted ? t("medications.corrupted_entry") : medication.name}
           </p>
@@ -75,7 +75,7 @@ export function MedicationCard({
             />
           )}
         </div>
-        <p className="text-[12px] mt-0.5 truncate" style={{ color: "#A8A29E" }}>
+        <p className="text-[12px] mt-0.5 truncate" style={{ color: "var(--color-text-hint)" }}>
           {scheduleLabel} &middot; {medication.time}
           {intervalSuffix}
           {dosageSuffix}
@@ -101,15 +101,16 @@ export function MedicationCard({
               aria-label="toggle-active"
               className="cursor-pointer w-[42px] h-[26px] rounded-full relative transition-colors duration-200"
               style={{
-                backgroundColor: medication.active ? "#059669" : "rgba(120,120,128,0.24)",
-                boxShadow: medication.active ? "0 2px 8px rgba(5,150,105,0.35)" : "inset 0 1px 2px rgba(30,41,59,0.06)",
+                backgroundColor: medication.active ? "#F9FFD0" : "rgba(255,255,255,0.18)",
+                boxShadow: medication.active ? "0 2px 8px rgba(249,255,208,0.3)" : "inset 0 1px 2px rgba(30,41,59,0.06)",
               }}
             >
               <span
-                className="absolute top-[3px] w-[20px] h-[20px] rounded-full bg-white transition-transform duration-200"
+                className="absolute top-[3px] w-[20px] h-[20px] rounded-full transition-transform duration-200"
                 style={{
                   transform: medication.active ? "translateX(19px)" : "translateX(3px)",
-                  boxShadow: "0 1px 4px rgba(0,0,0,0.13)",
+                  backgroundColor: medication.active ? "#1C1C1E" : "#E5E2E1",
+                  boxShadow: "0 1px 4px rgba(0,0,0,0.3)",
                   left: 0,
                 }}
               />
@@ -117,12 +118,12 @@ export function MedicationCard({
           )}
           {onEdit && (
             <button onClick={onEdit} className="cursor-pointer p-1" aria-label="edit-medication">
-              <Pencil size={20} color="#A8A29E" strokeWidth={1.8} />
+              <Pencil size={20} color="var(--color-text-hint)" strokeWidth={1.8} />
             </button>
           )}
           {onDelete && (
             <button onClick={onDelete} className="cursor-pointer p-1" aria-label="delete-medication">
-              <Trash2 size={20} color="#D6D3D1" strokeWidth={1.8} />
+              <Trash2 size={20} color="rgba(255,255,255,0.25)" strokeWidth={1.8} />
             </button>
           )}
         </div>

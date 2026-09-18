@@ -27,7 +27,7 @@ function LadderCard({ tag, currentValue, earnedIds }: LadderCardProps) {
       style={{ padding: 16 }}
       data-testid={`ladder-${tag}`}
     >
-      <p className="text-[14px] font-semibold" style={{ color: "#1C1917", marginBottom: 10 }}>
+      <p className="text-[14px] font-semibold" style={{ color: "var(--color-text)", marginBottom: 10 }}>
         {stages[0]?.emoji} {t(`tags.${tag}`)}
       </p>
 
@@ -41,8 +41,8 @@ function LadderCard({ tag, currentValue, earnedIds }: LadderCardProps) {
               className="flex-1 flex flex-col items-center rounded-xl text-center"
               style={{
                 padding: "10px 4px",
-                backgroundColor: got ? "#FBF3E7" : "#F5F5F4",
-                color: got ? "#C77414" : "#A8A29E",
+                backgroundColor: got ? "rgba(251,191,36,0.12)" : "rgba(255,255,255,0.06)",
+                color: got ? "#F26D21" : "var(--color-text-hint)",
               }}
             >
               <span style={{ fontSize: 20, lineHeight: 1 }}>{stage.emoji}</span>
@@ -53,7 +53,7 @@ function LadderCard({ tag, currentValue, earnedIds }: LadderCardProps) {
         })}
       </div>
 
-      <p className="text-[12px] mt-2" style={{ color: "#A8A29E" }}>
+      <p className="text-[12px] mt-2" style={{ color: "var(--color-text-hint)" }}>
         {progress.complete
           ? t("game.ladder_complete")
           : t("game.ladder_progress", {

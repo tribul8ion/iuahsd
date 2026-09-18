@@ -9,7 +9,7 @@ export function FieldLabel({ children, marginBottom = 8 }: FieldLabelProps) {
   return (
     <p
       className="text-[11px] font-semibold uppercase"
-      style={{ color: "#A8A29E", letterSpacing: "1px", marginBottom }}
+      style={{ color: "var(--color-text-hint)", letterSpacing: "1px", marginBottom }}
     >
       {children}
     </p>

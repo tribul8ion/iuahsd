@@ -58,19 +58,19 @@ export function NotificationToday({ settings }: NotificationTodayProps) {
     <div className="flex items-center" style={{ gap: 12, padding: "0 16px", height: 56 }}>
       <div
         className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center"
-        style={{ backgroundColor: muted ? "#F5F5F4" : "#ECFDF5" }}
+        style={{ backgroundColor: muted ? "rgba(255,255,255,0.06)" : "rgba(249,255,208,0.12)" }}
       >
         {muted ? (
-          <BellOff size={20} strokeWidth={1.8} color="#A8A29E" />
+          <BellOff size={20} strokeWidth={1.8} color="var(--color-text-hint)" />
         ) : (
-          <Bell size={20} strokeWidth={1.8} color="#059669" />
+          <Bell size={20} strokeWidth={1.8} color="#F9FFD0" />
         )}
       </div>
       <div className="flex-1 min-w-0">
-        <p className="text-[15px] font-medium truncate" style={{ color: "#1C1917" }}>
+        <p className="text-[15px] font-medium truncate" style={{ color: "var(--color-text)" }}>
           {t("settings.notifications_today")}
         </p>
-        <p className="text-[12px] mt-0.5 truncate" style={{ color: "#A8A29E" }}>
+        <p className="text-[12px] mt-0.5 truncate" style={{ color: "var(--color-text-hint)" }}>
           {muted ? t("settings.muted_today") : t("settings.not_muted_today")}
         </p>
       </div>
@@ -78,7 +78,7 @@ export function NotificationToday({ settings }: NotificationTodayProps) {
         onClick={handleToggle}
         disabled={muteToday.isPending}
         className="flex-shrink-0 cursor-pointer text-[13px] font-semibold"
-        style={{ color: "#059669", opacity: muteToday.isPending ? 0.5 : 1 }}
+        style={{ color: "#F9FFD0", opacity: muteToday.isPending ? 0.5 : 1 }}
       >
         {muted ? t("settings.unmute_today") : t("settings.mute_today")}
       </button>

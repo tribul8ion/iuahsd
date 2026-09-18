@@ -36,18 +36,18 @@ export function AchievementToast() {
         style={{ padding: "32px 28px", gap: 12, maxWidth: 280 }}
       >
         <span style={{ fontSize: 56, lineHeight: 1 }}>{badge.emoji}</span>
-        <p className="text-[13px] font-semibold uppercase" style={{ color: "#A8A29E", letterSpacing: "1px" }}>
+        <p className="text-[13px] font-semibold uppercase" style={{ color: "var(--color-text-hint)", letterSpacing: "1px" }}>
           {t("toast.unlocked")}
         </p>
-        <p className="text-[18px] font-bold text-center" style={{ color: "#1C1917" }}>
+        <p className="text-[18px] font-bold text-center" style={{ color: "var(--color-text)" }}>
           {t(badge.nameKey)}
         </p>
         <button
           onClick={dequeue}
           className="w-full flex items-center justify-center cursor-pointer transition-all duration-150 active:scale-[0.98]"
-          style={{ height: 44, borderRadius: 999, background: "var(--gradient-primary)", marginTop: 8, boxShadow: "0 8px 18px -6px rgba(5,150,105,0.4)" }}
+          style={{ height: 44, borderRadius: 22, background: "var(--gradient-primary)", marginTop: 8, boxShadow: "0 10px 24px -6px rgba(249,255,208,0.18), inset 0 1px 0 rgba(255,255,255,0.4)" }}
         >
-          <span className="text-[15px] font-semibold text-white">{t("toast.close")}</span>
+          <span className="text-[15px] font-semibold text-[#2C3400]">{t("toast.close")}</span>
         </button>
       </div>
     </div>

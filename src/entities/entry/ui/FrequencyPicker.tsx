@@ -75,7 +75,7 @@ export function FrequencyPicker({
     <div>
       <div
         className="flex rounded-full"
-        style={{ backgroundColor: "rgba(120,120,128,0.1)", padding: 4, gap: 4 }}
+        style={{ backgroundColor: "rgba(255,255,255,0.07)", padding: 4, gap: 4 }}
         role="tablist"
         aria-label="frequency-type"
       >
@@ -87,10 +87,10 @@ export function FrequencyPicker({
             aria-selected={value === freq}
             className={`flex-1 h-9 rounded-full font-medium cursor-pointer transition-all ${showWeekly ? "text-[13px]" : "text-[14px]"}`}
             style={{
-              backgroundColor: value === freq ? "rgba(255,255,255,0.92)" : "transparent",
-              color: value === freq ? "#047857" : "#51706A",
+              background: value === freq ? "var(--gradient-primary)" : "transparent",
+              color: value === freq ? "#2C3400" : "rgba(242,245,234,0.55)",
               fontWeight: value === freq ? 700 : 500,
-              boxShadow: value === freq ? "0 2px 8px rgba(13,84,73,0.16), inset 0 1px 0 rgba(255,255,255,0.9)" : "none",
+              boxShadow: value === freq ? "0 4px 12px -2px rgba(249,255,208,0.3), inset 0 1px 0 rgba(255,255,255,0.4)" : "none",
             }}
           >
             {tabLabel(freq)}
@@ -110,9 +110,9 @@ export function FrequencyPicker({
                 aria-label={`day-${dayIndex}`}
                 className="flex-1 h-10 rounded-full text-[13px] font-medium cursor-pointer transition-all"
                 style={{
-                  background: isSelected ? "var(--gradient-primary)" : "#EEF3F0",
-                  color: isSelected ? "#FFFFFF" : "#57534E",
-                  boxShadow: isSelected ? "0 4px 10px -3px rgba(5,150,105,0.4)" : "none",
+                  background: isSelected ? "var(--gradient-primary)" : "rgba(255,255,255,0.07)",
+                  color: isSelected ? "#2C3400" : "var(--color-text-secondary)",
+                  boxShadow: isSelected ? "0 4px 10px -3px rgba(249,255,208,0.18)" : "none",
                   fontWeight: isSelected ? 700 : 500,
                 }}
               >
@@ -124,7 +124,7 @@ export function FrequencyPicker({
       )}
 
       {value === "interval" && (
-        <div className="rounded-xl overflow-hidden mt-2" style={{ backgroundColor: "#F5F5F4" }}>
+        <div className="rounded-xl overflow-hidden mt-2" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
           {startDate && (
             <>
               <div
@@ -134,7 +134,7 @@ export function FrequencyPicker({
                 <label
                   htmlFor="frequency-start-date"
                   className="text-[15px]"
-                  style={{ color: "#57534E" }}
+                  style={{ color: "var(--color-text-secondary)" }}
                 >
                   {startDate.label}
                 </label>
@@ -146,7 +146,7 @@ export function FrequencyPicker({
                   onChange={(e) => startDate.onChange(e.target.value || todayISO())}
                   className="text-[15px] bg-transparent outline-none cursor-pointer [&::-webkit-calendar-picker-indicator]:ml-1 [&::-webkit-calendar-picker-indicator]:p-0"
                   style={{
-                    color: "#1C1917",
+                    color: "var(--color-text)",
                     fontWeight: 600,
                     width: 140,
                     flex: "0 0 auto",
@@ -154,14 +154,14 @@ export function FrequencyPicker({
                   aria-label="start-date"
                 />
               </div>
-              <div className="h-px" style={{ backgroundColor: "#E7E5E4" }} />
+              <div className="h-px" style={{ backgroundColor: "rgba(255,255,255,0.1)" }} />
             </>
           )}
           <div
             className="flex items-center justify-between w-full h-12"
             style={{ padding: "0 14px" }}
           >
-            <span className="text-[15px]" style={{ color: "#57534E" }}>
+            <span className="text-[15px]" style={{ color: "var(--color-text-secondary)" }}>
               {labels.every}
             </span>
             <div className="flex items-center gap-2">
@@ -169,14 +169,14 @@ export function FrequencyPicker({
                 onClick={() => handleStep(-1)}
                 disabled={intervalDays <= intervalMin}
                 className="w-7 h-7 rounded-full flex items-center justify-center cursor-pointer disabled:opacity-35 disabled:cursor-not-allowed"
-                style={{ backgroundColor: "#E7E5E4" }}
+                style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
                 aria-label="interval-decrement"
               >
-                <Minus size={14} color="#1C1917" strokeWidth={2} />
+                <Minus size={14} color="var(--color-text)" strokeWidth={2} />
               </button>
               <span
                 className={`text-[15px] font-semibold ${intervalValueWidthClass} text-center`}
-                style={{ color: "#1C1917" }}
+                style={{ color: "var(--color-text)" }}
                 aria-label="interval-value"
               >
                 {intervalDays}
@@ -185,12 +185,12 @@ export function FrequencyPicker({
                 onClick={() => handleStep(1)}
                 disabled={intervalDays >= intervalMax}
                 className="w-7 h-7 rounded-full flex items-center justify-center cursor-pointer disabled:opacity-35 disabled:cursor-not-allowed"
-                style={{ backgroundColor: "#E7E5E4" }}
+                style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
                 aria-label="interval-increment"
               >
-                <Plus size={14} color="#1C1917" strokeWidth={2} />
+                <Plus size={14} color="var(--color-text)" strokeWidth={2} />
               </button>
-              <span className="text-[15px]" style={{ color: "#57534E", marginLeft: 4 }}>
+              <span className="text-[15px]" style={{ color: "var(--color-text-secondary)", marginLeft: 4 }}>
                 {labels.daysSuffix}
               </span>
             </div>

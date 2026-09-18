@@ -13,7 +13,7 @@ export function Spinner({ size = "m" }: SpinnerProps) {
         size={SIZE_MAP[size]}
         className="animate-spin"
         strokeWidth={2}
-        color="#059669"
+        color="#F9FFD0"
       />
     </div>
   );
